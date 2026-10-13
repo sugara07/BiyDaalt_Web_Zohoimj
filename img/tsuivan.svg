@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" role="img" aria-label="Цуйван-ны чимэглэлийн вектор зураг">
+<defs><linearGradient id="bg" x2="0.8" y2="1"><stop stop-color="#e0e8d9"/><stop offset="1" stop-color="#b9cca7"/></linearGradient><radialGradient id="plate"><stop stop-color="#fffef8"/><stop offset=".8" stop-color="#f4f1e8"/><stop offset="1" stop-color="#cbd4d1"/></radialGradient></defs>
+<rect width="720" height="540" fill="url(#bg)"/>
+<circle cx="610" cy="105" r="155" fill="#ffffff" opacity=".16"/><circle cx="115" cy="490" r="135" fill="#ffffff" opacity=".15"/>
+<ellipse cx="364" cy="410" rx="268" ry="81" fill="#4c4635" opacity=".18"/>
+<ellipse cx="360" cy="362" rx="265" ry="150" fill="#e6e6e1"/>
+<ellipse cx="360" cy="352" rx="238" ry="125" fill="url(#plate)" stroke="#d7d9d4" stroke-width="8"/>
+<ellipse cx="362" cy="330" rx="210" ry="111" fill="#a8783e"/>
+ <g fill="none" stroke-linecap="round" stroke-width="14">
+ <path stroke="#eec782" d="M192 313Q258 230 334 295T518 279M200 337Q309 393 395 316T540 338M220 375Q307 278 404 373T535 366M245 285Q366 392 458 274M260 409Q319 322 470 407M190 350Q365 241 541 352"/>
+ <path stroke="#d99f57" d="M242 285Q298 358 383 289T508 316M258 374Q353 293 462 378"/>
+ </g>
+ <g fill="#74a057"><ellipse cx="244" cy="326" rx="29" ry="14" transform="rotate(35 244 326)"/><ellipse cx="474" cy="347" rx="30" ry="14" transform="rotate(-31 474 347)"/><ellipse cx="369" cy="278" rx="24" ry="14" transform="rotate(25 369 278)"/></g>
+ <g fill="#d36e36"><rect x="300" y="301" width="43" height="15" rx="5" transform="rotate(35 300 301)"/><rect x="430" y="380" width="41" height="15" rx="5" transform="rotate(-25 430 380)"/></g>
+</svg>

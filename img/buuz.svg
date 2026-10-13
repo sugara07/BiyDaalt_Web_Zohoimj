@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" role="img" aria-label="Бууз-ны чимэглэлийн вектор зураг">
+<defs><linearGradient id="bg" x2="0.8" y2="1"><stop stop-color="#e7e9dc"/><stop offset="1" stop-color="#e4c79b"/></linearGradient><radialGradient id="plate"><stop stop-color="#fffef8"/><stop offset=".8" stop-color="#f4f1e8"/><stop offset="1" stop-color="#cbd4d1"/></radialGradient></defs>
+<rect width="720" height="540" fill="url(#bg)"/>
+<circle cx="610" cy="105" r="155" fill="#ffffff" opacity=".16"/><circle cx="115" cy="490" r="135" fill="#ffffff" opacity=".15"/>
+<ellipse cx="364" cy="410" rx="268" ry="81" fill="#4c4635" opacity=".18"/>
+<ellipse cx="360" cy="362" rx="265" ry="150" fill="#e6e6e1"/>
+<ellipse cx="360" cy="352" rx="238" ry="125" fill="url(#plate)" stroke="#d7d9d4" stroke-width="8"/>
+<g stroke="#fffaf0" stroke-width="8" stroke-linecap="round" fill="none" opacity=".7"><path d="M310 174q-24-26 0-53t0-39"/><path d="M450 180q-20-31 0-54t0-39"/></g><g fill="#f6ebd5" stroke="#d2b98d" stroke-width="5">
+  <path d="M188 348Q173 246 276 219q101 31 86 130-80 62-174-1Z"/>
+  <path d="M330 336Q316 206 421 184q122 48 104 148-86 64-195 4Z"/>
+  <path d="M459 374Q446 275 538 250q104 32 90 121-80 45-169 3Z"/></g>
+  <g fill="none" stroke="#c7a879" stroke-width="6" stroke-linecap="round"><path d="M246 226l32 98m2-98-1 97m21-90-17 89M399 195l28 110m4-108-2 110m21-104-17 102M515 261l21 94m4-95-2 94m18-86-13 84"/></g>
+</svg>
