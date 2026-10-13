@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Хөх тэнгэр рестора - Монгол гэрийн хоол">
+  <title>Хөх тэнгэр рестора</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;800&family=Rubik:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="#top">Хөх тэнгэр</a>
+    <nav aria-label="Үндсэн цэс">
+      <ul>
+        <li><a href="#menu">Цэс</a></li>
+        <li><a href="#story">Бидний тухай</a></li>
+        <li><a href="#info">Хаяг, цаг</a></li>
+        <li><a href="#book">Захиалга</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Бууз.<br>Хуушуур.<br>Цуйван.</h1>
+        <p>Монгол гэрийн хоолыг өдөр бүр <strong>шинээр</strong> хийж, <em>халуунаар</em> нь хүргэнэ.</p>
+        <a class="btn" href="#book">Ширээ захиалах</a>
+        <a class="btn ghost" href="#menu">Цэс харах</a>
+      </div>
+      <figure>
+        <img src="img/hero.svg" alt="Хөх тэнгэрийн дор гэр, ширээн дээр уурласан бууз" width="600" height="420">
+      </figure>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="wrap">
+      <h2>Манай цэс</h2>
+      <p class="lead">Мах, гурил, ногоо бүгд орон нутгийн. Үнийг төгрөгөөр бичсэн.</p>
+
+      <div class="cards">
+        <article>
+          <figure>
+            <img src="img/buuz.svg" alt="Таваг дээр гурван бууз" loading="lazy">
+            <figcaption>Бууз <span class="price">9,500₮</span></figcaption>
+          </figure>
+          <p>Үхрийн мах, сонгинотой. 5 ширхэг.</p>
+        </article>
+        <article>
+          <figure>
+            <img src="img/khuushuur.svg" alt="Шарсан хуушуур" loading="lazy">
+            <figcaption>Хуушуур <span class="price">10,500₮</span></figcaption>
+          </figure>
+          <p>Шүүслэг, шарсан. 3 ширхэг.</p>
+        </article>
+        <article>
+          <figure>
+            <img src="img/tsuivan.svg" alt="Ногоотой цуйван" loading="lazy">
+            <figcaption>Цуйван <span class="price">14,000₮</span></figcaption>
+          </figure>
+          <p>Гар сунгасан гурил, ногоотой.</p>
+        </article>
+        <article>
+          <figure>
+            <img src="img/khorkhog.svg" alt="Халуун чулуутай хорхог" loading="lazy">
+            <figcaption>Хорхог <span class="price">38,000₮</span></figcaption>
+          </figure>
+          <p>Хонины мах, халуун чулуугаар. <mark>2–3 хүнд.</mark></p>
+        </article>
+      </div>
+
+      <h3>Бүтэн жагсаалт</h3>
+      <table>
+        <caption>Ундаа, шөл, амттан</caption>
+        <thead>
+          <tr><th scope="col">Нэр</th><th scope="col">Тайлбар</th><th scope="col">Үнэ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Сүүтэй цай</td><td>Давстай, уламжлалт</td><td>3,000₮</td></tr>
+          <tr><td>Айраг</td><td>Улирлын чанартай</td><td>6,000₮</td></tr>
+          <tr><td>Хонины шөл</td><td>Ногоотой</td><td>12,000₮</td></tr>
+          <tr><td>Аарцтай бялуу</td><td>Өдөр бүр шинэ</td><td>9,000₮</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="story" class="alt">
+    <div class="wrap two">
+      <div>
+        <h2>Бууз яаж хийдэг вэ</h2>
+        <ol>
+          <li>Гурилаа зуурч 30 минут амраана.</li>
+          <li>Махаа хутгаар жижиглэж, сонгино, давс, ус хийнэ.</li>
+          <li>Өрөөсөн гурилыг нимгэлж, дүүргээд нугалж атгана.</li>
+          <li>Уураар 20 минут чанана.</li>
+        </ol>
+        <p><small>Нэг бууз дунджаар <abbr title="гурван зуун тавин грамм">350 г</abbr> жинтэй.</small></p>
+      </div>
+      <div>
+        <blockquote>
+          <p>Эхийн хийсэн бууз шиг шүүстэй нь Улаанбаатарт цөөхөн.</p>
+          <footer>— <cite>Б. Сарангэрэл</cite>, байнгын үйлчлүүлэгч</footer>
+        </blockquote>
+        <details>
+          <summary>Хүргэлт хийдэг үү?</summary>
+          <p>Тийм. Хотын төвд 45 минутын дотор хүргэнэ.</p>
+        </details>
+        <details>
+          <summary>Хоолны дэглэмтэй хүнд тохирох юм бий юу?</summary>
+          <p>Хонины шөл болон ногоотой цуйванг махгүй хийж өгнө.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="music">
+    <div class="wrap">
+      <h2>Манай ресторанд эгшиглэдэг хөгжим</h2>
+      <p class="lead">Дуугаа асаагаад цэсээ сонгоорой.</p>
+      <audio controls preload="none">
+        <source src="audio/khuur.wav" type="audio/wav">
+        Таны хөтөч аудио тоглуулдаггүй байна.
+      </audio>
+    </div>
+  </section>
+
+  <section id="info" class="dark">
+    <div class="wrap two">
+      <address>
+        <h2>Хаяг, цаг</h2>
+        <p>Сүхбаатар дүүрэг, Энхтайваны өргөн чөлөө 12<br>Улаанбаатар хот</p>
+        <p>Утас: <a href="tel:+97611000000">+976 1100 0000</a></p>
+        <p>И-мэйл: <a href="mailto:hello@khukhtengeri.mn">hello@khukhtengeri.mn</a></p>
+      </address>
+      <dl>
+        <dt>Даваа – Баасан</dt><dd><time>10:00</time> – <time>22:00</time></dd>
+        <dt>Бямба</dt><dd><time>11:00</time> – <time>23:00</time></dd>
+        <dt>Ням</dt><dd><time>11:00</time> – <time>21:00</time></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="wrap">
+      <h2>Ширээ захиалах</h2>
+      <p class="lead">Мэдээллээ үлдээвэл бид 30 минутын дотор утасдаж баталгаажуулна.</p>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Таны мэдээлэл</legend>
+          <label>Нэр <input type="text" name="name" required autocomplete="name"></label>
+          <label>Утас <input type="tel" name="phone" required autocomplete="tel"></label>
+        </fieldset>
+        <fieldset>
+          <legend>Захиалга</legend>
+          <label>Огноо <input type="date" name="date" required></label>
+          <label>Цаг <input type="time" name="time" required></label>
+          <label>Хүний тоо
+            <select name="guests">
+              <option>1–2</option><option>3–4</option><option>5–8</option><option>9 болон түүнээс дээш</option>
+            </select>
+          </label>
+          <label>Хаана суух вэ?
+            <span class="radios">
+              <label><input type="radio" name="zone" value="in" checked> Дотор</label>
+              <label><input type="radio" name="zone" value="out"> Гадаа</label>
+            </span>
+          </label>
+          <label class="full"><input type="checkbox" name="bday"> Төрсөн өдрийн хүндэтгэл (бялуу бэлдэнэ)</label>
+          <label class="full">Нэмэлт хүсэлт
+            <textarea name="note" rows="3"></textarea>
+          </label>
+        </fieldset>
+        <button class="btn" type="submit">Захиалга илгээх</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Хөх тэнгэр рестора. Улаанбаатар.</p>
+    <hr>
+    <p><small>Энэ сайтыг зөвхөн HTML болон CSS-ээр хийсэн.</small></p>
+  </div>
+</footer>
+
+</body>
+</html>
