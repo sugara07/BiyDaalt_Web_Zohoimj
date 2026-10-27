@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102747">
+  <meta name="description" content="Хөх тэнгэр — Хүргэлтийн бүс, тариф, хүргэлтийн хугацаа болон захиалгын нөхцөл.">
+  <title>Хүргэлт | Хөх тэнгэр</title>
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/services.css">
+  <script src="../js/services.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Үндсэн агуулга руу шилжих</a>
+
+<header class="topbar">
+  <div class="wrap nav-bar">
+    <a class="logo" href="../index.html" aria-label="Хөх тэнгэр — Нүүр хуудас"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a>
+    <nav aria-label="Үндсэн цэс">
+      <ul>
+        <li><a href="index.html">Үйлчилгээ</a></li>
+        <li><a href="delivery.html" aria-current="page">Хүргэлт</a></li>
+        <li><a href="catering.html">Арга хэмжээ</a></li>
+        <li><a href="offers.html">Урамшуулал</a></li>
+        <li><a href="feedback.html">Санал хүсэлт</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="../index.html#book">Ширээ захиалах <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <ol class="breadcrumbs" aria-label="Таны байршил">
+        <li><a href="../index.html">Нүүр</a></li>
+        <li><a href="index.html">Үйлчилгээ</a></li>
+        <li aria-current="page">Хүргэлт</li>
+      </ol>
+      <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> ХҮРГЭЛТ</p>
+      <h1 id="hero-title">Халуун хоол, <em>цагт нь.</em></h1>
+      <p class="lead">Захиалгаа өгснөөс хойш 30–70 минутын дотор хотын 5 бүсэд хүргэнэ. Бүсийн төлбөр, доод захиалга болон хүлээгдэх хугацааг доороос шалгаарай.</p>
+      <ul class="hero-points">
+        <li>Хүргэлтийн цаг 10:00–21:00</li>
+        <li>80,000₮-өөс дээш I–II бүсэд үнэгүй</li>
+        <li>Бэлэн мөнгө, карт, шилжүүлэг</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="zone-title">
+    <div class="wrap">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">ХҮРГЭЛТИЙН БҮС</p>
+          <h2 id="zone-title">Хүргэлт хаана хүрэх вэ?</h2>
+          <p class="lead">Дүүргээ сонгон хүргэлтийн төлбөр болон хүлээгдэх хугацааг шалгаарай.</p>
+        </div>
+        <a class="text-link" href="../index.html#book">Захиалга өгөх <span aria-hidden="true">↗</span></a>
+      </div>
+
+      <div class="checker">
+        <h3>Бүсээ шалгах</h3>
+        <p>Жагсаалтаас өөрийн дүүргийг сонгоод “Бүс шалгах” товчийг дарна уу.</p>
+        <form id="zone-form" class="checker-form" action="#" method="get">
+          <label>Дүүрэг
+            <select id="zone-select" name="zone" required>
+              <option value="" selected disabled>Сонгоно уу</option>
+              <option value="Сүхбаатар дүүрэг">Сүхбаатар дүүрэг</option>
+              <option value="Чингэлтэй дүүрэг">Чингэлтэй дүүрэг</option>
+              <option value="Баянзүрх дүүрэг (1–5 хороо)">Баянзүрх дүүрэг (1–5 хороо)</option>
+              <option value="Хан-Уул дүүрэг">Хан-Уул дүүрэг</option>
+              <option value="Баянзүрх дүүрэг (6–15 хороо)">Баянзүрх дүүрэг (6–15 хороо)</option>
+              <option value="Сонгинохайрхан дүүрэг">Сонгинохайрхан дүүрэг</option>
+              <option value="Налайх дүүрэг">Налайх дүүрэг</option>
+              <option value="Багануур дүүрэг">Багануур дүүрэг</option>
+            </select>
+          </label>
+          <button class="btn" type="submit">Бүс шалгах</button>
+        </form>
+        <div id="zone-result" class="form-result" role="status" aria-live="polite" hidden></div>
+      </div>
+
+      <div class="table-card">
+        <h3>Бүсийн үнэ ба хугацаа</h3>
+        <section class="table-scroll" aria-label="Хүргэлтийн бүсийн үнийн хүснэгт" tabindex="0">
+          <table class="stack-table">
+            <caption>Хүргэлтийн жишиг тариф — 2026 он</caption>
+            <thead>
+              <tr>
+                <th scope="col">Бүс</th>
+                <th scope="col">Хамрах дүүрэг</th>
+                <th scope="col">Хүргэлтийн төлбөр</th>
+                <th scope="col">Доод захиалга</th>
+                <th scope="col">Хугацаа</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Бүс">I</td>
+                <td data-label="Хамрах дүүрэг">Сүхбаатар, Чингэлтэй</td>
+                <td data-label="Хүргэлтийн төлбөр">3,000₮</td>
+                <td data-label="Доод захиалга">25,000₮</td>
+                <td data-label="Хугацаа">30–40 мин</td>
+              </tr>
+              <tr>
+                <td data-label="Бүс">II</td>
+                <td data-label="Хамрах дүүрэг">Баянзүрх (1–5), Хан-Уул</td>
+                <td data-label="Хүргэлтийн төлбөр">5,000₮</td>
+                <td data-label="Доод захиалга">30,000₮</td>
+                <td data-label="Хугацаа">40–55 мин</td>
+              </tr>
+              <tr>
+                <td data-label="Бүс">III</td>
+                <td data-label="Хамрах дүүрэг">Баянзүрх (6–15), Сонгинохайрхан</td>
+                <td data-label="Хүргэлтийн төлбөр">7,000₮</td>
+                <td data-label="Доод захиалга">35,000₮</td>
+                <td data-label="Хугацаа">55–70 мин</td>
+              </tr>
+              <tr>
+                <td data-label="Бүс">IV</td>
+                <td data-label="Хамрах дүүрэг">Налайх, Багануур</td>
+                <td data-label="Хүргэлтийн төлбөр">Тохиролцоно</td>
+                <td data-label="Доод захиалга">50,000₮</td>
+                <td data-label="Хугацаа">60–90 мин</td>
+              </tr>
+              <tr>
+                <td data-label="Бүс">Үнэгүй</td>
+                <td data-label="Хамрах дүүрэг">I–II бүс, 80,000₮-өөс дээш</td>
+                <td data-label="Хүргэлтийн төлбөр">0₮</td>
+                <td data-label="Доод захиалга">80,000₮</td>
+                <td data-label="Хугацаа">Бүсийн хугацаа</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <p class="note-box"><strong>Анхаар.</strong> Хүргэлтийн төлбөр нь захиалгын дүнгээс хамаарахгүй. 80,000₮-өөс дээш захиалгад I–II бүсэд хүргэлт үнэгүй. Цаг агаар, замын нөхцөлөөс хамаарч хугацаа хэдэн минутаар хэтэрч болно.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft-section" aria-labelledby="steps-title">
+    <div class="wrap">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">ХҮРГЭЛТИЙН ПРОЦЕСС</p>
+          <h2 id="steps-title">Захиалгаас хүргэлт хүртэл</h2>
+          <p class="lead">Дөрвөн алхамд таны хоол хаалга хүртэл ирнэ.</p>
+        </div>
+      </div>
+      <ol class="steps">
+        <li><strong>Захиалга өгөх</strong><span>Утсаар эсвэл вэб сайтаар хоол, тоо ширхэгээ сонгоно.</span></li>
+        <li><strong>Баталгаажуулах</strong><span>Ажилтан захиалгыг хүлээн авч, хаяг, утсыг баталгаажуулна.</span></li>
+        <li><strong>Хоол бэлтгэх</strong><span>Захиалга баталгаажсаны дараа гал тогоо хоолыг шинээр бэлтгэнэ.</span></li>
+        <li><strong>Хүргэх</strong><span>Хүргэгч товлосон хугацаанд хаалга хүртэл хүргэж өгнө.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="rules-title">
+    <div class="wrap">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">ҮЙЛЧИЛГЭЭНИЙ НӨХЦӨЛ</p>
+          <h2 id="rules-title">Хүргэлтийн үед анхаарах зүйл</h2>
+        </div>
+      </div>
+      <div class="rule-grid">
+        <article class="rule">
+          <h3>Захиалгын цаг</h3>
+          <p>Хүргэлтийг өдөр бүр 10:00–21:00 цагийн хооронд гүйцэтгэнэ. Хаалтын 30 минутын өмнө захиалгаа өгөөрэй.</p>
+        </article>
+        <article class="rule">
+          <h3>Хаяг тодорхой</h3>
+          <p>Дүүрэг, хороо, байр, орц, тоот болон утасны дугаараа зөв бөглөнө үү.</p>
+        </article>
+        <article class="rule">
+          <h3>Төлбөрийн хэлбэр</h3>
+          <p>Бэлэн мөнгө, банкны карт эсвэл шилжүүлгээр төлөх боломжтой. Хүргэгч баримт олгоно.</p>
+        </article>
+        <article class="rule">
+          <h3>Цуцлалт</h3>
+          <p>Хоол бэлтгэж эхлэхээс өмнө захиалгыг үнэгүй цуцалж болно. Дараа нь ажилтнаар тохиролцоно.</p>
+        </article>
+      </div>
+
+      <div class="cta-band">
+        <div>
+          <h2>Хүргэлтээ захиалахад бэлэн үү?</h2>
+          <p>Хоолны цэсээ үзээд дуртай хоолоо сонгоорой. Захиалгыг утсаар баталгаажуулна.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn" href="../index.html#menu">Хоолны цэс <span aria-hidden="true">→</span></a>
+          <a class="btn btn-outline" href="index.html">Бусад үйлчилгээ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-cols">
+    <div>
+      <a class="logo" href="../index.html"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a>
+      <p>Монгол гэрийн хоолны жишиг вэб сайт. Сургалтын зориулалттай төсөл.</p>
+    </div>
+    <div>
+      <h3 class="footer-title">Үйлчилгээ</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">Үйлчилгээний танилцуулга</a></li>
+        <li><a href="delivery.html">Хүргэлт</a></li>
+        <li><a href="catering.html">Арга хэмжээний хоол</a></li>
+        <li><a href="offers.html">Урамшуулал</a></li>
+        <li><a href="feedback.html">Санал хүсэлт</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-title">Холбоо барих</h3>
+      <p>Утас: +976 1100 0000<br>И-мэйл: hello@khukhtengeri.mn</p>
+      <p>© 2026 Хөх тэнгэр. Бүх мэдээлэл жишиг.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
