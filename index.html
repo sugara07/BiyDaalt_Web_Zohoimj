@@ -11,13 +11,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Үндсэн агуулга руу шилжих</a>
 <header class="topbar">
   <div class="wrap nav-bar">
     <a class="logo" href="#top" aria-label="Хөх тэнгэр — Нүүр хуудас"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a>
-    <nav aria-label="Үндсэн цэс"><ul><li><a href="index.html" aria-current="page">Нүүр</a></li><li><a href="about.html">Бидний тухай</a></li><li><a href="news.html">Мэдээлэл</a></li><li><a href="contact.html">Холбоо барих</a></li><li><a href="sitemap.html">Сайтын зураглал</a></li></ul></nav>
+    <nav aria-label="Үндсэн цэс"><ul><li><a href="index.html" aria-current="page">Нүүр</a></li><li><a href="about.html">Бидний тухай</a></li><li><a href="services/index.html">Үйлчилгээ</a></li><li><a href="news.html">Мэдээлэл</a></li><li><a href="contact.html">Холбоо барих</a></li><li><a href="sitemap.html">Сайтын зураглал</a></li></ul></nav>
     <a class="nav-cta" href="sitemap.html">Сайтын зураглал ↗</a>
   </div>
 </header>
@@ -193,11 +194,11 @@
       <div class="booking-intro">
         <p class="section-kicker">ШИРЭЭНИЙ ЗАХИАЛГА</p>
         <h2 id="book-title">Тухтай суудлаа төлөвлөөрэй.</h2>
-        <p>Эхний шатанд энэ HTML форм нь зөвхөн загвар. Интерaктив ажиллагааг дараагийн шатанд нэмнэ.</p>
+        <p>Доорх формыг туршиж бөглөхөд таны оруулсан мэдээллийн тойм харагдана.</p>
         <div class="demo-alert" role="note"><strong>Демо хувилбар.</strong> Мэдээллийг серверт илгээхгүй, хадгалахгүй. Захиалга бодитоор баталгаажихгүй.</div>
       </div>
       <div class="booking-card">
-        <form id="booking-form">
+        <form id="booking-form" action="#" method="get">
           <fieldset>
             <legend>Таны мэдээлэл</legend>
             <label>Нэр <input type="text" name="name" autocomplete="name" minlength="2" maxlength="70" placeholder="Нэрээ оруулна уу" required></label>
@@ -226,10 +227,10 @@
             <label class="full checkbox-label"><input type="checkbox" name="bday"> Төрсөн өдрийн тэмдэглэгээ</label>
             <label class="full">Нэмэлт хүсэлт <textarea name="note" rows="3" maxlength="300" placeholder="Хүсэлт байвал энд бичнэ үү"></textarea></label>
           </fieldset>
-          <button class="btn submit-btn" type="button" disabled>Илгээх (2-р шатанд)</button>
-          <p class="form-hint">Эхний шат: мэдээлэл хадгалахгүй, серверт илгээхгүй.</p>
+          <button class="btn submit-btn" type="submit">Мэдээллээ шалгах <span aria-hidden="true">→</span></button>
+          <p class="form-hint">Энэ товч захиалга илгээхгүй, зөвхөн дэлгэц дээр харуулна.</p>
         </form>
-
+        <div id="booking-result" class="booking-result" role="status" aria-live="polite" hidden></div>
       </div>
     </div>
   </section>
@@ -237,7 +238,7 @@
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div><a class="logo" href="#top"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a><p>Монгол гэрийн хоолны жишиг вэб сайт.</p></div>
-    <div><p>© 2026 Хөх тэнгэр. Сургалтын зориулалттай төсөл.</p><a href="sitemap.html">Сайтын зураглал ↗</a></div>
+    <div><p>© 2026 Хөх тэнгэр. Сургалтын зориулалттай төсөл.</p><a href="sitemap.html">Сайтын зураглал ↗</a> · <a href="services/index.html">Үйлчилгээ ↗</a></div>
   </div>
 </footer>
 </body>

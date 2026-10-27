@@ -146,7 +146,7 @@ input[type=radio],input[type=checkbox]{accent-color:var(--navy);width:18px;heigh
   .section{padding:64px 0}
   .nav-bar{flex-wrap:wrap;justify-content:center;gap:0;padding:12px 0 10px}
   nav{width:100%;overflow-x:auto;scrollbar-width:thin}
-  nav ul{width:max-content;max-width:none;justify-content:center;gap:18px;margin:6px auto 0;padding:5px 1px}
+  nav ul{width:100%;max-width:none;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin:6px 0 0;padding:5px 1px}
   nav a{font-size:.8rem}
   .hero{padding:47px 0 63px}
   .hero-grid,.story-grid,.music-grid,.info-grid,.booking-grid{grid-template-columns:1fr}
@@ -244,3 +244,6 @@ button:disabled{opacity:.6;cursor:not-allowed;transform:none!important;box-shado
 .explore-item>span{margin-top:auto;color:#946718;font-size:1.4rem}
 @media(max-width:900px){.explore-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:440px){.explore-grid{grid-template-columns:1fr}}
+
+/* Keep the shared main navigation usable when more sections are added. */
+@media(max-width:1000px){.topbar nav{overflow-x:visible}.topbar nav ul{min-width:0;width:100%;flex-wrap:wrap;gap:6px 14px;margin:5px auto 0}}
