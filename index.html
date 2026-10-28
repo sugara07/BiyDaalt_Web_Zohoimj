@@ -137,7 +137,7 @@
         <h3>Танд хэрэгтэй мэдээлэл</h3>
         <details>
           <summary>Захиалгын форм үнэхээр илгээгдэх үү?</summary>
-          <p>Үгүй. Энэ бол сургалтын демо вэб сайт. Маягт бөглөсний дараа зөвхөн мэдээллийн тойм дэлгэц дээр гарна.</p>
+          <p>Захиалга зөвхөн таны браузерт хадгалагдах бөгөөд бодит ресторан руу илгээгдэхгүй.</p>
         </details>
         <details>
           <summary>Энэ цэсний үнэ бодит уу?</summary>
@@ -194,8 +194,12 @@
       <div class="booking-intro">
         <p class="section-kicker">ШИРЭЭНИЙ ЗАХИАЛГА</p>
         <h2 id="book-title">Тухтай суудлаа төлөвлөөрэй.</h2>
-        <p>Доорх формыг туршиж бөглөхөд таны оруулсан мэдээллийн тойм харагдана.</p>
-        <div class="demo-alert" role="note"><strong>Демо хувилбар.</strong> Мэдээллийг серверт илгээхгүй, хадгалахгүй. Захиалга бодитоор баталгаажихгүй.</div>
+        <p>Ширээгээ захиалаад дараа нь хоолны цэсээс хүссэн хоолоо сонгоорой.</p>
+
+<div class="demo-alert" role="note">
+    Таны ширээ болон хоолны захиалга энэ браузерт хадгалагдана.
+    Бодит ресторан руу илгээгдэхгүй.
+</div>
       </div>
       <div class="booking-card">
         <form id="booking-form" action="#" method="get">
@@ -227,8 +231,8 @@
             <label class="full checkbox-label"><input type="checkbox" name="bday"> Төрсөн өдрийн тэмдэглэгээ</label>
             <label class="full">Нэмэлт хүсэлт <textarea name="note" rows="3" maxlength="300" placeholder="Хүсэлт байвал энд бичнэ үү"></textarea></label>
           </fieldset>
-          <button class="btn submit-btn" type="submit">Мэдээллээ шалгах <span aria-hidden="true">→</span></button>
-          <p class="form-hint">Энэ товч захиалга илгээхгүй, зөвхөн дэлгэц дээр харуулна.</p>
+          <button class="btn submit-btn" type="submit">Ширээ захиалах →</button>
+          <p class="form-hint">Ширээ захиалсны дараа хоолны цэсээс сонгоно уу.</p>
         </form>
         <div id="booking-result" class="booking-result" role="status" aria-live="polite" hidden></div>
       </div>
