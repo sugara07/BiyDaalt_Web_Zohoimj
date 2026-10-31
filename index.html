@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102747">
+  <meta name="description" content="Хөх тэнгэр — Монгол гэрийн хоолны рестораны жишиг вэб сайт. Бууз, хуушуур, цуйван, хорхогийн цэс, үнэ болон ширээ захиалгын демо.">
+  <title>Хөх тэнгэр | Монгол гэрийн хоол</title>
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Үндсэн агуулга руу шилжих</a>
+<header class="topbar">
+  <div class="wrap nav-bar">
+    <a class="logo" href="#top" aria-label="Хөх тэнгэр — Нүүр хуудас"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a>
+    <nav aria-label="Үндсэн цэс">
+      <ul>
+        <li><a href="#menu">Хоолны цэс</a></li>
+        <li><a href="#story">Бидний тухай</a></li>
+        <li><a href="#info">Хаяг, цаг</a></li>
+        <li><a href="#book">Захиалга</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#book">Ширээ захиалах <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> МОНГОЛ УЛАМЖЛАЛТ АМТ</p>
+        <h1 id="hero-title">Гэрийн хоолны <em>жинхэнэ амт.</em></h1>
+        <p class="hero-intro">Бууз, хуушуур, цуйван, хорхог — танил дотно амтыг нэг дороос. Манай жишиг цэстэй танилцаарай.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#menu">Цэс үзэх <span aria-hidden="true">→</span></a>
+          <a class="btn btn-outline" href="#book">Ширээ захиалах</a>
+        </div>
+        <p class="hero-note">Монгол хоол • Дулаан уур амьсгал • Жишиг вэб төсөл</p>
+      </div>
+      <figure class="hero-art">
+        <img src="img/hero.svg" width="720" height="510" alt="Уулс, гэр болон уур савссан буузыг дүрсэлсэн зураг" fetchpriority="high">
+        <figcaption class="art-label">Амт бүрт уламжлал бий.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="highlights" aria-label="Онцлох мэдээлэл">
+    <div class="wrap highlights-grid">
+      <p><span aria-hidden="true">✳</span> Монгол уламжлалт хоол</p>
+      <p><span aria-hidden="true">✳</span> Зурагтай, ойлгомжтой цэс</p>
+      <p><span aria-hidden="true">✳</span> Утасанд тохирсон загвар</p>
+    </div>
+  </section>
+
+  <section class="section" id="menu" aria-labelledby="menu-title">
+    <div class="wrap">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">АМТТАЙ ТАНИЛЦ</p>
+          <h2 id="menu-title">Манай хоолны цэс</h2>
+          <p class="lead">Дуртай хоолоо сонгоорой. Доорх үнэ нь сургалтын зориулалттай жишиг үнэ юм.</p>
+        </div>
+        <a class="text-link" href="#book">Ширээ захиалах <span aria-hidden="true">↗</span></a>
+      </div>
+
+      <div class="cards">
+        <article class="food-card">
+          <figure>
+            <img src="img/buuz.svg" alt="Таваг дээрх уур савссан буузны зураг" width="720" height="540" loading="lazy">
+            <figcaption><span>Бууз</span><span class="price">9,500₮</span></figcaption>
+          </figure>
+          <p>Үхрийн мах, сонгинотой. 5 ширхэг.</p>
+          <a href="#book" aria-label="Бууз сонгоод ширээ захиалах">Захиалга хэсэг рүү <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="food-card">
+          <figure>
+            <img src="img/khuushuur.svg" alt="Алтан шаргал хуушуурны зураг" width="720" height="540" loading="lazy">
+            <figcaption><span>Хуушуур</span><span class="price">10,500₮</span></figcaption>
+          </figure>
+          <p>Шүүслэг, шарсан. 3 ширхэг.</p>
+          <a href="#book" aria-label="Хуушуур сонгоод ширээ захиалах">Захиалга хэсэг рүү <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="food-card">
+          <figure>
+            <img src="img/tsuivan.svg" alt="Ногоотой цуйвангийн зураг" width="720" height="540" loading="lazy">
+            <figcaption><span>Цуйван</span><span class="price">14,000₮</span></figcaption>
+          </figure>
+          <p>Гар сунгасан гурил, ногоотой.</p>
+          <a href="#book" aria-label="Цуйван сонгоод ширээ захиалах">Захиалга хэсэг рүү <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="food-card">
+          <figure>
+            <img src="img/khorkhog.svg" alt="Халуун чулуун хорхогны зураг" width="720" height="540" loading="lazy">
+            <figcaption><span>Хорхог</span><span class="price">38,000₮</span></figcaption>
+          </figure>
+          <p>Хонины мах, халуун чулуугаар. 2–3 хүнд.</p>
+          <a href="#book" aria-label="Хорхог сонгоод ширээ захиалах">Захиалга хэсэг рүү <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+
+      <div class="more-menu">
+        <div class="more-menu-heading">
+          <h3>Ундаа, шөл, амттан</h3>
+          <span class="chip">Бүтэн жагсаалт</span>
+        </div>
+        <div class="table-scroll" role="region" aria-label="Нэмэлт хоолны жагсаалт" tabindex="0">
+          <table>
+            <caption>Нэмэлт бүтээгдэхүүний жишиг үнэ</caption>
+            <thead><tr><th scope="col">Нэр</th><th scope="col">Тайлбар</th><th scope="col">Үнэ</th></tr></thead>
+            <tbody>
+              <tr><td>Сүүтэй цай</td><td>Давстай, уламжлалт</td><td>3,000₮</td></tr>
+              <tr><td>Айраг</td><td>Улирлын чанартай</td><td>6,000₮</td></tr>
+              <tr><td>Хонины шөл</td><td>Ногоотой</td><td>12,000₮</td></tr>
+              <tr><td>Аарцтай бялуу</td><td>Өдөр бүр шинэ</td><td>9,000₮</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section story-section" id="story" aria-labelledby="story-title">
+    <div class="wrap story-grid">
+      <div>
+        <p class="section-kicker">АМТНЫ ЦААНАХ ТҮҮХ</p>
+        <h2 id="story-title">Бууз хэрхэн бүтдэг вэ?</h2>
+        <p class="lead">Монгол айлын гал тогооноос эхтэй энгийн, дотно амт.</p>
+        <ol class="steps">
+          <li><strong>Гурилаа зуурах</strong><span>Гурилаа зуурч 30 минут амраана.</span></li>
+          <li><strong>Шанзаа бэлтгэх</strong><span>Махаа жижиглэж, сонгино, давс, ус нэмнэ.</span></li>
+          <li><strong>Буузаа чимхэх</strong><span>Зуурсан гурилаа нимгэлж, шанзаа хийж чимхэнэ.</span></li>
+          <li><strong>Жигнэх</strong><span>Уураар ойролцоогоор 20 минут жигнэнэ.</span></li>
+        </ol>
+      </div>
+      <div class="faq-panel">
+        <p class="section-kicker">АСУУЛТ, ХАРИУЛТ</p>
+        <h3>Танд хэрэгтэй мэдээлэл</h3>
+        <details>
+          <summary>Захиалгын форм үнэхээр илгээгдэх үү?</summary>
+          <p>Үгүй. Энэ бол сургалтын демо вэб сайт. Маягт бөглөсний дараа зөвхөн мэдээллийн тойм дэлгэц дээр гарна.</p>
+        </details>
+        <details>
+          <summary>Энэ цэсний үнэ бодит уу?</summary>
+          <p>Үгүй. Үнэ, хаяг, холбоо барих мэдээлэл нь вэб загварын жишээ юм.</p>
+        </details>
+        <details>
+          <summary>Утас, таблет дээр үзэж болох уу?</summary>
+          <p>Тийм. Хуудасны цэс, зураг, хүснэгт, захиалгын талбарууд дэлгэцийн хэмжээнд зохицно.</p>
+        </details>
+        <a class="text-link" href="#info">Хаяг, цагийн хэсэг <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section music-section" id="music" aria-labelledby="music-title">
+    <div class="wrap music-grid">
+      <div>
+        <p class="section-kicker">АМРАХ АГШИН</p>
+        <h2 id="music-title">Аялгуутай хамт тухлаарай</h2>
+        <p class="lead">Эндэхийн хөгжим нь сайтад зориулан үүсгэсэн богино жишээ аялгуу; морин хуурын бодит бичлэг биш.</p>
+      </div>
+      <audio controls preload="none" aria-label="Жишээ аялгуу">
+        <source src="audio/demo-melody.wav" type="audio/wav">
+        Таны хөтөч аудио тоглуулах боломжгүй байна.
+      </audio>
+    </div>
+  </section>
+
+  <section class="section info-section" id="info" aria-labelledby="info-title">
+    <div class="wrap info-grid">
+      <div>
+        <p class="section-kicker">ХОЛБОО БАРИХ</p>
+        <h2 id="info-title">Хаяг, ажиллах цаг</h2>
+        <p class="info-alert">Сургалтын загвар: доорх хаяг, дугаар, имэйл нь баталгаажсан бодит үйлчилгээний мэдээлэл биш.</p>
+        <address>
+          <p>Сүхбаатар дүүрэг, Энхтайваны өргөн чөлөө 12<br>Улаанбаатар хот</p>
+          <p>Утас: +976 1100 0000<br>И-мэйл: hello@khukhtengeri.mn</p>
+        </address>
+      </div>
+      <div class="hours-card">
+        <h3>Жишиг ажиллах цаг</h3>
+        <dl>
+          <dt>Даваа – Баасан</dt><dd>10:00 – 22:00</dd>
+          <dt>Бямба</dt><dd>11:00 – 23:00</dd>
+          <dt>Ням</dt><dd>11:00 – 21:00</dd>
+        </dl>
+        <p>Бодит ресторантай холбогдохын өмнө мэдээллийг баталгаажуулна уу.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section booking-section" id="book" aria-labelledby="book-title">
+    <div class="wrap booking-grid">
+      <div class="booking-intro">
+        <p class="section-kicker">ШИРЭЭНИЙ ЗАХИАЛГА</p>
+        <h2 id="book-title">Тухтай суудлаа төлөвлөөрэй.</h2>
+        <p>Доорх формыг туршиж бөглөхөд таны оруулсан мэдээллийн тойм харагдана.</p>
+        <div class="demo-alert" role="note"><strong>Демо хувилбар.</strong> Мэдээллийг серверт илгээхгүй, хадгалахгүй. Захиалга бодитоор баталгаажихгүй.</div>
+      </div>
+      <div class="booking-card">
+        <form id="booking-form" action="#" method="get">
+          <fieldset>
+            <legend>Таны мэдээлэл</legend>
+            <label>Нэр <input type="text" name="name" autocomplete="name" minlength="2" maxlength="70" placeholder="Нэрээ оруулна уу" required></label>
+            <label>Утас <input type="tel" name="phone" autocomplete="tel" inputmode="tel" pattern="[+0-9() -]{6,20}" title="Утасны дугаарыг 6–20 тэмдэгтээр оруулна уу" placeholder="+976 99xxxxxx" required></label>
+          </fieldset>
+          <fieldset>
+            <legend>Захиалгын мэдээлэл</legend>
+            <label>Огноо <input id="booking-date" type="date" name="date" required></label>
+            <label>Цаг <input type="time" name="time" required></label>
+            <label>Хүний тоо
+              <select name="guests" required>
+                <option value="" selected disabled>Сонгоно уу</option>
+                <option value="1–2 хүн">1–2 хүн</option>
+                <option value="3–4 хүн">3–4 хүн</option>
+                <option value="5–8 хүн">5–8 хүн</option>
+                <option value="9+ хүн">9 болон түүнээс дээш</option>
+              </select>
+            </label>
+            <div class="field-group">
+              <span class="field-label">Хаана суух вэ?</span>
+              <div class="radios">
+                <label><input type="radio" name="zone" value="Дотор" checked> Дотор</label>
+                <label><input type="radio" name="zone" value="Гадаа"> Гадаа</label>
+              </div>
+            </div>
+            <label class="full checkbox-label"><input type="checkbox" name="bday"> Төрсөн өдрийн тэмдэглэгээ</label>
+            <label class="full">Нэмэлт хүсэлт <textarea name="note" rows="3" maxlength="300" placeholder="Хүсэлт байвал энд бичнэ үү"></textarea></label>
+          </fieldset>
+          <button class="btn submit-btn" type="submit">Мэдээллээ шалгах <span aria-hidden="true">→</span></button>
+          <p class="form-hint">Энэ товч захиалга илгээхгүй, зөвхөн дэлгэц дээр харуулна.</p>
+        </form>
+        <div id="booking-result" class="booking-result" role="status" aria-live="polite" hidden></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div><a class="logo" href="#top"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a><p>Монгол гэрийн хоолны жишиг вэб сайт.</p></div>
+    <div><p>© 2026 Хөх тэнгэр. Сургалтын зориулалттай төсөл.</p><a href="#top">Дээш буцах ↑</a></div>
+  </div>
+</footer>
+    <div id="foodModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <div class="modal-body-layout">
+                <img id="modalImg" src="" alt="Хоолны вектор зураг" class="modal-vector-img">
+                <div class="modal-info-text">
+                    <h2 id="modalTitle">Хоолны нэр</h2>
+                    <p id="modalDescription">Дэлгэрэнгүй мэдээлэл...</p>
+                    <div class="modal-price-tag">Үнэ: <span id="modalPrice">0</span> ₮</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

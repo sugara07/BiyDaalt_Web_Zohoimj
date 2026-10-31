@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" role="img" aria-label="Хуушуур-ны чимэглэлийн вектор зураг">
+<defs><linearGradient id="bg" x2="0.8" y2="1"><stop stop-color="#eadcc7"/><stop offset="1" stop-color="#dcb780"/></linearGradient><radialGradient id="plate"><stop stop-color="#fffef8"/><stop offset=".8" stop-color="#f4f1e8"/><stop offset="1" stop-color="#cbd4d1"/></radialGradient></defs>
+<rect width="720" height="540" fill="url(#bg)"/>
+<circle cx="610" cy="105" r="155" fill="#ffffff" opacity=".16"/><circle cx="115" cy="490" r="135" fill="#ffffff" opacity=".15"/>
+<ellipse cx="364" cy="410" rx="268" ry="81" fill="#4c4635" opacity=".18"/>
+<ellipse cx="360" cy="362" rx="265" ry="150" fill="#e6e6e1"/>
+<ellipse cx="360" cy="352" rx="238" ry="125" fill="url(#plate)" stroke="#d7d9d4" stroke-width="8"/>
+<g fill="#e4a43d" stroke="#b8752b" stroke-width="6">
+  <path d="M154 360Q235 171 362 323L344 372Q248 418 154 360Z" transform="rotate(-8 250 325)"/>
+  <path d="M321 325Q450 147 579 343L546 377Q425 413 321 325Z" transform="rotate(11 450 315)"/>
+  <path d="M244 387Q374 249 506 383L484 415Q373 445 244 387Z"/></g>
+  <g fill="none" stroke="#f8d281" stroke-width="7" stroke-linecap="round"><path d="M176 353q84-23 151 0M354 330q97-44 181 9M276 393q100-25 191 0"/></g>
+  <g fill="#ba6f21"><circle cx="270" cy="302" r="7"/><circle cx="472" cy="320" r="6"/><circle cx="362" cy="381" r="6"/></g>
+</svg>
