@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Жорын жагсаалт | Хөх тэнгэр</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .recipe-page-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Radio button-уудыг нуух */
+    .filter-radio {
+      display: none;
+    }
+
+    /* Ангилал сонгох товчны загвар */
+    .recipe-categories {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+    }
+
+    .cat-label {
+      background: #f0f4f8;
+      color: #102747;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .cat-label:hover {
+      background: #e2e8f0;
+    }
+
+    /* Сонгогдсон үеийн товчны өнгө */
+    #all:checked ~ .recipe-categories label[for="all"],
+    #guril-checked:checked ~ .recipe-categories label[for="guril-checked"],
+    #makhan-checked:checked ~ .recipe-categories label[for="makhan-checked"],
+    #shol-checked:checked ~ .recipe-categories label[for="shol-checked"] {
+      background: #102747;
+      color: #ffffff;
+    }
+
+    .recipe-list-vertical {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .recipe-row-card {
+      display: flex;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 16px;
+      gap: 20px;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* --- ЦЭВЭР CSS-ЭЭР ШҮҮХ ЛОГИК --- */
+    #guril-checked:checked ~ .recipe-list-vertical .recipe-row-card:not(.cat-guril) {
+      display: none;
+    }
+    #makhan-checked:checked ~ .recipe-list-vertical .recipe-row-card:not(.cat-makhan) {
+      display: none;
+    }
+    #shol-checked:checked ~ .recipe-list-vertical .recipe-row-card:not(.cat-shol) {
+      display: none;
+    }
+
+    .recipe-thumb {
+      width: 140px;
+      height: 110px;
+      min-width: 140px;
+      background: #f8fafc;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .recipe-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .recipe-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .recipe-info h3 {
+      font-size: 1.1rem;
+      margin: 0;
+      color: #102747;
+    }
+
+    .recipe-info p {
+      font-size: 0.88rem;
+      color: #64748b;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .read-more-btn {
+      display: inline-block;
+      margin-top: 4px;
+      background: #e2e8f0;
+      color: #334155;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .read-more-btn:hover {
+      background: #fb8500;
+      color: #ffffff;
+    }
+
+    @media (max-width: 550px) {
+      .recipe-row-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .recipe-thumb {
+        width: 100%;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav-bar">
+      <a class="logo" href="index.html"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a>
+      <nav aria-label="Үндсэн цэс">
+        <ul>
+          <li><a href="index.html">Нүүр</a></li>
+          <li><a href="about.html">Бидний тухай</a></li>
+          <li><a href="news.html">Мэдээлэл</a></li>
+          <li><a href="contact.html">Холбоо барих</a></li>
+          <li><a href="sitemap.html">Сайтын зураглал</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="crumb"><a href="index.html">Нүүр</a> / Жорын жагсаалт</p>
+        <p class="section-kicker">ХООЛНЫ СОЁЛ</p>
+        <h1>Уламжлалт хоолны жорууд</h1>
+        <p>Та дуртай хоолны ангиллаа сонгон жортой танилцаарай.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap recipe-page-container">
+        
+        <!-- CSS Radio Inputs шүүлтүүр -->
+        <input type="radio" id="all" name="recipe-filter" checked class="filter-radio">
+        <input type="radio" id="guril-checked" name="recipe-filter" class="filter-radio">
+        <input type="radio" id="makhan-checked" name="recipe-filter" class="filter-radio">
+        <input type="radio" id="shol-checked" name="recipe-filter" class="filter-radio">
+
+        <!-- Ангилал сонгох товчнууд (Label) -->
+        <div class="recipe-categories">
+          <label for="all" class="cat-label">Бүгд</label>
+          <label for="guril-checked" class="cat-label">Гурилтай хоол</label>
+          <label for="makhan-checked" class="cat-label">Махан хоол</label>
+          <label for="shol-checked" class="cat-label">Шөлтэй хоол</label>
+        </div>
+
+        <!-- Хоолны картууд (Зөв ангилалтайгаар) -->
+        <div class="recipe-list-vertical">
+          
+          <!-- Бууз (Гурилтай & Махан) -->
+          <article class="recipe-row-card cat-guril cat-makhan">
+            <div class="recipe-thumb">
+              <img src="img/buuz.svg" alt="Бууз">
+            </div>
+            <div class="recipe-info">
+              <h3>Бууз хийх уламжлалт жор</h3>
+              <p>Үхрийн болон хонины махаар амтлан чимхэж, уураар жигнэдэг монгол уламжлалт үндсэн зоог...</p>
+              <a href="buuz-guide.html" class="read-more-btn">Дэлгэрэнгүй унших</a>
+            </div>
+          </article>
+
+          <!-- Хуушуур (Махан хоол) -->
+          <article class="recipe-row-card cat-makhan">
+            <div class="recipe-thumb">
+              <img src="img/khuushuur.svg" alt="Хуушуур">
+            </div>
+            <div class="recipe-info">
+              <h3>Шүүслэг хуушуур хийх арга</h3>
+              <p>Амталсан татш махаар гуриланд битүүмжлэн халуун тосонд шаргалттал шардаг амттай хоол...</p>
+              <a href="#" class="read-more-btn">Дэлгэрэнгүй унших</a>
+            </div>
+          </article>
+
+          <!-- Цуйван (Гурилтай хоол) -->
+          <article class="recipe-row-card cat-guril">
+            <div class="recipe-thumb">
+              <img src="img/tsuivan.svg" alt="Цуйван">
+            </div>
+            <div class="recipe-info">
+              <h3>Ногоотой цуйвангийн жор</h3>
+              <p>Гар сунгасан гурилыг уураар жигнэж, мах болон төрөл бүрийн ногоотой холин хуурч бэлтгэнэ...</p>
+              <a href="#" class="read-more-btn">Дэлгэрэнгүй унших</a>
+            </div>
+          </article>
+
+          <!-- Хорхог (Махан хоол) -->
+          <article class="recipe-row-card cat-makhan">
+            <div class="recipe-thumb">
+              <img src="img/khorkhog.svg" alt="Хорхог">
+            </div>
+            <div class="recipe-info">
+              <h3>Халуун чулууны хорхог</h3>
+              <p>Хонины махайг халуун чулуутай хамт саванд битүү чанаж болгодог нүүдэлчдийн өвөрмөц жор...</p>
+              <a href="#" class="read-more-btn">Дэлгэрэнгүй унших</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="logo" href="index.html"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a>
+        <p>Монгол хоолны сэдэвтэй сургалтын веб төсөл.</p>
+      </div>
+      <div>
+        <p>© 2026. Сургалтын зориулалттай.</p>
+        <a href="sitemap.html">Сайтын зураглал ↗</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

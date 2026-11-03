@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Уламжлалт бууз - Дэлгэрэнгүй | Хөх тэнгэр</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .detail-container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .detail-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .back-btn {
+      text-decoration: none;
+      color: #102747;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .detail-hero-img {
+      width: 100%;
+      height: 280px;
+      background: #f1f5f9;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .detail-hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .detail-header {
+      margin-top: 20px;
+    }
+
+    .detail-header h1 {
+      font-size: 1.5rem;
+      color: #102747;
+      margin-bottom: 8px;
+    }
+
+    .meta-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: #64748b;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .rating {
+      color: #fb8500;
+      font-weight: bold;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      color: #102747;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .description-text {
+      color: #475569;
+      line-height: 1.6;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .related-grid {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-top: 10px;
+    }
+
+    .related-item {
+      width: 90px;
+      height: 80px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      flex-shrink: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .related-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .action-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: #102747;
+      color: #ffffff;
+      padding: 14px;
+      border-radius: 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 30px;
+      transition: background 0.2s ease;
+    }
+
+    .action-btn:hover {
+      background: #fb8500;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav-bar">
+      <a class="logo" href="index.html"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a>
+      <nav aria-label="Үндсэн цэс">
+        <ul>
+          <li><a href="index.html">Нүүр</a></li>
+          <li><a href="recipe.html">Жорын жагсаалт</a></li>
+          <li><a href="sitemap.html">Сайтын зураглал</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="detail-container">
+        
+        <div class="detail-nav">
+          <a href="recipe.html" class="back-btn">‹ Буцах</a>
+          <span style="font-weight: 600; color: #102747;">Дэлгэрэнгүй жор</span>
+        </div>
+
+        <div class="detail-hero-img">
+          <img src="img/buuz.svg" alt="Бууз">
+        </div>
+
+        <div class="detail-header">
+          <h1>Уламжлалт бууз хийх арга</h1>
+          <div class="meta-row">
+            <span class="rating">★ 4.9 (258)</span>
+            <span>Хугацаа: 45 мин</span>
+          </div>
+        </div>
+
+        <h3 class="section-title">Жорын тайлбар</h3>
+        <p class="description-text">
+          Монголын үндэсний уламжлалт амтат бууз нь үхрийн болон хонины татсан махаар амтлан бэлтгэсэн зуурсан гуриланд битүүмжлэн чимхэж, уурын жигнүүрт жигнэж болгодог баярын ширээний гол зоог юм.
+        </p>
+
+        <h3 class="section-title">Холбоотой хоолнууд</h3>
+        <div class="related-grid">
+          <div class="related-item">
+            <img src="img/khuushuur.svg" alt="Хуушуур">
+          </div>
+          <div class="related-item">
+            <img src="img/tsuivan.svg" alt="Цуйван">
+          </div>
+          <div class="related-item">
+            <img src="img/khorkhog.svg" alt="Хорхог">
+          </div>
+        </div>
+
+        <a href="recipe.html" class="action-btn">Жорын жагсаалт руу буцах</a>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="logo" href="index.html">✦ Хөх тэнгэр</a>
+        <p>Монгол хоолны сэдэвтэй сургалтын веб төсөл.</p>
+      </div>
+      <div>
+        <p>© 2026. Сургалтын зориулалттай.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
