@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102747">
+  <meta name="description" content="Хөх тэнгэр — Үйлчилгээний үнэлгээ, санал хүсэлт, гомдлын маягт.">
+  <title>Санал хүсэлт | Хөх тэнгэр</title>
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/services.css">
+  <script src="../js/services.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Үндсэн агуулга руу шилжих</a>
+
+<header class="topbar">
+  <div class="wrap nav-bar">
+    <a class="logo" href="../index.html" aria-label="Хөх тэнгэр — Нүүр хуудас"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a>
+    <nav aria-label="Үндсэн цэс">
+      <ul>
+        <li><a href="index.html">Үйлчилгээ</a></li>
+        <li><a href="delivery.html">Хүргэлт</a></li>
+        <li><a href="catering.html">Арга хэмжээ</a></li>
+        <li><a href="offers.html">Урамшуулал</a></li>
+        <li><a href="feedback.html" aria-current="page">Санал хүсэлт</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="../index.html#book">Ширээ захиалах <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <ol class="breadcrumbs" aria-label="Таны байршил">
+        <li><a href="../index.html">Нүүр</a></li>
+        <li><a href="index.html">Үйлчилгээ</a></li>
+        <li aria-current="page">Санал хүсэлт</li>
+      </ol>
+      <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> САНАЛ ХҮСЭЛТ</p>
+      <h1 id="hero-title">Таны үнэлгээ <em>бидэнд чухал.</em></h1>
+      <p class="lead">Хоол, хүргэлт, үйлчилгээний талаар сэтгэгдлээ хуваалцаарай. Магтаал, санал, гомдлыг адил анхааралтай хүлээн авч, ажлын 24 цагийн дотор хариу өгнө.</p>
+      <ul class="hero-points">
+        <li>1–5 одны үнэлгээ</li>
+        <li>24 цагийн дотор хариу</li>
+        <li>Мэдээлэл нууцлагдана</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="form-title">
+    <div class="wrap split">
+      <div class="panel form-panel">
+        <p class="section-kicker">ҮНЭЛГЭЭ БА САНАЛ</p>
+        <h2 id="form-title">Санал хүсэлт илгээх</h2>
+        <p class="panel-intro">Одны үнэлгээгээ сонгоод, сэтгэгдлээ товч бичнэ үү. Дараах товч нь мэдээллийн тоймыг дэлгэц дээр харуулна.</p>
+        <div class="demo-alert" role="note"><strong>Демо хувилбар.</strong> Мэдээлэл серверт илгээгдэхгүй, хадгалагдахгүй. Энэ маягтаар бодит гомдол бүртгэгдэхгүй.</div>
+
+        <form id="feedback-form" action="#" method="get">
+          <fieldset class="rating-fieldset">
+            <legend>Таны үнэлгээ</legend>
+
+            <div class="rating-group">
+              <div class="rg-head">
+                <span id="taste-label">Хоолны амт</span>
+                <span class="rg-value">Сонгоогүй</span>
+              </div>
+              <div class="rating" role="radiogroup" aria-labelledby="taste-label" data-value="0">
+                <label><input type="radio" name="taste" value="1" required><span class="star" aria-hidden="true">★</span><span class="sr-only">1 од</span></label>
+                <label><input type="radio" name="taste" value="2"><span class="star" aria-hidden="true">★</span><span class="sr-only">2 од</span></label>
+                <label><input type="radio" name="taste" value="3"><span class="star" aria-hidden="true">★</span><span class="sr-only">3 од</span></label>
+                <label><input type="radio" name="taste" value="4"><span class="star" aria-hidden="true">★</span><span class="sr-only">4 од</span></label>
+                <label><input type="radio" name="taste" value="5"><span class="star" aria-hidden="true">★</span><span class="sr-only">5 од</span></label>
+              </div>
+            </div>
+
+            <div class="rating-group">
+              <div class="rg-head">
+                <span id="delivery-label">Хүргэлтийн хурд</span>
+                <span class="rg-value">Сонгоогүй</span>
+              </div>
+              <div class="rating" role="radiogroup" aria-labelledby="delivery-label" data-value="0">
+                <label><input type="radio" name="speed" value="1" required><span class="star" aria-hidden="true">★</span><span class="sr-only">1 од</span></label>
+                <label><input type="radio" name="speed" value="2"><span class="star" aria-hidden="true">★</span><span class="sr-only">2 од</span></label>
+                <label><input type="radio" name="speed" value="3"><span class="star" aria-hidden="true">★</span><span class="sr-only">3 од</span></label>
+                <label><input type="radio" name="speed" value="4"><span class="star" aria-hidden="true">★</span><span class="sr-only">4 од</span></label>
+                <label><input type="radio" name="speed" value="5"><span class="star" aria-hidden="true">★</span><span class="sr-only">5 од</span></label>
+              </div>
+            </div>
+
+            <div class="rating-group">
+              <div class="rg-head">
+                <span id="service-label">Үйлчилгээний соёл</span>
+                <span class="rg-value">Сонгоогүй</span>
+              </div>
+              <div class="rating" role="radiogroup" aria-labelledby="service-label" data-value="0">
+                <label><input type="radio" name="service" value="1" required><span class="star" aria-hidden="true">★</span><span class="sr-only">1 од</span></label>
+                <label><input type="radio" name="service" value="2"><span class="star" aria-hidden="true">★</span><span class="sr-only">2 од</span></label>
+                <label><input type="radio" name="service" value="3"><span class="star" aria-hidden="true">★</span><span class="sr-only">3 од</span></label>
+                <label><input type="radio" name="service" value="4"><span class="star" aria-hidden="true">★</span><span class="sr-only">4 од</span></label>
+                <label><input type="radio" name="service" value="5"><span class="star" aria-hidden="true">★</span><span class="sr-only">5 од</span></label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Санал хүсэлтийн мэдээлэл</legend>
+            <label>Төрөл
+              <select name="type" required>
+                <option value="" selected disabled>Сонгоно уу</option>
+                <option value="Магтаал">Магтаал</option>
+                <option value="Санал">Санал</option>
+                <option value="Гомдол">Гомдол</option>
+                <option value="Асуулт">Асуулт</option>
+              </select>
+            </label>
+            <label>Захиалгын дугаар <span class="optional">(заавал биш)</span>
+              <input type="text" name="order" maxlength="30" placeholder="Жишээ: HT-2026-0142">
+            </label>
+            <label>Нэр
+              <input type="text" name="name" autocomplete="name" minlength="2" maxlength="70" placeholder="Овог, нэр" required>
+            </label>
+            <label>И-мэйл
+              <input type="email" name="email" autocomplete="email" placeholder="name@example.com" required>
+            </label>
+            <label>Утас <span class="optional">(заавал биш)</span>
+              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" pattern="[+0-9() -]{6,20}" title="Утасны дугаарыг 6–20 тэмдэгтээр оруулна уу" placeholder="+976 99xxxxxx">
+            </label>
+            <div class="field-group">
+              <span class="field-label">Дахин захиалах уу?</span>
+              <div class="radios">
+                <label><input type="radio" name="recommend" value="Тийм" checked> Тийм</label>
+                <label><input type="radio" name="recommend" value="Магадгүй"> Магадгүй</label>
+                <label><input type="radio" name="recommend" value="Үгүй"> Үгүй</label>
+              </div>
+            </div>
+            <label class="full">Сэтгэгдэл
+              <textarea name="message" rows="5" minlength="10" maxlength="800" placeholder="Юу таалагдсан, юуг сайжруулах вэ?" required></textarea>
+            </label>
+            <label class="full consent"><input type="checkbox" name="consent" required> Мэдээлэл зөв гэдгээ баталж, энэ нь демо маягт гэдгийг ойлгосон.</label>
+          </fieldset>
+
+          <button class="btn submit-btn" type="submit">Үнэлгээгээ шалгах <span aria-hidden="true">→</span></button>
+          <p class="form-hint">Товч нь мэдээлэл илгээхгүй, зөвхөн дэлгэц дээр харуулна.</p>
+        </form>
+
+        <div id="feedback-result" class="form-result" role="status" aria-live="polite" hidden></div>
+      </div>
+
+      <aside class="aside-stack" aria-label="Хариу өгөх журам">
+        <div class="panel">
+          <p class="section-kicker">БИД ХЭРХЭН ХАРИУЛДАГ ВЭ?</p>
+          <h3>Гурван алхам</h3>
+          <ul class="check-list">
+            <li>Хүсэлтийг хүлээн авч бүртгэнэ.</li>
+            <li>Хариуцсан ажилтан 24 цагийн дотор холбогдоно.</li>
+            <li>Шийдлийг танд мэдэгдэж, шаардлагатай бол дахин холбогдоно.</li>
+          </ul>
+          <p class="aside-note">Гомдлын хувьд захиалгын дугаар, огноо, асуудлын товч тайлбарыг хавсаргавал хурдан шийдвэрлэнэ.</p>
+        </div>
+
+        <div class="panel">
+          <h3>Яаралтай холбоо барих</h3>
+          <p class="aside-text">Хүргэлтийн асуудал, гомдлын хувьд шууд утсаар холбогдоорой.</p>
+          <p class="aside-note is-plain">Утас: +976 1100 0000<br>И-мэйл: hello@khukhtengeri.mn<br>Ажиллах цаг: 10:00–22:00</p>
+        </div>
+
+        <div class="panel">
+          <h3>Түгээмэл асуулт</h3>
+          <details>
+            <summary>Үнэлгээ заавал өгөх уу?</summary>
+            <p>Гурван үнэлгээг бүгдийг нь сонгох шаардлагатай. Энэ нь сэтгэгдлийг илүү ойлгомжтой болгоход тусална.</p>
+          </details>
+          <details>
+            <summary>Нэрээ нууцлах боломжтой юу?</summary>
+            <p>Энэ демо хувилбарт мэдээлэл хадгалагдахгүй. Бодит үйлчилгээнд нэрээ нууцлах хүсэлтийг тусад нь тэмдэглэнэ.</p>
+          </details>
+          <details>
+            <summary>Хариуг хэрхэн авах вэ?</summary>
+            <p>Таны оруулсан и-мэйл эсвэл утасны дугаараар холбогдоно. Демо хувилбарт хариу илгээгдэхгүй.</p>
+          </details>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-cols">
+    <div>
+      <a class="logo" href="../index.html"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a>
+      <p>Монгол гэрийн хоолны жишиг вэб сайт. Сургалтын зориулалттай төсөл.</p>
+    </div>
+    <div>
+      <h3 class="footer-title">Үйлчилгээ</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">Үйлчилгээний танилцуулга</a></li>
+        <li><a href="delivery.html">Хүргэлт</a></li>
+        <li><a href="catering.html">Арга хэмжээний хоол</a></li>
+        <li><a href="offers.html">Урамшуулал</a></li>
+        <li><a href="feedback.html">Санал хүсэлт</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-title">Холбоо барих</h3>
+      <p>Утас: +976 1100 0000<br>И-мэйл: hello@khukhtengeri.mn</p>
+      <p>© 2026 Хөх тэнгэр. Бүх мэдээлэл жишиг.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

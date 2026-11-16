@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102747">
+  <meta name="description" content="Хөх тэнгэр — Урамшууллын купон код, хямдрал болон багц саналууд.">
+  <title>Урамшуулал | Хөх тэнгэр</title>
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/services.css">
+  <script src="../js/services.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Үндсэн агуулга руу шилжих</a>
+
+<header class="topbar">
+  <div class="wrap nav-bar">
+    <a class="logo" href="../index.html" aria-label="Хөх тэнгэр — Нүүр хуудас"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a>
+    <nav aria-label="Үндсэн цэс">
+      <ul>
+        <li><a href="index.html">Үйлчилгээ</a></li>
+        <li><a href="delivery.html">Хүргэлт</a></li>
+        <li><a href="catering.html">Арга хэмжээ</a></li>
+        <li><a href="offers.html" aria-current="page">Урамшуулал</a></li>
+        <li><a href="feedback.html">Санал хүсэлт</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="../index.html#book">Ширээ захиалах <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <ol class="breadcrumbs" aria-label="Таны байршил">
+        <li><a href="../index.html">Нүүр</a></li>
+        <li><a href="index.html">Үйлчилгээ</a></li>
+        <li aria-current="page">Урамшуулал</li>
+      </ol>
+      <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> УРАМШУУЛАЛ</p>
+      <h1 id="hero-title">Купон кодоо <em>ашиглаарай.</em></h1>
+      <p class="lead">Доорх купонуудаас сонгон кодоо хуулж аваад захиалгын үед ашиглаарай. Код бүр тодорхой нөхцөл, хугацаатай.</p>
+      <ul class="hero-points">
+        <li>Нэг захиалгад нэг код</li>
+        <li>Кодын хугацаа хязгаартай</li>
+        <li>Бүх санал жишиг, демо</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="check-title">
+    <div class="wrap">
+      <div class="checker">
+        <h3 id="check-title">Купон кодоо шалгах</h3>
+        <p>Кодоо оруулаад идэвхтэй эсэх, ямар хямдрал олгохыг шалгаарай. Жишээ: <strong>BUUZ10</strong>, <strong>FREEDEL</strong>, <strong>EVENT20</strong>.</p>
+        <form id="coupon-form" class="coupon-form" action="#" method="get">
+          <label>Купон код
+            <input class="code-input" id="coupon-code" type="text" name="code" autocomplete="off" spellcheck="false" maxlength="20" placeholder="Жишээ: BUUZ10" required>
+          </label>
+          <button class="btn" type="submit">Кодыг шалгах</button>
+        </form>
+        <div id="coupon-result" class="form-result" role="status" aria-live="polite" hidden></div>
+      </div>
+
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">ИДЭВХТЭЙ САНАЛ</p>
+          <h2>Одоогийн купонууд</h2>
+          <p class="lead">Купоны “Хуулах” товчийг дарахад код таны санах ойд хуулагдана.</p>
+        </div>
+      </div>
+
+      <div class="coupon-grid">
+        <article class="coupon">
+          <div class="coupon-head">
+            <span class="badge">Идэвхтэй</span>
+            <span class="coupon-off">10%</span>
+          </div>
+          <div class="coupon-body">
+            <h3>Бүх захиалгад 10% хямдрал</h3>
+            <p>30,000₮-өөс дээш захиалгад хүчинтэй.</p>
+            <div class="coupon-code-row">
+              <code class="coupon-code">BUUZ10</code>
+              <button class="copy-btn" type="button" data-code="BUUZ10">Хуулах</button>
+            </div>
+            <p class="coupon-meta">Хүчинтэй: 2026.12.31 хүртэл</p>
+          </div>
+        </article>
+
+        <article class="coupon">
+          <div class="coupon-head">
+            <span class="badge">Идэвхтэй</span>
+            <span class="coupon-off">0₮</span>
+          </div>
+          <div class="coupon-body">
+            <h3>Хүргэлтийн төлбөр үнэгүй</h3>
+            <p>I–III бүсэд 50,000₮-өөс дээш захиалгад.</p>
+            <div class="coupon-code-row">
+              <code class="coupon-code">FREEDEL</code>
+              <button class="copy-btn" type="button" data-code="FREEDEL">Хуулах</button>
+            </div>
+            <p class="coupon-meta">Хүчинтэй: 2026.11.30 хүртэл</p>
+          </div>
+        </article>
+
+        <article class="coupon">
+          <div class="coupon-head">
+            <span class="badge">Идэвхтэй</span>
+            <span class="coupon-off">20%</span>
+          </div>
+          <div class="coupon-body">
+            <h3>Арга хэмжээний захиалгад 20%</h3>
+            <p>50-аас дээш зочны арга хэмжээнд хүчинтэй.</p>
+            <div class="coupon-code-row">
+              <code class="coupon-code">EVENT20</code>
+              <button class="copy-btn" type="button" data-code="EVENT20">Хуулах</button>
+            </div>
+            <p class="coupon-meta">Хүчинтэй: 2026.12.15 хүртэл</p>
+          </div>
+        </article>
+
+        <article class="coupon">
+          <div class="coupon-head">
+            <span class="badge">Шинэ</span>
+            <span class="coupon-off">5,000₮</span>
+          </div>
+          <div class="coupon-body">
+            <h3>Шинэ хэрэглэгчийн бонус</h3>
+            <p>Анхны захиалгад 20,000₮-өөс дээш бол хүчинтэй.</p>
+            <div class="coupon-code-row">
+              <code class="coupon-code">FIRST5</code>
+              <button class="copy-btn" type="button" data-code="FIRST5">Хуулах</button>
+            </div>
+            <p class="coupon-meta">Хүчинтэй: 2026.12.31 хүртэл</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft-section" aria-labelledby="terms-title">
+    <div class="wrap split">
+      <div class="panel">
+        <p class="section-kicker">АШИГЛАХ НӨХЦӨЛ</p>
+        <h2 id="terms-title">Купоны дүрэм</h2>
+        <ul class="check-list">
+          <li>Нэг захиалгад зөвхөн нэг купон код ашиглана.</li>
+          <li>Код нь бусад хямдрал, багц саналтай давхцахгүй.</li>
+          <li>Код бүр заасан хугацаанд л хүчинтэй.</li>
+          <li>Кодыг захиалга баталгаажих үед ажилтан шалгана.</li>
+          <li>Хүргэлтийн купон нь зөвхөн заасан бүсэд үйлчилнэ.</li>
+          <li>Купон код хууль бусаар олширсон тохиолдолд цуцлагдана.</li>
+        </ul>
+      </div>
+      <div class="aside-stack">
+        <div class="panel">
+          <p class="section-kicker">АНХААРУУЛГА</p>
+          <h3>Демо хувилбар</h3>
+          <p class="aside-text">Энэ хуудсан дээрх купон, хямдрал, хугацаа нь сургалтын зориулалттай жишиг мэдээлэл. Бодит захиалгад ашиглах боломжгүй.</p>
+          <p class="aside-note">Кодыг хуулах, шалгах үйлдэл зөвхөн таны хөтөч дээр ажиллана. Мэдээлэл сервер рүү явахгүй.</p>
+        </div>
+        <div class="panel">
+          <h3>Танд асуулт байна уу?</h3>
+          <p class="aside-text">Купон ашиглах, нөхцөл шалгах талаар ажилтантай холбогдоорой.</p>
+          <a class="text-link block" href="feedback.html">Санал хүсэлт илгээх <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="cta-title">
+    <div class="wrap">
+      <div class="cta-band tight">
+        <div>
+          <h2 id="cta-title">Купон ашиглаад захиалгаа өгөөрэй</h2>
+          <p>Хоолны цэснээс сонголтоо хийгээд захиалгын хуудсаар дамжина уу.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn" href="../index.html#menu">Хоолны цэс <span aria-hidden="true">→</span></a>
+          <a class="btn btn-outline" href="../index.html#book">Ширээ захиалах</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-cols">
+    <div>
+      <a class="logo" href="../index.html"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a>
+      <p>Монгол гэрийн хоолны жишиг вэб сайт. Сургалтын зориулалттай төсөл.</p>
+    </div>
+    <div>
+      <h3 class="footer-title">Үйлчилгээ</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">Үйлчилгээний танилцуулга</a></li>
+        <li><a href="delivery.html">Хүргэлт</a></li>
+        <li><a href="catering.html">Арга хэмжээний хоол</a></li>
+        <li><a href="offers.html">Урамшуулал</a></li>
+        <li><a href="feedback.html">Санал хүсэлт</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-title">Холбоо барих</h3>
+      <p>Утас: +976 1100 0000<br>И-мэйл: hello@khukhtengeri.mn</p>
+      <p>© 2026 Хөх тэнгэр. Бүх мэдээлэл жишиг.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

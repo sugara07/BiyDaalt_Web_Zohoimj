@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102747">
+  <meta name="description" content="Хөх тэнгэр — Төрсөн өдөр, хурим, корпорацийн арга хэмжээний хоолны хүсэлтийн маягт.">
+  <title>Арга хэмжээний хоол | Хөх тэнгэр</title>
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/services.css">
+  <script src="../js/services.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Үндсэн агуулга руу шилжих</a>
+
+<header class="topbar">
+  <div class="wrap nav-bar">
+    <a class="logo" href="../index.html" aria-label="Хөх тэнгэр — Нүүр хуудас"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a>
+    <nav aria-label="Үндсэн цэс">
+      <ul>
+        <li><a href="index.html">Үйлчилгээ</a></li>
+        <li><a href="delivery.html">Хүргэлт</a></li>
+        <li><a href="catering.html" aria-current="page">Арга хэмжээ</a></li>
+        <li><a href="offers.html">Урамшуулал</a></li>
+        <li><a href="feedback.html">Санал хүсэлт</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="../index.html#book">Ширээ захиалах <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <ol class="breadcrumbs" aria-label="Таны байршил">
+        <li><a href="../index.html">Нүүр</a></li>
+        <li><a href="index.html">Үйлчилгээ</a></li>
+        <li aria-current="page">Арга хэмжээ</li>
+      </ol>
+      <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> АРГА ХЭМЖЭЭНИЙ ХООЛ</p>
+      <h1 id="hero-title">Таны баяр, <em>бидний хоол.</em></h1>
+      <p class="lead">Төрсөн өдөр, хурим, сургалт, корпорацийн уулзалт — 10–500 зочны арга хэмжээнд зориулсан хоолны багцыг таны хүсэлтээр бэлтгэнэ.</p>
+      <ul class="hero-points">
+        <li>Урьдчилан амталгаа</li>
+        <li>Буфет эсвэл ширээний үйлчилгээ</li>
+        <li>3–7 хоногийн өмнө захиална</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="form-title">
+    <div class="wrap split">
+      <div class="panel form-panel">
+        <p class="section-kicker">ХҮСЭЛТИЙН МАЯГТ</p>
+        <h2 id="form-title">Арга хэмжээний хоол захиалах</h2>
+        <p class="panel-intro">Доорх мэдээллийг бөглөсний дараа таны оруулсан мэдээллийн тойм дэлгэц дээр харагдана.</p>
+        <div class="demo-alert" role="note"><strong>Демо хувилбар.</strong> Энэ маягт мэдээллийг серверт илгээхгүй, хадгалахгүй. Хүсэлт бодитоор бүртгэгдэхгүй.</div>
+
+        <form id="catering-form" action="#" method="get">
+          <fieldset>
+            <legend>Холбоо барих</legend>
+            <label>Нэр
+              <input type="text" name="name" autocomplete="name" minlength="2" maxlength="70" placeholder="Овог, нэр" required>
+            </label>
+            <label>Утас
+              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" pattern="[+0-9() -]{6,20}" title="Утасны дугаарыг 6–20 тэмдэгтээр оруулна уу" placeholder="+976 99xxxxxx" required>
+            </label>
+            <label>И-мэйл
+              <input type="email" name="email" autocomplete="email" placeholder="name@example.com" required>
+            </label>
+            <label>Байгууллага <span class="optional">(заавал биш)</span>
+              <input type="text" name="company" autocomplete="organization" maxlength="80" placeholder="Компани, сургууль...">
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Арга хэмжээний мэдээлэл</legend>
+            <label>Арга хэмжээний төрөл
+              <select name="eventType" required>
+                <option value="" selected disabled>Сонгоно уу</option>
+                <option value="Төрсөн өдөр">Төрсөн өдөр</option>
+                <option value="Хурим">Хурим</option>
+                <option value="Корпорацийн арга хэмжээ">Корпорацийн арга хэмжээ</option>
+                <option value="Сургалт, семинар">Сургалт, семинар</option>
+                <option value="Бусад">Бусад</option>
+              </select>
+            </label>
+            <label>Огноо
+              <input type="date" name="date" data-today-min required>
+            </label>
+            <label>Эхлэх цаг
+              <input type="time" name="time" required>
+            </label>
+            <label>Зочдын тоо
+              <input type="number" name="guests" min="10" max="500" step="1" value="30" inputmode="numeric" required>
+            </label>
+            <label class="full">Байршил
+              <input type="text" name="venue" maxlength="120" placeholder="Дүүрэг, байр, орц, тоот" required>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Хоолны сонголт</legend>
+            <div class="field-group full">
+              <span class="field-label">Үйлчилгээний хэлбэр</span>
+              <div class="radios">
+                <label><input type="radio" name="serviceStyle" value="Буфет" checked> Буфет</label>
+                <label><input type="radio" name="serviceStyle" value="Ширээний үйлчилгээ"> Ширээний үйлчилгээ</label>
+                <label><input type="radio" name="serviceStyle" value="Хайрцагт"> Хайрцагт</label>
+              </div>
+            </div>
+            <div class="field-group full">
+              <span class="field-label">Хоолны чиглэл (олныг сонгож болно)</span>
+              <div class="check-grid">
+                <label class="check-chip"><input type="checkbox" name="diet[]" value="Уламжлалт хоол" checked> Уламжлалт хоол</label>
+                <label class="check-chip"><input type="checkbox" name="diet[]" value="Цагаан хоол"> Цагаан хоол</label>
+                <label class="check-chip"><input type="checkbox" name="diet[]" value="Хүүхдийн меню"> Хүүхдийн меню</label>
+                <label class="check-chip"><input type="checkbox" name="diet[]" value="Хөнгөн зууш"> Хөнгөн зууш</label>
+              </div>
+            </div>
+            <label>Төсөв
+              <select name="budget">
+                <option value="Зөвлөлдөх" selected>Зөвлөлдөх</option>
+                <option value="1–2 сая ₮">1–2 сая ₮</option>
+                <option value="2–5 сая ₮">2–5 сая ₮</option>
+                <option value="5 сая ₮-өөс дээш">5 сая ₮-өөс дээш</option>
+              </select>
+            </label>
+            <label class="full">Нэмэлт тайлбар
+              <textarea name="note" rows="4" maxlength="500" placeholder="Хоолны онцгой хүсэлт, харшил, цагийн хуваарь..."></textarea>
+            </label>
+            <label class="full consent"><input type="checkbox" name="consent" required> Мэдээлэл зөв гэдгээ баталж, энэ нь бодит захиалга биш демо маягт гэдгийг ойлгосон.</label>
+          </fieldset>
+
+          <button class="btn submit-btn" type="submit">Хүсэлтээ шалгах <span aria-hidden="true">→</span></button>
+          <p class="form-hint">Товч нь хүсэлтийг илгээхгүй, зөвхөн дэлгэц дээр харуулна.</p>
+        </form>
+
+        <div id="catering-result" class="form-result" role="status" aria-live="polite" hidden></div>
+      </div>
+
+      <aside class="aside-stack" aria-label="Багц ба нөхцөл">
+        <div class="panel">
+          <p class="section-kicker">ЖИШИГ БАГЦ</p>
+          <h3>Зочдын тоонд тохирсон багц</h3>
+          <ul class="pkg-list">
+            <li>
+              <div><strong>Жижиг багц</strong><span>10–30 зочин</span></div>
+              <span class="pkg-price">25,000₮</span>
+            </li>
+            <li>
+              <div><strong>Дунд багц</strong><span>30–80 зочин</span></div>
+              <span class="pkg-price">32,000₮</span>
+            </li>
+            <li>
+              <div><strong>Том багц</strong><span>80+ зочин</span></div>
+              <span class="pkg-price">Тохиролцоно</span>
+            </li>
+          </ul>
+          <p class="aside-note">Үнэ нь нэг хүнд ногдох жишиг үнэ. Меню, улирал, байршил, үйлчилгээний хэлбэрээс хамаарч өөрчлөгдөнө.</p>
+        </div>
+
+        <div class="panel">
+          <h3>Багцад юу багтах вэ?</h3>
+          <ul class="check-list">
+            <li>Урьдчилан амталгаа хийх боломж</li>
+            <li>Ширээний засалт, сав, хэрэгсэл</li>
+            <li>Үйлчилгээний ажилтан (тохиролцоогоор)</li>
+            <li>Хоолыг товлосон цагт хүргэх</li>
+            <li>Хүсэлтийн дагуу меню өөрчлөх</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Холбоо барих</h3>
+          <p class="aside-note is-plain">Ажлын өдөр 10:00–18:00<br>Утас: +976 7000 0002<br>И-мэйл: event@khukhtengeri.mn</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section soft-section" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="faq-panel">
+        <p class="section-kicker">ТҮГЭЭМЭЛ АСУУЛТ</p>
+        <h2 id="faq-title">Арга хэмжээний хоолны тухай</h2>
+        <details>
+          <summary>Хэдэн хоногийн өмнө захиалах вэ?</summary>
+          <p>10–50 зочны арга хэмжээг 3 хоногийн өмнө, 50-аас дээш зочны арга хэмжээг 7 хоногийн өмнө захиалахыг зөвлөж байна.</p>
+        </details>
+        <details>
+          <summary>Амталгаа хийж болох уу?</summary>
+          <p>Тийм. 50-аас дээш зочны захиалгад урьдчилан амталгаа хийх боломжтой. Амталгааны цагийг ажилтантай тохиролцоно.</p>
+        </details>
+        <details>
+          <summary>Хоолны үлдэгдлийг яах вэ?</summary>
+          <p>Илүүдэл хоолыг таны хүсэлтээр сав баглаа боодолд хийж өгнө. Савны зардлыг урьдчилан тооцно.</p>
+        </details>
+        <details>
+          <summary>Энэ хуудаснаас бодит захиалга өгөх боломжтой юу?</summary>
+          <p>Үгүй. Энэ бол сургалтын демо хуудас. Маягт мэдээллийг зөвхөн дэлгэц дээр харуулж, серверт илгээхгүй.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-cols">
+    <div>
+      <a class="logo" href="../index.html"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a>
+      <p>Монгол гэрийн хоолны жишиг вэб сайт. Сургалтын зориулалттай төсөл.</p>
+    </div>
+    <div>
+      <h3 class="footer-title">Үйлчилгээ</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">Үйлчилгээний танилцуулга</a></li>
+        <li><a href="delivery.html">Хүргэлт</a></li>
+        <li><a href="catering.html">Арга хэмжээний хоол</a></li>
+        <li><a href="offers.html">Урамшуулал</a></li>
+        <li><a href="feedback.html">Санал хүсэлт</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-title">Холбоо барих</h3>
+      <p>Утас: +976 1100 0000<br>И-мэйл: hello@khukhtengeri.mn</p>
+      <p>© 2026 Хөх тэнгэр. Бүх мэдээлэл жишиг.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
