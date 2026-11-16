@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   status.dataset.state = "loading";
   let data;
   try {
-    const response = await fetch("../data/culture.json");
+    const response = await fetch("data/culture.json");
     if (!response.ok) throw new Error("HTTP " + response.status);
     data = await response.json();
     if (!Array.isArray(data.recipes) || !Array.isArray(data.stories)) throw new Error("Формат буруу");

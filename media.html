@@ -120,9 +120,9 @@
             }
         }
     </style>
-</head>
+<link rel="stylesheet" href="css/project-bridge.css"><link rel="stylesheet" href="css/project.css"><script defer src="js/culture.js"></script></head>
 
-<body>
+<body data-page="stories">
     <a class="skip-link" href="#main">Үндсэн агуулга руу</a>
 
     <header class="topbar">
@@ -139,7 +139,7 @@
             </nav>
             <a class="nav-cta" href="index.html#menu">Цэс үзэх ↗</a>
         </div>
-    </header>
+    </header><nav class="team-shortcuts" aria-label="Багийн зургаан хэсэг"><a href="index.html">Нүүр</a><a href="services/index.html">Үйлчилгээ</a><a href="booking/index.html">Захиалга</a><a href="menu/index.html">Цэс</a><a href="visit/index.html">Зочлох</a><a href="cultureint.html">Хоолны өв</a></nav>
 
     <main id="main">
         <section class="page-hero">
@@ -358,7 +358,7 @@
 
             </div>
         </section>
-    </main>
+    <section class="section"><div class="wrap live-extra"><h2>Богино өгүүлэмжүүд</h2><label for="story-query">Хоолны нэр, сэдвээр хайх</label><input id="story-query" type="search" placeholder="Бууз, цуйван…" aria-label="Түүх хайх"><p id="data-status" role="status">JSON мэдээлэл ачаалж байна…</p><div id="stories-list" class="project-stack"></div><p>Эдгээр богино өгүүлэмж сургалтын зохиомол тайлбар юм.</p></div></section></main>
 
     <footer class="site-footer">
         <div class="wrap footer-grid">
