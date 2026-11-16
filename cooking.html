@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Монгол уламжлалт хоол хийх арга, орц найрлага болон хийх дараалал.">
+    <meta name="theme-color" content="#102747">
+    <title>Хоол хийх арга | Хөх тэнгэр</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+
+    <style>
+        body {
+            background-color: #f8fafc;
+        }
+
+        .recipes-wrapper {
+            max-width: 900px;
+            margin: -40px auto 60px auto;
+            position: relative;
+            z-index: 10;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .recipe-card-box {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(16, 39, 71, 0.06);
+            border: 1px solid #e2e8f0;
+            border-top: 5px solid #fb8500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .recipe-card-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(16, 39, 71, 0.1);
+        }
+
+        .recipe-header-flex {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .recipe-thumb {
+            width: 220px;
+            height: 160px;
+            min-width: 220px;
+            background: #f1f5f9;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .recipe-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .recipe-details-info {
+            flex: 1;
+        }
+
+        .recipe-details-info .card-tag {
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: #b45309;
+            font-weight: 700;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .recipe-details-info h2 {
+            font-size: 1.6rem;
+            color: #102747;
+            margin: 0 0 10px 0;
+            font-family: 'Bitter', serif;
+        }
+
+        .recipe-details-info p {
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0 0 16px 0;
+        }
+
+        .meta-badges {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .badge-time {
+            color: #92400e;
+            background: #fef3c7;
+            padding: 6px 12px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .badge-rating {
+            color: #b45309;
+            background: #fffbeb;
+            padding: 6px 12px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .recipe-ingredients,
+        .recipe-steps {
+            margin-top: 24px;
+            padding-top: 18px;
+            border-top: 1px dashed #cbd5e1;
+        }
+
+        .recipe-ingredients h4,
+        .recipe-steps h4 {
+            color: #102747;
+            margin: 0 0 10px 0;
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .recipe-ingredients ul,
+        .recipe-steps ol {
+            margin: 0 0 0 20px;
+            padding: 0;
+            color: #334155;
+            font-size: 0.92rem;
+            line-height: 1.65;
+        }
+
+        .recipe-ingredients li,
+        .recipe-steps li {
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .recipe-header-flex {
+                flex-direction: column;
+            }
+
+            .recipe-thumb {
+                width: 100%;
+                height: 180px;
+            }
+
+            .recipes-wrapper {
+                margin-top: -20px;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="css/project-bridge.css"><link rel="stylesheet" href="css/project.css"><script defer src="js/culture.js"></script></head>
+
+<body data-page="etiquette">
+    <a class="skip-link" href="#main">Үндсэн агуулга руу</a>
+
+    <header class="topbar">
+        <div class="wrap nav-bar">
+            <a class="logo" href="index.html"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a>
+            <nav aria-label="Үндсэн цэс">
+                <ul>
+                    <li><a href="index.html">Нүүр</a></li>
+                    <li><a href="about.html">Бидний тухай</a></li>
+                    <li><a href="news.html">Мэдээлэл</a></li>
+                    <li><a href="contact.html">Холбоо барих</a></li>
+                    <li><a href="sitemap.html">Сайтын зураглал</a></li>
+                </ul>
+            </nav>
+            <a class="nav-cta" href="index.html#menu">Цэс үзэх ↗</a>
+        </div>
+    </header><nav class="team-shortcuts" aria-label="Багийн зургаан хэсэг"><a href="index.html">Нүүр</a><a href="services/index.html">Үйлчилгээ</a><a href="booking/index.html">Захиалга</a><a href="menu/index.html">Цэс</a><a href="visit/index.html">Зочлох</a><a href="cultureint.html">Хоолны өв</a></nav>
+
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="crumb"><a href="index.html">Нүүр</a> / Хоол хийх арга</p>
+                <p class="section-kicker">ХООЛНЫ СОЁЛ</p>
+                <h1>Хоол хийх арга, дэлгэрэнгүй</h1>
+                <p>Уламжлалт хоол бүрийн орц найрлага болон хийх дараалалтай дэлгэрэнгүй танилцаарай.</p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="recipes-wrapper">
+
+                <article class="recipe-card-box">
+                    <div class="recipe-header-flex">
+                        <div class="recipe-thumb">
+                            <img src="img/buuz.svg" alt="Бууз" width="220" height="160">
+                        </div>
+                        <div class="recipe-details-info">
+                            <div class="card-tag">ГУРИЛТАЙ & МАКАН ХООЛ</div>
+                            <h2>Уламжлалт Монгол Бууз</h2>
+                            <p>Амт чанартай шүүслэг бууз хийх уламжлалт арга. Шинэ сайн чанарын хонь эсвэл үхрийн махыг
+                                сонгон сонгино, сармисаар амталж чимхэнэ.</p>
+
+                            <div class="meta-badges">
+                                <span class="badge-time"><span aria-hidden="true">✦</span> 45 мин</span>
+                                <span class="badge-rating"><span aria-hidden="true">✦</span> 4.9 (258 үнэлгээ)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-ingredients">
+                        <h4>Орц найрлага:</h4>
+                        <ul>
+                            <li>Гурил, ус, давс, гоньд</li>
+                            <li>Хонь эсвэл үхрийн мах (жижиг хэрчсэн)</li>
+                            <li>Сонгино, сармис</li>
+                        </ul>
+                    </div>
+
+                    <div class="recipe-steps">
+                        <h4>Хийх дараалал:</h4>
+                        <ol>
+                            <li>Гурилаа устай хольж зуураад амраана.</li>
+                            <li>Махаа жижиглэн хэрчиж, сонгино болон амтлагчаар амталж шанз бэлдэнэ.</li>
+                            <li>Гурилаа элдэн шанзаа тавин битүү чимхэнэ.</li>
+                            <li>Жигнүүртээ ус хийн буцалмагц буузаа тавьж 15-20 минут жигнэнэ.</li>
+                        </ol>
+                    </div>
+                </article>
+
+                <article class="recipe-card-box">
+                    <div class="recipe-header-flex">
+                        <div class="recipe-thumb">
+                            <img src="img/shul.svg" alt="Шөл" width="220" height="160">
+                        </div>
+                        <div class="recipe-details-info">
+                            <div class="card-tag">ШӨЛТЭЙ ХООЛ</div>
+                            <h2>Тэжээллэг махан шөл хийх арга</h2>
+                            <p>Биеийг дулаацуулж, дархлаа дэмжих амттай шөл. Чанартай ястай махыг удаан чанаж шүүсийг нь
+                                гаргаад ногоогоор баяжуулна.</p>
+
+                            <div class="meta-badges">
+                                <span class="badge-time"><span aria-hidden="true">✦</span> 40 мин</span>
+                                <span class="badge-rating"><span aria-hidden="true">✦</span> 4.9 (190 үнэлгээ)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-ingredients">
+                        <h4>Орц найрлага:</h4>
+                        <ul>
+                            <li>Үхэр эсвэл хонины ястай мах</li>
+                            <li>Төмс, лууван, сонгино</li>
+                            <li>Гурил эсвэл гоймон, ус, давс, хар перц</li>
+                        </ul>
+                    </div>
+
+                    <div class="recipe-steps">
+                        <h4>Хийх дараалал:</h4>
+                        <ol>
+                            <li>Махаа хүйтэн усанд хийж буцалган, гарсан хөөсийг шүүж авна.</li>
+                            <li>Дунд зэргийн гал дээр махыг зөөлөртөл нь 40-50 минут чанана.</li>
+                            <li>Төмс, лууван, сонгино болон амтлагчуудаа хийж зөөлөртөл нь буцалгана.</li>
+                        </ol>
+                    </div>
+                </article>
+
+                <article class="recipe-card-box">
+                    <div class="recipe-header-flex">
+                        <div class="recipe-thumb">
+                            <img src="img/khuushuur.svg" alt="Хуушуур" width="220" height="160">
+                        </div>
+                        <div class="recipe-details-info">
+                            <div class="card-tag">МАХАН ХООЛ</div>
+                            <h2>Шүүслэг хуушуур хийх арга</h2>
+                            <p>Амталсан татсан махаар гуриланд битүүмжлэн халуун тосонд шаргалттал шардаг амттай хоол.
+                            </p>
+
+                            <div class="meta-badges">
+                                <span class="badge-time"><span aria-hidden="true">✦</span> 30 мин</span>
+                                <span class="badge-rating"><span aria-hidden="true">✦</span> 4.8 (210 үнэлгээ)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-ingredients">
+                        <h4>Орц найрлага:</h4>
+                        <ul>
+                            <li>Гурил, ус, давс, шарах тос</li>
+                            <li>Татсан мах (хонь/үхэр), сонгино, сармис, перц</li>
+                        </ul>
+                    </div>
+
+                    <div class="recipe-steps">
+                        <h4>Хийх дараалал:</h4>
+                        <ol>
+                            <li>Гурилаа зуураад амраана. Махаа сонгино, амтлагчаар амталж шанз бэлдэнэ.</li>
+                            <li>Гурилаа элдэн махаа тавиад ирмэгийг битүүмжилж чимхэнэ.</li>
+                            <li>Халуун тосонд хоёр талаар нь шаргалттал шарна.</li>
+                        </ol>
+                    </div>
+                </article>
+
+                <article class="recipe-card-box">
+                    <div class="recipe-header-flex">
+                        <div class="recipe-thumb">
+                            <img src="img/tsuivan.svg" alt="Цуйван" width="220" height="160">
+                        </div>
+                        <div class="recipe-details-info">
+                            <div class="card-tag">ГУРИЛТАЙ ХООЛ</div>
+                            <h2>Ногоотой цуйвангийн жор</h2>
+                            <p>Гар сунгасан гурилыг уураар жигнэж, мах болон төрөл бүрийн ногоотой холин хуурч бэлтгэнэ.
+                            </p>
+
+                            <div class="meta-badges">
+                                <span class="badge-time"><span aria-hidden="true">✦</span> 40 мин</span>
+                                <span class="badge-rating"><span aria-hidden="true">✦</span> 4.9 (315 үнэлгээ)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-ingredients">
+                        <h4>Орц найрлага:</h4>
+                        <ul>
+                            <li>Гурил, ус, тос, давс, амтлагч</li>
+                            <li>Мах (үхэр эсвэл хонь), төрөл бүрийн ногоо (сонгино, лууван, байцаа)</li>
+                        </ul>
+                    </div>
+
+                    <div class="recipe-steps">
+                        <h4>Хийх дараалал:</h4>
+                        <ol>
+                            <li>Гурилаа зуураад цуйвангийн гурил элдэж тослоод ууранд жигнэнэ.</li>
+                            <li>Мах болон ногоогоо уртааш нь хэрчиж хуураад ус хийж борцлох маягтай болгоно.</li>
+                            <li>Жигнэсэн гурилаа нарийн хэрчиж, хуурсан мах ногоон дээрээ тавиад битүү чанаж холино.
+                            </li>
+                        </ol>
+                    </div>
+                </article>
+
+                <article class="recipe-card-box">
+                    <div class="recipe-header-flex">
+                        <div class="recipe-thumb">
+                            <img src="img/khorkhog.svg" alt="Хорхог" width="220" height="160">
+                        </div>
+                        <div class="recipe-details-info">
+                            <div class="card-tag">МАХАН ХООЛ</div>
+                            <h2>Халуун чулууны хорхог</h2>
+                            <p>Хонины махыг халуун чулуутай хамт саванд битүү чанаж болгодог нүүдэлчдийн өвөрмөц жор.
+                            </p>
+
+                            <div class="meta-badges">
+                                <span class="badge-time"><span aria-hidden="true">✦</span> 90 мин</span>
+                                <span class="badge-rating"><span aria-hidden="true">✦</span> 5.0 (180 үнэлгээ)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-ingredients">
+                        <h4>Орц найрлага:</h4>
+                        <ul>
+                            <li>Хонины ястай болон зөөлөн мах</li>
+                            <li>Голын цэвэр чулуу (сайр чулуу)</li>
+                            <li>Сонгино, лууван, төмс, давс, хар перц</li>
+                        </ul>
+                    </div>
+
+                    <div class="recipe-steps">
+                        <h4>Хийх дараалал:</h4>
+                        <ol>
+                            <li>Голын чулууг гал дээр улайстал сайтар халаана.</li>
+                            <li>Төмөр саванд мах, халуун чулуу, ногоо, давсаа ээлжлэн үечлэн хийнэ.</li>
+                            <li>Савны тагийг нягт таглаж, халуун чулууны илчээр махыг битүү чанаж болгоно.</li>
+                        </ol>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    <section class="section"><div class="wrap live-extra"><h2>Гал тогооны харилцааны зөвлөмж</h2><p>Хоол бэлтгэхэд хамтран ажиллах, бусдыг хүндэтгэхтэй холбоотой жишиг тайлбар.</p><p id="data-status" role="status">JSON мэдээлэл ачаалж байна…</p><div id="etiquette-tabs" class="project-controls"></div><div id="etiquette-output" class="project-result" aria-live="polite"></div></div></section></main>
+
+    <footer class="site-footer">
+        <div class="wrap footer-grid">
+            <div>
+                <a class="logo" href="index.html"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a>
+                <p>Монгол хоолны сэдэвтэй сургалтын веб төсөл.</p>
+            </div>
+            <div>
+                <p>© 2026. Сургалтын зориулалттай.</p>
+                <a href="sitemap.html">Сайтын зураглал ↗</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

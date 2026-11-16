@@ -12,8 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/services.css">
-  
-<link rel="stylesheet" href="../css/project-bridge.css"></head>
+  <script src="../js/services.js" defer></script>
+<link rel="stylesheet" href="../css/project-bridge.css"><script defer src="../js/services-data.js"></script></head>
 <body>
 <a class="skip-link" href="#main">Үндсэн агуулга руу шилжих</a>
 
@@ -31,8 +31,7 @@
     </nav>
     <a class="nav-cta" href="../index.html#book">Ширээ захиалах <span aria-hidden="true">↗</span></a>
   </div>
-</header>
-<nav class="team-shortcuts" aria-label="Багийн зургаан хэсэг"><a href="../index.html">Нүүр</a><a href="../services/index.html">Үйлчилгээ</a><a href="../booking/index.html">Захиалга</a><a href="../menu/index.html">Цэс</a><a href="../visit/index.html">Зочлох</a><a href="../culture/index.html">Хоолны өв</a></nav>
+</header><nav class="team-shortcuts" aria-label="Багийн зургаан хэсэг"><a href="../index.html">Нүүр</a><a href="../services/index.html">Үйлчилгээ</a><a href="../booking/index.html">Захиалга</a><a href="../menu/index.html">Цэс</a><a href="../visit/index.html">Зочлох</a><a href="../cultureint.html">Хоолны өв</a></nav>
 
 <main id="main">
   <section class="page-hero" aria-labelledby="hero-title">
@@ -237,7 +236,7 @@
       </div>
     </div>
   </section>
-<section class="section" aria-labelledby="service-data-title"><div class="wrap live-extra"><h2 id="service-data-title">Үйлчилгээ сонгох туслах</h2><p>Хэрэглэгчийн хэрэгцээнд тохирсон үйлчилгээний тайлбарыг өгөгдлөөс харуулна.</p><label for="service-filter">Хэрэгцээ</label><select id="service-filter"><option value="all">Бүх үйлчилгээ</option><option value="delivery">Хүргэлт</option><option value="event">Арга хэмжээ</option><option value="saving">Хэмнэлт</option><option value="feedback">Санал</option></select><p id="service-load-status" role="status">Багийн үйлчилгээний танилцуулга.</p><div id="service-live" class="live-grid"><article><h3>Хүргэлт</h3><p>Жишиг хүргэлтийн бүсийн мэдээлэл.</p><a href='delivery.html'>Дэлгэрэнгүй</a></article><article><h3>Арга хэмжээ</h3><p>Олон хүнтэй арга хэмжээний хүсэлтийн хуудас.</p><a href='catering.html'>Дэлгэрэнгүй</a></article><article><h3>Урамшуулал</h3><p>Купон кодын жишиг танилцуулга.</p><a href='offers.html'>Дэлгэрэнгүй</a></article><article><h3>Санал хүсэлт</h3><p>Үнэлгээ өгөх маягтын загвар.</p><a href='feedback.html'>Дэлгэрэнгүй</a></article></div></div></section></main>
+<section class="section" aria-labelledby="service-dynamic-title"><div class="wrap live-extra"><h2 id="service-dynamic-title">Үйлчилгээний сонголт</h2><label for="service-filter">Хэрэгцээ</label><select id="service-filter"><option value="all">Бүх үйлчилгээ</option><option value="delivery">Хүргэлт</option><option value="event">Арга хэмжээ</option><option value="saving">Урамшуулал</option><option value="feedback">Санал хүсэлт</option></select><p id="service-load-status" role="status">Ачаалж байна…</p><div id="service-live" class="live-grid"></div></div></section></main>
 
 <footer class="site-footer">
   <div class="wrap footer-cols">

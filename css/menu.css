@@ -1,0 +1,74 @@
+/* Хоолны цэсийн хуудсуудын тусгай загвар (Davkharbayr) — style.css-ийн хувьсагчдыг ашиглана */
+.menu-hero{background:linear-gradient(120deg,#102747,#173957);color:#fff;padding:56px 0 60px}
+.menu-hero h1{font-size:clamp(2.2rem,4.6vw,3.8rem);line-height:1.1;letter-spacing:-.03em;margin:0 0 14px}
+.menu-hero p{color:#d8e2ed;max-width:620px;margin:0}
+.crumbs{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0 0 18px;font-size:.84rem;color:#c1cfdf}
+.crumbs a{color:var(--accent);text-decoration:none}
+.crumbs li+li::before{content:"/";margin-right:8px;color:#748ca4}
+.menu-section{padding:56px 0}
+.menu-section.alt{background:#fff;border-block:1px solid var(--line)}
+.menu-section h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:12px}
+
+/* Ангиллын товчнууд */
+.category-nav{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:0 0 30px}
+.category-nav a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:100px;background:#fff;text-decoration:none;font-weight:600;font-size:.9rem}
+.category-nav a:hover{background:var(--accent);border-color:var(--accent);color:var(--navy)}
+.category-block+.category-block{margin-top:48px}
+.category-block h2 small{display:block;font:500 .9rem var(--body);color:var(--muted);letter-spacing:0;margin-top:6px}
+.card-link{display:inline-block;margin:0 18px 18px;font-weight:700;color:var(--navy2)}
+.menu-cards{display:flex;flex-wrap:wrap;gap:18px}
+.menu-cards .food-card{flex:0 1 300px;max-width:100%}
+.menu-cards .food-card p{margin:14px 18px 8px;color:var(--muted)}
+
+/* Нэг хоол */
+.dish-layout{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
+.dish-photo{flex:1 1 300px;min-width:0;margin:0}
+.dish-photo img{width:100%;border-radius:20px;border:1px solid var(--line);box-shadow:0 18px 40px #152b3e20}
+.dish-photo figcaption{font-size:.85rem;color:var(--muted);margin-top:10px}
+.dish-info{flex:1 1 300px;min-width:0}
+.dish-price{display:inline-block;background:var(--accent);color:var(--navy);font:800 1.4rem var(--head);padding:6px 16px;border-radius:10px;margin:0 0 18px}
+.facts{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 24px;padding:0;list-style:none}
+.facts li{flex:1 1 120px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:.9rem}
+.facts strong{display:block;font-size:.75rem;letter-spacing:.1em;color:#a06b11;margin-bottom:2px}
+.ing-list{columns:2;padding-left:20px;margin:0 0 22px}
+.ing-list li{margin-bottom:6px}
+.notice{border-left:5px solid var(--accent);background:#fff8e6;padding:14px 18px;border-radius:0 10px 10px 0;margin:22px 0 0;font-size:.92rem}
+
+/* Хүснэгт */
+.menu-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:#fff}
+.menu-table{width:100%;border-collapse:collapse;min-width:560px}
+.menu-table caption{text-align:left;padding:16px 18px;font:700 1.05rem var(--head)}
+.menu-table th,.menu-table td{padding:13px 18px;text-align:left;border-top:1px solid var(--line)}
+.menu-table thead th{background:var(--navy);color:#fff;font-size:.85rem;letter-spacing:.04em}
+.menu-table tbody tr:nth-child(even){background:var(--soft)}
+.menu-table td.num{font-weight:700;white-space:nowrap}
+.menu-table td.best{color:#1a6b3a;font-weight:700}
+.menu-table th,.menu-table td{font-size:1rem}
+
+/* Багц хоол */
+.set-grid{display:flex;flex-wrap:wrap;gap:22px}
+.set-card{flex:1 1 280px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 8px 30px #192f4510;display:flex;flex-direction:column}
+.set-card.featured{border:2px solid var(--accent);position:relative}
+.set-badge{align-self:flex-start;background:var(--accent);color:var(--navy);font-weight:700;font-size:.74rem;letter-spacing:.1em;padding:4px 12px;border-radius:100px;margin-bottom:12px}
+.set-card h3{margin-bottom:6px}
+.set-card .who{color:var(--muted);font-size:.9rem;margin:0 0 16px}
+.set-items{list-style:none;padding:0;margin:0 0 20px;flex:1}
+.set-items li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line)}
+.set-total{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:0}
+.set-total s{color:var(--muted)}
+.set-total b{font:800 1.6rem var(--head);color:var(--navy)}
+.save{margin:6px 0 0;color:#1a6b3a;font-weight:600;font-size:.9rem}
+
+/* Найрлагын схем */
+.diagram{display:flex;flex-direction:column;align-items:center;gap:0}
+.dg-root{background:var(--navy);color:#fff;font:700 1.2rem var(--head);padding:14px 30px;border-radius:12px}
+.dg-line{width:3px;height:26px;background:var(--accent)}
+.dg-row{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;width:100%}
+.dg-group{flex:1 1 200px;max-width:260px;background:#fff;border:2px solid var(--line);border-top:6px solid var(--accent);border-radius:14px;padding:16px}
+.dg-group h3{font-size:1.1rem;margin-bottom:8px}
+.dg-group ul{margin:0;padding-left:18px;font-size:.92rem}
+.dg-group p{margin:10px 0 0;font-size:.8rem;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:18px;margin:26px 0 0;padding:0;list-style:none;font-size:.88rem}
+.legend span{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:6px;vertical-align:-2px}
+
+@media (max-width:560px){.menu-cards .food-card{flex-basis:100%}.ing-list{columns:1}.menu-section{padding:40px 0}}
