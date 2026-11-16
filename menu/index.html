@@ -1,15 +1,107 @@
 <!DOCTYPE html>
 <html lang="mn">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Хөх тэнгэр сургалтын рестораны Бүтэн цэс хуудас.">
-<title>Бүтэн цэс | Хөх тэнгэр</title><link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
-<link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/project.css">
-<script defer src="../js/menu.js"></script></head>
-<body class="project-page project-menu" data-page="index">
-<a class="skip-link" href="#main">Үндсэн агуулга руу</a>
-<header class="project-header"><div class="project-top"><a class="project-brand" href="../index.html">✦ Хөх тэнгэр</a><span class="project-flag">F.ITM202 · Гишүүн 4 · Демо төсөл</span></div>
-<nav class="project-site-nav" aria-label="Багийн бүх хэсэг"><a href="../index.html">Нүүр</a><a href="../services/index.html">Үйлчилгээ</a><a href="../booking/index.html">Захиалга</a><a href="../menu/index.html">Хоолны цэс</a><a href="../visit/index.html">Зочлох</a><a href="../culture/index.html">Хоолны өв</a></nav><nav class="project-subnav" aria-label="Хоолны цэс доторх хуудсууд"><a href="index.html" aria-current="page">Бүтэн цэс</a><a href="compare.html">Хоол харьцуулах</a><a href="ingredients.html">Орц, харшил</a><a href="favorites.html">Дуртай хоол</a><a href="seasonal.html">Улирлын санал</a></nav></header>
-<main id="main"><section class="project-hero"><p class="project-kicker">ХООЛНЫ ЦЭС / 01</p><h1>Бүтэн цэс</h1><p>Хоолны нэр, төрөл, үнийг текстээр харуулах тул гар утаснаас ч уншихад хялбар. Жишиг үнэ ашигласан.</p>
-<p class="project-status" id="data-status" role="status">Мэдээлэл ачаалж байна…</p></section><section class="project-paper project-form"><h2>Хоол хайх, шүүх</h2><div class="project-controls"><div><label for="menu-query">Хоолны нэр</label><input type="search" id="menu-query" placeholder="Бууз, цуйван…"></div><div><label for="menu-filter">Төрөл</label><select id="menu-filter"><option value="all">Бүх төрөл</option><option value="main">Үндсэн хоол</option><option value="drink">Ундаа</option><option value="side">Хачир</option></select></div></div><div id="menu-items" class="project-grid"></div></section><p class="project-hint">Орц, харшилтай холбоотой мэдээлэл нь сургалтын жишээ тул үйлчлүүлэгч бодит газраас тодруулах ёстой.</p>
-<section class="project-next"><h2>Энэ хэсгийн бусад хуудас</h2><div class="project-small-links"><a href="compare.html">Хоол харьцуулах</a><a href="ingredients.html">Орц, харшил</a><a href="favorites.html">Дуртай хоол</a><a href="seasonal.html">Улирлын санал</a></div></section></main>
-<footer class="project-footer"><p>© 2026 Хөх тэнгэр — F.ITM202 сургалтын төсөл. Бодит ресторан, захиалгын үйлчилгээ биш.</p><a href="../sitemap.html">Сайтын зураглал</a></footer></body></html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Хөх тэнгэр рестораны хоолны каталог: бууз, хуушуур, цуйван, хорхог ангиллаар.">
+  <title>Хоолны каталог | Хөх тэнгэр</title>
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/menu.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Үндсэн агуулга руу шилжих</a>
+<header class="topbar">
+  <div class="wrap nav-bar">
+    <a class="logo" href="../index.html" aria-label="Хөх тэнгэр — Нүүр хуудас"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a>
+    <nav aria-label="Үндсэн цэс"><ul>
+      <li><a href="../index.html">Нүүр</a></li>
+      <li><a href="index.html" aria-current="page">Хоолны цэс</a></li>
+      <li><a href="../about.html">Бидний тухай</a></li>
+      <li><a href="../services/index.html">Үйлчилгээ</a></li>
+      <li><a href="../news.html">Мэдээлэл</a></li>
+      <li><a href="../contact.html">Холбоо барих</a></li>
+      <li><a href="../sitemap.html">Сайтын зураглал</a></li>
+    </ul></nav>
+  </div>
+</header>
+<main id="main">
+  <section class="menu-hero" aria-labelledby="page-title">
+    <div class="wrap">
+      <ol class="crumbs" aria-label="Хуудасны зам"><li><a href="../index.html">Нүүр</a></li><li>Хоолны цэс</li></ol>
+      <h1 id="page-title">Хоолны цэс</h1>
+      <p>Монгол гэрийн хоолны бүх төрлийг нэг дороос үзээрэй.</p>
+    </div>
+  </section>
+  <section class="menu-section" aria-labelledby="catalog-title">
+    <div class="wrap">
+      <h2 id="catalog-title">Хоолны каталог</h2>
+      <p class="lead" style="margin-bottom:22px">Ангиллаа сонгоод хоолтой танилцаарай. Үнэ нь сургалтын зориулалттай жишиг үнэ.</p>
+      <ul class="category-nav" aria-label="Хоолны ангилал">
+        <li><a href="#boov">Мантуун хоол</a></li>
+        <li><a href="#guril">Гурилтай хоол</a></li>
+        <li><a href="#mah">Махан хоол</a></li>
+        <li><a href="sets.html">Багц хоол ↗</a></li>
+        <li><a href="compare.html">Үнэ харьцуулах ↗</a></li>
+      </ul>
+      <div class="category-block" id="boov">
+        <h2>Мантуун хоол <small>Уураар болгосон, шарсан дүүргэлттэй хоолууд</small></h2>
+        <div class="menu-cards">
+        <article class="food-card">
+          <figure>
+            <img src="../img/buuz.svg" alt="Таваг дээрх уур савссан буузны зураг" width="720" height="540" loading="lazy">
+            <figcaption><span>Бууз</span><span class="price">9,500₮</span></figcaption>
+          </figure>
+          <p>Үхрийн мах, сонгинотой. 5 ширхэг.</p>
+          <a class="card-link" href="dish.html">Дэлгэрэнгүй <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="food-card">
+          <figure>
+            <img src="../img/khuushuur.svg" alt="Алтан шаргал хуушуурны зураг" width="720" height="540" loading="lazy">
+            <figcaption><span>Хуушуур</span><span class="price">10,500₮</span></figcaption>
+          </figure>
+          <p>Шүүслэг, шарсан. 3 ширхэг.</p>
+          <a class="card-link" href="compare.html">Үнэ харьцуулах <span aria-hidden="true">→</span></a>
+        </article>
+        </div>
+      </div>
+      <div class="category-block" id="guril">
+        <h2>Гурилтай хоол <small>Гар сунгасан гурилаар хийсэн хоол</small></h2>
+        <div class="menu-cards">
+        <article class="food-card">
+          <figure>
+            <img src="../img/tsuivan.svg" alt="Ногоотой цуйвангийн зураг" width="720" height="540" loading="lazy">
+            <figcaption><span>Цуйван</span><span class="price">14,000₮</span></figcaption>
+          </figure>
+          <p>Гар сунгасан гурил, ногоотой.</p>
+          <a class="card-link" href="ingredients.html">Найрлага үзэх <span aria-hidden="true">→</span></a>
+        </article>
+        </div>
+      </div>
+      <div class="category-block" id="mah">
+        <h2>Махан хоол <small>Томоохон компанид зориулсан халуун хоол</small></h2>
+        <div class="menu-cards">
+        <article class="food-card">
+          <figure>
+            <img src="../img/khorkhog.svg" alt="Халуун чулуун хорхогны зураг" width="720" height="540" loading="lazy">
+            <figcaption><span>Хорхог</span><span class="price">38,000₮</span></figcaption>
+          </figure>
+          <p>Хонины мах, халуун чулуугаар. 2–3 хүнд.</p>
+          <a class="card-link" href="sets.html">Багцад орсон эсэх <span aria-hidden="true">→</span></a>
+        </article>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div><a class="logo" href="../index.html"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a><p>Монгол гэрийн хоолны жишиг вэб сайт.</p></div>
+    <div><p>© 2026 Хөх тэнгэр. Сургалтын зориулалттай төсөл. Үнэ нь жишиг.</p><a href="../sitemap.html">Сайтын зураглал ↗</a> · <a href="index.html">Хоолны цэс ↗</a></div>
+  </div>
+</footer>
+</body>
+</html>

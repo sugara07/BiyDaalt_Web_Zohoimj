@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Монгол уламжлалт хоолны жорууд болон хийх заавар.">
+  <meta name="theme-color" content="#102747">
+  <title>Жорын жагсаалт | Хөх тэнгэр</title>
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .filter-radio,
+    .recipe-checkbox {
+      display: none;
+    }
+
+    .recipe-categories {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .cat-label {
+      background: #f0f4f8;
+      color: #102747;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .cat-label:hover {
+      background: #e2e8f0;
+    }
+
+    #all:checked~.recipe-categories label[for="all"],
+    #guril-checked:checked~.recipe-categories label[for="guril-checked"],
+    #makhan-checked:checked~.recipe-categories label[for="makhan-checked"],
+    #shol-checked:checked~.recipe-categories label[for="shol-checked"] {
+      background: #102747;
+      color: #ffffff;
+    }
+
+    #guril-checked:checked~.food-container .food-card:not(.cat-guril),
+    #makhan-checked:checked~.food-container .food-card:not(.cat-makhan),
+    #shol-checked:checked~.food-container .food-card:not(.cat-shol) {
+      display: none;
+    }
+
+    .food-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .food-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 5px solid #b37e28;
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      box-shadow: 0 4px 16px rgba(16, 39, 71, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .food-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(16, 39, 71, 0.08);
+    }
+
+    .recipe-thumb {
+      width: 200px;
+      height: 150px;
+      min-width: 200px;
+      background: #f8fafc;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .recipe-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .food-info {
+      width: 100%;
+    }
+
+    .food-info h3 {
+      margin: 0 0 8px 0;
+      color: #102747;
+      font-size: 21px;
+    }
+
+    .food-desc {
+      margin: 0 0 12px 0;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .recipe-full-details {
+      display: none;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed #cbd5e1;
+      color: #334155;
+      line-height: 1.65;
+    }
+
+    .recipe-full-details h4 {
+      margin: 12px 0 6px 0;
+      color: #102747;
+      font-size: 16px;
+    }
+
+    .recipe-full-details ul,
+    .recipe-full-details ol {
+      margin: 4px 0 10px 20px;
+      padding: 0;
+    }
+
+    .recipe-checkbox:checked~.recipe-full-details {
+      display: block;
+    }
+
+    .see-more-btn {
+      display: inline-block;
+      margin-top: 8px;
+      background: #f0f4f8;
+      color: #102747;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .see-more-btn:hover {
+      background: #b37e28;
+      color: #ffffff;
+    }
+
+    .see-more-btn::after {
+      content: "Дэлгэрэнгүй үзэх ▾";
+    }
+
+    .recipe-checkbox:checked~.see-more-btn::after {
+      content: "Хумих ▴";
+    }
+
+    @media (max-width: 768px) {
+      .food-card {
+        flex-direction: column;
+      }
+
+      .recipe-thumb {
+        width: 100%;
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Үндсэн агуулга руу</a>
+
+  <header class="topbar">
+    <div class="wrap nav-bar">
+      <a class="logo" href="index.html"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a>
+      <nav aria-label="Үндсэн цэс">
+        <ul>
+          <li><a href="index.html">Нүүр</a></li>
+          <li><a href="about.html">Бидний тухай</a></li>
+          <li><a href="news.html">Мэдээлэл</a></li>
+          <li><a href="contact.html">Холбоо барих</a></li>
+          <li><a href="sitemap.html">Сайтын зураглал</a></li>
+        </ul>
+      </nav>
+      <a class="nav-cta" href="index.html#menu">Цэс үзэх ↗</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="crumb"><a href="index.html">Нүүр</a> / Жорын жагсаалт</p>
+        <p class="section-kicker">ХООЛНЫ СОЁЛ</p>
+        <h1>Уламжлалт хоолны жорууд</h1>
+        <p>Та дуртай хоолны ангиллаа сонгон орц найрлага болон хийх дараалалтай танилцаарай.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <input type="radio" id="all" name="recipe-filter" checked class="filter-radio">
+        <input type="radio" id="guril-checked" name="recipe-filter" class="filter-radio">
+        <input type="radio" id="makhan-checked" name="recipe-filter" class="filter-radio">
+        <input type="radio" id="shol-checked" name="recipe-filter" class="filter-radio">
+
+        <div class="recipe-categories">
+          <label for="all" class="cat-label">Бүгд</label>
+          <label for="guril-checked" class="cat-label">Гурилтай хоол</label>
+          <label for="makhan-checked" class="cat-label">Махан хоол</label>
+          <label for="shol-checked" class="cat-label">Шөлтэй хоол</label>
+        </div>
+
+        <div class="food-container">
+
+          <article class="food-card cat-guril cat-makhan">
+            <div class="recipe-thumb">
+              <img src="img/buuz.svg" alt="Бууз" width="200" height="150">
+            </div>
+            <div class="food-info">
+              <h3>Бууз хийх уламжлалт жор</h3>
+              <p class="food-desc">Амт чанартай шүүслэг бууз хийх уламжлалт арга. Шинэ сайн чанарын хонь эсвэл үхрийн
+                махыг сонгон сонгино, сармисаар амталж чимхэнэ.</p>
+
+              <div class="expandable-recipe-container">
+                <input type="checkbox" id="buuz-toggle" class="recipe-checkbox">
+                <div class="recipe-full-details">
+                  <h4>Орц найрлага</h4>
+                  <ul>
+                    <li>Гурил</li>
+                    <li>Хонь эсвэл үхрийн мах (жижиг хэрчсэн мах)</li>
+                    <li>Сонгино</li>
+                    <li>Ус, давс, гоньд</li>
+                  </ul>
+                  <h4>Хэрэглэх зүйл</h4>
+                  <ul>
+                    <li>Жигнүүр, илдүүр, гамбанз</li>
+                  </ul>
+                  <h4>Хийх дараалал</h4>
+                  <ol>
+                    <li>Гурилаа устай хольж зуурна.</li>
+                    <li>Зуурсан гурилаа жижиг хэсгүүдэд хуваагаад элдэж хавтгайлна.</li>
+                    <li>Шанзаа тавин дугуй хэлбэрээр чимхэнэ.</li>
+                    <li>Жигнүүрт тавьж 15-20 минут жигнэнэ.</li>
+                  </ol>
+                </div>
+                <label for="buuz-toggle" class="see-more-btn"></label>
+              </div>
+            </div>
+          </article>
+
+          <article class="food-card cat-shol cat-guril cat-makhan">
+            <div class="recipe-thumb">
+              <img src="img/shul.svg" alt="Шөл" width="200" height="150">
+            </div>
+            <div class="food-info">
+              <h3>Тэжээллэг махан шөл хийх арга</h3>
+              <p class="food-desc">Биеийг дулаацуулж, дархлаа дэмжих амттай шөл. Чанартай ястай махыг удаан чанаж
+                шүүсийг нь гаргаад ногоогоор баяжуулна.</p>
+
+              <div class="expandable-recipe-container">
+                <input type="checkbox" id="shul-toggle" class="recipe-checkbox">
+                <div class="recipe-full-details">
+                  <h4>Орц найрлага</h4>
+                  <ul>
+                    <li>Үхэр эсвэл хонины ястай мах</li>
+                    <li>Төмс, лууван, сонгино</li>
+                    <li>Гурил эсвэл гоймон</li>
+                    <li>Ус, давс, хар перц</li>
+                  </ul>
+                  <h4>Хийх дараалал</h4>
+                  <ol>
+                    <li>Махаа хүйтэн усанд хийж буцалган, хөөсийг шүүж авна.</li>
+                    <li>Дунд зэргийн гал дээр 40-50 минут чанана.</li>
+                    <li>Төмс, лууван, сонгино болон амтлагч нэмж зөөлөртөл буцалгана.</li>
+                  </ol>
+                </div>
+                <label for="shul-toggle" class="see-more-btn"></label>
+              </div>
+            </div>
+          </article>
+
+          <article class="food-card cat-makhan">
+            <div class="recipe-thumb">
+              <img src="img/khuushuur.svg" alt="Хуушуур" width="200" height="150">
+            </div>
+            <div class="food-info">
+              <h3>Шүүслэг хуушуур хийх арга</h3>
+              <p class="food-desc">Амталсан татсан махаар гуриланд битүүмжлэн халуун тосонд шаргалттал шардаг амттай
+                хоол.</p>
+
+              <div class="expandable-recipe-container">
+                <input type="checkbox" id="khuushuur-toggle" class="recipe-checkbox">
+                <div class="recipe-full-details">
+                  <h4>Орц найрлага</h4>
+                  <ul>
+                    <li>Гурил, ус, давс, татсан мах, сонгино, шарах тос</li>
+                  </ul>
+                  <h4>Хийх арга</h4>
+                  <ol>
+                    <li>Гурилаа зуураад амраана. Махаа амталж шанз бэлдэнэ.</li>
+                    <li>Гурилаа элдэн махаа тавиад хагасаар нугалж чимхэнэ.</li>
+                    <li>Халуун тосонд хоёр талаар нь шаргалттал шарна.</li>
+                  </ol>
+                </div>
+                <label for="khuushuur-toggle" class="see-more-btn"></label>
+              </div>
+            </div>
+          </article>
+
+          <article class="food-card cat-guril">
+            <div class="recipe-thumb">
+              <img src="img/tsuivan.svg" alt="Цуйван" width="200" height="150">
+            </div>
+            <div class="food-info">
+              <h3>Ногоотой цуйвангийн жор</h3>
+              <p class="food-desc">Гар сунгасан гурилыг уураар жигнэж, мах болон төрөл бүрийн ногоотой холин хуурч
+                бэлтгэнэ.</p>
+
+              <div class="expandable-recipe-container">
+                <input type="checkbox" id="tsuivan-toggle" class="recipe-checkbox">
+                <div class="recipe-full-details">
+                  <h4>Орц найрлага</h4>
+                  <ul>
+                    <li>Гурил, мах, ногооны төрөл, тос, амтлагч</li>
+                  </ul>
+                  <h4>Хийх арга</h4>
+                  <ol>
+                    <li>Гурилаа зуураад элдэж тослоод ууранд жигнэнэ.</li>
+                    <li>Мах, ногоогоо хуураад ус хийж чанана.</li>
+                    <li>Жигнэсэн гурилаа хэрчиж мах ногоон дээрээ холино.</li>
+                  </ol>
+                </div>
+                <label for="tsuivan-toggle" class="see-more-btn"></label>
+              </div>
+            </div>
+          </article>
+
+          <article class="food-card cat-makhan">
+            <div class="recipe-thumb">
+              <img src="img/khorkhog.svg" alt="Хорхог" width="200" height="150">
+            </div>
+            <div class="food-info">
+              <h3>Халуун чулууны хорхог</h3>
+              <p class="food-desc">Хонины махыг халуун чулуутай хамт саванд битүү чанаж болгодог нүүдэлчдийн өвөрмөц
+                жор.</p>
+
+              <div class="expandable-recipe-container">
+                <input type="checkbox" id="khorkhog-toggle" class="recipe-checkbox">
+                <div class="recipe-full-details">
+                  <h4>Орц найрлага</h4>
+                  <ul>
+                    <li>Хонины мах, голын цэвэр чулуу, сонгино, давс</li>
+                  </ul>
+                  <h4>Хийх арга</h4>
+                  <ol>
+                    <li>Чулууг гал дээр улайстал халаана.</li>
+                    <li>Саванд мах, халуун чулуу, амтлагчаа үечлэн хийнэ.</li>
+                    <li>Тагийг нягт таглаж чулууны илчээр болгоно.</li>
+                  </ol>
+                </div>
+                <label for="khorkhog-toggle" class="see-more-btn"></label>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="logo" href="index.html">✦ Хөх тэнгэр</a>
+        <p>Монгол хоолны сэдэвтэй сургалтын веб төсөл.</p>
+      </div>
+      <div>
+        <p>© 2026. Сургалтын зориулалттай.</p>
+        <a href="sitemap.html">Сайтын зураглал ↗</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

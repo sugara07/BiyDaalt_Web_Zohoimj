@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Соёлын танилцуулга | Хөх тэнгэр</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+  <style>
+    .site-header {
+      background-color: #0f1c3f;
+      color: #ffffff;
+      padding-bottom: 40px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .logo a {
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: #cbd5e0;
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .menu-btn {
+      background-color: transparent;
+      border: 1px solid #cbd5e0;
+      color: #ffffff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    .menu-btn:hover {
+      background-color: #ffffff;
+      color: #0f1c3f;
+    }
+
+    .f-layout-container {
+      max-width: 1050px;
+      margin: -30px auto 40px auto;
+      position: relative;
+      z-index: 10;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .f-top-bar {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      margin-bottom: 24px;
+      border-left: 6px solid #b37e28;
+    }
+
+    .f-top-bar h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      color: #1c1c1e;
+    }
+
+    .f-top-bar p {
+      font-size: 15px;
+      color: #636366;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .f-body-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .f-left-sidebar {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .featured-media-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: #e9e9eb;
+      border-radius: 14px;
+      box-sizing: border-box;
+    }
+
+    .media-caption {
+      margin-top: 14px;
+      text-align: left;
+      width: 100%;
+    }
+
+    .media-caption h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 6px 0;
+      color: #1c1c1e;
+    }
+
+    .media-caption p {
+      font-size: 13px;
+      color: #8e8e93;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* Баруун талын Багана */
+    .f-right-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .f-block-top,
+    .f-block-bottom {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .f-block-top h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+      color: #1c1c1e;
+    }
+
+    .f-block-top p,
+    .f-block-bottom p {
+      font-size: 14px;
+      color: #48484a;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .expandable-text-container {
+      position: relative;
+    }
+
+    .expandable-checkbox {
+      display: none;
+    }
+
+    .full-text-content {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: all 0.3s ease;
+    }
+
+    .expandable-checkbox:checked~.full-text-content {
+      display: block;
+      -webkit-line-clamp: unset;
+    }
+
+    .see-more-btn {
+      display: inline-block;
+      margin-top: 10px;
+      color: #b37e28;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+      user-select: none;
+    }
+
+    .see-more-btn::after {
+      content: " See More ▾";
+    }
+
+    .expandable-checkbox:checked~.see-more-btn::after {
+      content: " See Less ▴";
+    }
+
+    .f-middle-bar {
+      background: #b37e28;
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 16px 24px;
+      box-shadow: 0 8px 20px rgba(179, 126, 40, 0.25);
+    }
+
+    .highlight-fact {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .highlight-fact i {
+      font-size: 20px;
+    }
+
+    .action-box {
+      margin-top: 16px;
+    }
+
+    .culture-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #e9e9eb;
+      color: #1c1c1e;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .culture-btn:hover {
+      background: #b37e28;
+      color: #ffffff;
+    }
+
+    @media (max-width: 800px) {
+      .f-body-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="img/favicon.svg" alt="Лого" width="24" height="24" style="vertical-align: middle;">
+          Хөх тэнгэр
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Нүүр</a></li>
+        <li><a href="about.html">Бидний тухай</a></li>
+        <li><a href="news.html">Мэдээлэл</a></li>
+        <li><a href="contact.html">Холбоо барих</a></li>
+        <li><a href="sitemap.html">Сайтын зураглал</a></li>
+      </ul>
+      <div class="nav-btn">
+        <a href="services/index.html" class="menu-btn">Цэс үзэх ↗</a>
+      </div>
+    </nav>
+
+    <div style="max-width: 1050px; margin: 0 auto; padding: 10px 20px 20px 20px;">
+      <div style="color: #a0aec0; font-size: 13px; margin-bottom: 6px;">
+        Нүүр / Соёлын танилцуулга
+      </div>
+      <h2 style="color: #ffffff; font-size: 28px; font-weight: 800; margin: 0;">
+        Соёлын танилцуулга
+      </h2>
+    </div>
+  </header>
+
+  <main class="f-layout-container">
+
+    <section class="f-top-bar">
+      <h1>Монгол Хоолны Соёл ба Уламжлал</h1>
+      <p>Нүүдэлчдийн ахуй амьдрал, цаг уур, байгаль дэлхийтэйгээ зохицон бүрэлдсэн монгол зоог ба хоолны соёлын
+        сонирхолтой түүхээс.</p>
+    </section>
+
+    <div class="f-body-grid">
+
+      <aside class="f-left-sidebar">
+        <div class="featured-media-card">
+          <img src="img/shiree.svg" alt="Монгол хоолны соёл">
+        </div>
+        <div class="media-caption">
+          <h3>Идээнээс дээж</h3>
+          <p>Цагаан сар болон баяр наадмын хүндэтгэлийн зоог.</p>
+        </div>
+      </aside>
+
+      <div class="f-right-content">
+
+        <article class="f-block-top">
+          <h2>Монголчуудын хоолын соёл</h2>
+
+          <div class="expandable-text-container">
+            <input type="checkbox" id="see-more-toggle" class="expandable-checkbox">
+
+            <div class="full-text-content">
+              <p>
+                Монгол туургатны мартагдаж буй зарим хоол.<br>
+                <strong>ХООЛНЫ СОЁЛ:</strong><br>
+                Монголчууд хүнс хоол ундаа тухайн цаг улиралд нь тохируулан зохицуулж ирсэн уламжлалтай ард түмэн.
+                Жилийн 4 улирал, өдрийн цаг, тухайн хүйс, нас, бие махбодийн онцлог, бодисын солилцоо, энергийн
+                хуримтлал зэргээс хамааран хоол ундныхаа төрөл зүйл, тэдгээрийн хэмжээг тохируулсаар иржээ.<br><br>
+                <strong>Намар:</strong><br>
+                Намаршиж, үрт болон үндэст ургамал жигдрэн боловсрох цагт ногоон идээ болох жимснүүд тухайлбал
+                гүзээлзгэнэ, нэрс, мойл, хад, үхрийн нүд, тошлой, бөөрөлзгөнө, мөөг, самар, сонгино, мангир, цулхир
+                боловсорч нүйцдэг. Эдгээрийг цагаан идээтэй хослуулан хоол хүнсэндээ тогтмол хэрэглэх нь эрүүл мэндэд ач
+                тустай.<br><br>
+                <strong>Өвөл:</strong><br>
+                Өвлийн хатуу хахирган цагт тамир тэнхээг сэргээх, дотоод энергийг халуун дулаан байлгах үүднээс уураг,
+                тэжээл ichтэй өөх тос бүхий нөөшилсөн махны төрлийн хүнсийг өргөн хэрэглэнэ. Өвөл цагт улаан буюу махан,
+                шар буюу тослог идээт ааруул, аарц, ээзгий, арвай, буудай, хөц будаа зэрэг цагаан, ногоон олон төрлийн
+                идээтэй хослуулан чанар шим тэжээлийг нь тэгшитгэн, бие махбодод шимэгдэх зохицолдоог нь тохируулж
+                хэрэглэсээр иржээ.<br><br>
+                <strong>Хавар:</strong><br>
+                Хаврын улиралд хүний бадгана их арвиддаг, хүйтэн чанартай зүйл хөдөлдөг тул түүний эсрэг үйлчилгээтэй
+                шар идээ болох шар тос, уураг, будаатай цай мэтийн хоол ундааг зорицуулан хэрэглэж, ялангуяа хаврын
+                тарчиг цагт мах, өөх, тослогийн зүйл, өрөм, ааруул зэргийг арай түлхүү хэрэглэн аарцтай хар шөл, шар
+                тосоор зуурсан арвайн гурил, сармистай хоол, хийцэлсэн цай, зөгийн бал тэргүүтнээр хооллон аажуу тайван
+                явганаар явах, агаар салхинд зугаалахыг эрхэмлэн чухалд үзэж байжээ.<br><br>
+                <strong>Зун:</strong><br>
+                Зуны улиралд махан хүнснээс бүрэн татгалзаж, цагаан идээг голдуу хэрэглэнэ. Зун сүү, цагаан идээ,
+                ундааны дэглэмд шилжиж, тараг, айраг, хоормог, цийдмээр хооллож ундаална. Гэхдээ арвай буудай зэрэгтэй
+                хослуулдаг. Цагаан идээний энэхүү дэглэм нь зуны улирлын турш үргэлжилнэ.<br><br>
+                Мөнгөн аягыг битүү мөнгөдөхгүй, заавал чээж бөгсөөр ялгаж дунд нь завсар гаргаж хийдэг нь физикийн
+                хуулийг амьдралдаа ашигласны гайхамшиг юм. Халуун хоол цай хиймэгц мөнгө дулааныг маш түргэн дамжуулдаг
+                учир гараа халахаас болгоомжилж дунд нь зай гаргасан байдаг.
+              </p>
+            </div>
+
+            <label for="see-more-toggle" class="see-more-btn"></label>
+          </div>
+        </article>
+
+        <section class="f-middle-bar">
+          <div class="highlight-fact">
+            <i class="fa-solid fa-utensils"></i>
+            <span>Цагаан идээ ба Улаан идээний зохицол</span>
+          </div>
+        </section>
+
+        <article class="f-block-bottom">
+          <p>
+            Хоол хийх арга технологи нь махыг битүү чанах, ууранд жигнэх, чулуугаар хуйхлах зэрэг өвөрмөц онцлогтой. Энэ
+            нь маханд агуулагдах амин дэм, амт чанарыг алдагдуулахгүй хадгалахад чиглэгддэг.
+          </p>
+          <div class="action-box">
+            <a href="recipe.html" class="culture-btn">Жорын жагсаалт үзэх <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer
+    style="text-align: center; padding: 30px; color: #718096; font-size: 14px; background-color: #f7fafc; border-top: 1px solid #e2e8f0; margin-top: 50px;">
+    <p>&copy; 2026 Хөх Тэнгэр - Монгол Үндэсний Хоолны Вэб Төсөл</p>
+  </footer>
+
+</body>
+
+</html>
