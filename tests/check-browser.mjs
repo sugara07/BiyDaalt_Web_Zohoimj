@@ -135,7 +135,9 @@ async function checkFlows(page, base) {
   await page.getByRole("button", { name: "Хоолны захиалга хадгалах" }).click();
   assert.equal(await page.evaluate(() => JSON.parse(localStorage.restaurant_bookings)[0].total), 19000);
   await page.locator("#booking-result a").click();
-  assert.match(await page.locator("#manage-result").textContent(), /19,000₮/);
+  await page.waitForFunction(() =>
+    document.querySelector("#manage-result")?.textContent.includes("19,000₮")
+  );
   page.once("dialog", (dialog) => dialog.accept());
   await page.locator("#manage-delete").click();
   assert.equal(await page.evaluate(() => JSON.parse(localStorage.restaurant_bookings).length), 0);
