@@ -1,0 +1,79 @@
+/* F.ITM202: 4 гишүүний шинэ хуудсууд. Номын сан/framework ашиглаагүй. */
+*{box-sizing:border-box}
+.project-page{margin:0;min-width:0;background:#f6f3ed;color:#17283b;font-family:system-ui,"Segoe UI",sans-serif;line-height:1.55}
+.project-page a{color:#164968}
+.project-page a:focus-visible,.project-page button:focus-visible,.project-page input:focus-visible,.project-page select:focus-visible{outline:3px solid #e69d38;outline-offset:3px}
+.project-header{background:#11283d;color:#fff;box-shadow:0 4px 18px #0002}
+.project-top{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:16px max(18px,calc((100vw - 1120px)/2));}
+.project-brand{color:#fff!important;text-decoration:none;font-family:Georgia,serif;font-weight:bold;font-size:1.4rem}
+.project-flag{color:#bdd1df;font-size:.82rem}
+.project-site-nav,.project-subnav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;padding:10px 18px}
+.project-site-nav{background:#18354a;border-top:1px solid #ffffff22}
+.project-subnav{background:#e7eee9}
+.project-site-nav a{color:#f5faff!important;text-decoration:none;font-weight:650;padding:5px 8px}
+.project-subnav a{color:#245063!important;text-decoration:none;padding:5px 7px;border-radius:6px}
+.project-subnav a[aria-current=page]{background:#245063;color:#fff!important}
+.project-site-nav a:hover,.project-subnav a:hover{text-decoration:underline}
+.project-page main{max-width:1120px;margin:0 auto;padding:0 22px 60px}
+.project-hero{padding:56px 0 32px;border-bottom:1px solid #d9ded8;margin-bottom:28px}
+.project-kicker{font-size:.73rem!important;letter-spacing:.16em;font-weight:800;color:#ad6b2b!important;margin:0 0 12px}
+.project-hero h1{font-family:Georgia,"Times New Roman",serif;color:#10283d;font-size:clamp(2.1rem,5vw,3.7rem);line-height:1.13;margin:0 0 15px}
+.project-hero>p:not(.project-kicker):not(.project-status){max-width:720px;font-size:1.07rem;color:#506170}
+.project-status{color:#386d54;background:#e9f4eb;display:inline-block;border-radius:9px;padding:7px 12px;font-size:.82rem;margin-top:15px}
+.project-status[data-state=loading]{background:#fff0d0;color:#7c5a12}
+.project-status[data-state=error]{background:#fae3dc;color:#8c3030}
+.project-status[data-state=empty]{background:#e9ecf2;color:#586578}
+.project-paper{background:#fff;border:1px solid #e0e5e1;border-radius:18px;padding:clamp(20px,3vw,32px);box-shadow:0 10px 30px #102b4110;min-width:0;animation:project-rise .45s ease both}
+.project-paper h2{font-family:Georgia,serif;color:#17364b;font-size:1.55rem;margin-top:0}
+.project-split{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:22px;margin:24px 0}
+.project-paper+.project-paper{margin-top:20px}
+.project-split>.project-paper+.project-paper{margin-top:0}
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:17px;margin:15px 0}
+.project-tile{border:1px solid #d9e0d9;border-radius:12px;padding:17px;background:#fbfcfa;min-width:0;animation:project-rise .4s ease both}
+.project-tile h3{margin:0 0 8px;color:#17354a;font-size:1.1rem}
+.project-tile p{margin:8px 0;color:#536474;font-size:.91rem}
+.project-tile img{width:100%;height:130px;object-fit:contain;background:#f4f0e6;border-radius:9px;margin-bottom:10px}
+.project-steps{padding-left:25px}
+.project-steps li{padding:8px 0 18px;line-height:1.5}
+.project-steps li::marker{font-weight:800;color:#b9782f}
+.project-stack{display:grid;gap:12px;margin-top:17px}
+.project-stack article,.project-stack li{background:#f6f8f6;border:1px solid #dce5df;border-radius:10px;padding:14px}
+.project-stack li{list-style:none}
+.project-stack:empty::after{content:"Одоогоор мэдээлэл алга.";color:#6c7780}
+.project-form{display:flex;flex-direction:column;gap:11px}
+.project-form label{font-weight:700;margin-top:5px}
+.project-form input,.project-form select{width:100%;font:inherit;min-width:0;border:1px solid #9cacb7;border-radius:9px;padding:11px;background:white;color:#1d3340}
+.project-form button,.project-action,.project-danger{display:inline-block;border:0;border-radius:10px;padding:11px 16px;font:700 .96rem system-ui;cursor:pointer;text-decoration:none!important;align-self:flex-start;margin-top:8px}
+.project-action{background:#174b5a;color:white!important}
+.project-action:hover{background:#226a77}
+.project-danger{background:#8d302c;color:white}
+.project-controls{display:flex;flex-wrap:wrap;gap:16px;margin:12px 0 17px;align-items:end}
+.project-controls>div{flex:1 1 220px;min-width:0}
+.project-controls>button{flex:0 1 auto}
+.project-result{display:block;background:#eff4f2;padding:17px;border:1px solid #d8e1df;border-radius:12px;overflow-wrap:anywhere}
+.project-result:empty::before{content:"Одоогоор мэдээлэл алга."}
+.project-hint{font-size:.88rem;color:#66737a}
+.project-checks{list-style:"✓  ";padding-left:22px}
+.project-checks li{padding:8px 0}
+.project-table-scroll{width:100%;overflow-x:auto}
+.project-table-scroll table{width:100%;border-collapse:collapse;min-width:510px;margin-top:12px}
+.project-table-scroll td,.project-table-scroll th{text-align:left;padding:13px;border-bottom:1px solid #dbe3e2}
+.project-table-scroll th{background:#edf3ef;color:#193b4c}
+.project-table-scroll tr:nth-child(even){background:#f8faf8}
+.project-small-links{display:flex;flex-wrap:wrap;gap:8px}
+.project-small-links a{padding:9px 13px;background:#e8efed;border-radius:9px;text-decoration:none}
+.project-next{margin-top:42px;padding-top:20px;border-top:1px solid #dbe2e3}
+.project-next h2{font-size:1.18rem;color:#19364b}
+.project-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:25px max(22px,calc((100vw - 1120px)/2));background:#10283d;color:#dce6ea;font-size:.85rem}
+.project-footer a{color:#fff!important}
+.project-pick{width:100%;text-align:left;border:1px solid #b7c9ce;background:#eef6f4;border-radius:9px;padding:12px;cursor:pointer}
+.project-pick[aria-pressed=true]{border:2px solid #246456;background:#d9eee3}
+.project-favorite{border:1px solid #afc4bc;background:#f5fbf8;border-radius:8px;padding:8px;cursor:pointer}
+.project-inline{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.project-inline strong{font-size:1.05rem}
+.project-tile button{margin-top:10px}
+.project-item-compact{display:flex;justify-content:space-between;align-items:center;gap:12px}
+@keyframes project-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.project-split{grid-template-columns:1fr}.project-header .project-top{padding:14px 20px}.project-hero{padding:38px 0 25px}.project-page main{padding:0 15px 35px}.project-site-nav,.project-subnav{gap:4px 8px;font-size:.85rem}}
+@media(max-width:420px){.project-grid{grid-template-columns:1fr}.project-flag{font-size:.68rem}.project-top{flex-wrap:wrap}.project-tile img{height:115px}}
+@media(prefers-reduced-motion:reduce){.project-paper,.project-tile{animation:none!important}.project-page *, .project-page *::before,.project-page *::after{transition:none!important;scroll-behavior:auto!important}}
