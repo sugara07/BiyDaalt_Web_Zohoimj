@@ -1,0 +1,17 @@
+/* Хуучин 10 хуудас, шинэ 20 хуудас руу нэг хөдөлгөөнөөр нэвтрэх. */
+.team-shortcuts{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 13px;background:#e9f0ed;border-bottom:1px solid #cedbd8;padding:10px 17px;font:650 .89rem system-ui,sans-serif}
+.team-shortcuts a{color:#153f51;text-decoration:none;padding:6px 7px;border-radius:7px}
+.team-shortcuts a:hover,.team-shortcuts a:focus-visible{background:#d0e4dc;text-decoration:underline}
+.live-extra{border:1px solid #d8e3df;border-radius:18px;background:#fafcfb;padding:clamp(20px,3vw,35px)}
+.live-extra h2{color:#193e4b}
+.live-extra input,.live-extra select{display:block;width:100%;max-width:420px;font:inherit;padding:12px;border:1px solid #9fb5b7;border-radius:8px;margin:8px 0 16px}
+.live-extra label{font-weight:700}
+.live-extra [role=status]{font-size:.85rem;color:#49646a;padding:5px 0}
+.live-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.live-grid article{min-width:0;background:white;border:1px solid #dce4df;border-radius:14px;padding:20px;animation:live-appear .4s ease both}
+.live-grid article h3{font-size:1.12rem;color:#16384b}
+.live-grid article p{font-size:.92rem;line-height:1.6}
+.live-grid article small{color:#687a83}
+@keyframes live-appear{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.team-shortcuts{font-size:.79rem;gap:4px 8px}.live-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.live-grid article{animation:none!important}.team-shortcuts *{transition:none!important}}
