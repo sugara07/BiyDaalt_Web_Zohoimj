@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%">
+  <defs>
+    <!-- Background wall (Ger lattice / khana) -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#5a2d0c" />
+      <stop offset="100%" stop-color="#210f04" />
+    </radialGradient>
+    
+    <!-- Table Wood Gradient -->
+    <linearGradient id="tableWood" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8c531e" />
+      <stop offset="50%" stop-color="#59320d" />
+      <stop offset="100%" stop-color="#331b05" />
+    </linearGradient>
+
+    <!-- Ul Boov (Bread Stack) Gradient -->
+    <linearGradient id="boovGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e8a854" />
+      <stop offset="30%" stop-color="#f5cc7f" />
+      <stop offset="70%" stop-color="#e39e46" />
+      <stop offset="100%" stop-color="#c27b27" />
+    </linearGradient>
+
+    <!-- Uuts (Sheep back/tail meat) -->
+    <linearGradient id="meatGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a86834" />
+      <stop offset="50%" stop-color="#734218" />
+      <stop offset="100%" stop-color="#40210a" />
+    </linearGradient>
+
+    <!-- Copper / Brass Vessels -->
+    <linearGradient id="copperGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d49048" />
+      <stop offset="50%" stop-color="#b06223" />
+      <stop offset="100%" stop-color="#7a3e0c" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Wall -->
+  <rect width="1000" height="600" fill="url(#bgGrad)" />
+
+  <!-- Ger Lattice (Khana) Pattern -->
+  <g stroke="#331705" stroke-width="4" opacity="0.6">
+    <path d="M 0,0 L 1000,300 M 0,100 L 1000,400 M 0,200 L 1000,500 M 0,300 L 1000,600" />
+    <path d="M 1000,0 L 0,300 M 1000,100 L 0,400 M 1000,200 L 0,500 M 1000,300 L 0,600" />
+  </g>
+
+  <!-- Table Base / Cloth -->
+  <rect x="0" y="500" width="1000" height="100" fill="url(#tableWood)" />
+  <!-- Traditional Red/Orange Table Border Ornament -->
+  <rect x="0" y="505" width="1000" height="20" fill="#9e2a1a" />
+  <g fill="#f5cc7f" opacity="0.8">
+    <path d="M 0,515 L 1000,515 M 20,505 L 20,525 M 40,505 L 40,525 M 60,505 L 60,525 M 80,505 L 80,525 M 100,505 L 100,525 M 120,505 L 120,525 M 140,505 L 140,525 M 160,505 L 160,525 M 180,505 L 180,525 M 200,505 L 200,525 M 220,505 L 220,525 M 240,505 L 240,525 M 260,505 L 260,525 M 280,505 L 280,525 M 300,505 L 300,525 M 320,505 L 320,525 M 340,505 L 340,525 M 360,505 L 360,525 M 380,505 L 380,525 M 400,505 L 400,525 M 420,505 L 420,525 M 440,505 L 440,525 M 460,505 L 460,525 M 480,505 L 480,525 M 500,505 L 500,525 M 520,505 L 520,525 M 540,505 L 540,525 M 560,505 L 560,525 M 580,505 L 580,525 M 600,505 L 600,525 M 620,505 L 620,525 M 640,505 L 640,525 M 660,505 L 660,525 M 680,505 L 680,525 M 700,505 L 700,525 M 720,505 L 720,525 M 740,505 L 740,525 M 760,505 L 760,525 M 780,505 L 780,525 M 800,505 L 800,525 M 820,505 L 820,525 M 840,505 L 840,525 M 860,505 L 860,525 M 880,505 L 880,525 M 900,505 L 900,525 M 920,505 L 920,525 M 940,505 L 940,525 M 960,505 L 960,525 M 980,505 L 980,525" stroke="#f5cc7f" stroke-width="2" />
+  </g>
+  <rect x="0" y="525" width="1000" height="75" fill="#42210b" />
+
+  <text x="500" y="565" fill="#f5cc7f" font-family="Georgia, serif" font-size="24" font-weight="bold" text-anchor="middle" letter-spacing="4">Монгол Үндэсний Зоог</text>
+
+  <!-- RIGHT SIDE: Ul Boov Stack (Ул боов / Өрөсөн идээ) -->
+  <g transform="translate(640, 200)">
+    <!-- Wooden Tray Base -->
+    <path d="M 30,300 L 210,300 L 230,320 L 10,320 Z" fill="#b06223" />
+    
+    <!-- Stack of Bread Layers (Uvuljuu / Ul Boov) -->
+    <!-- Row 1 (Bottom) -->
+    <path d="M 20,280 Q 120,265 220,280 L 225,295 Q 120,310 15,295 Z" fill="url(#boovGrad)" stroke="#8a4f15" stroke-width="1.5" />
+    <!-- Row 2 -->
+    <path d="M 25,255 Q 120,240 215,255 L 218,272 Q 120,287 22,272 Z" fill="url(#boovGrad)" stroke="#8a4f15" stroke-width="1.5" />
+    <!-- Row 3 -->
+    <path d="M 30,230 Q 120,215 210,230 L 212,247 Q 120,262 28,247 Z" fill="url(#boovGrad)" stroke="#8a4f15" stroke-width="1.5" />
+    <!-- Row 4 -->
+    <path d="M 35,205 Q 120,190 205,205 L 208,222 Q 120,237 32,222 Z" fill="url(#boovGrad)" stroke="#8a4f15" stroke-width="1.5" />
+    <!-- Row 5 -->
+    <path d="M 40,180 Q 120,165 200,180 L 202,197 Q 120,212 38,197 Z" fill="url(#boovGrad)" stroke="#8a4f15" stroke-width="1.5" />
+    <!-- Row 6 -->
+    <path d="M 45,155 Q 120,140 195,155 L 197,172 Q 120,187 43,172 Z" fill="url(#boovGrad)" stroke="#8a4f15" stroke-width="1.5" />
+    <!-- Row 7 -->
+    <path d="M 50,130 Q 120,115 190,130 L 192,147 Q 120,162 48,147 Z" fill="url(#boovGrad)" stroke="#8a4f15" stroke-width="1.5" />
+    <!-- Row 8 (Top cookies / boov pieces) -->
+    <path d="M 60,105 Q 120,95 180,105 L 182,122 Q 120,132 58,122 Z" fill="url(#boovGrad)" stroke="#8a4f15" stroke-width="1.5" />
+    
+    <!-- Top Sugar / Aaruul / Boov garnish pyramid -->
+    <path d="M 80,85 Q 120,70 160,85 L 165,102 Q 120,112 75,102 Z" fill="#f5cc7f" stroke="#c27b27" />
+    <path d="M 95,65 Q 120,55 145,65 L 148,82 Q 120,90 92,82 Z" fill="#f5cc7f" stroke="#c27b27" />
+
+    <!-- Yellow Butter Cube (Tsagaan Tos) on Top -->
+    <path d="M 110,40 L 135,40 L 140,55 L 105,55 Z" fill="#ffe066" stroke="#d4b23b" />
+    <rect x="105" y="55" width="35" height="12" fill="#ffd033" stroke="#b89321" />
+  </g>
+
+  <!-- LEFT SIDE: Uuts (Sheep Back Meat) -->
+  <g transform="translate(140, 310)">
+    <!-- Wooden Serving Tray -->
+    <ellipse cx="120" cy="150" rx="130" ry="40" fill="#7a3e0c" stroke="#4a2505" stroke-width="3" />
+    <ellipse cx="120" cy="145" rx="120" ry="34" fill="#a86834" />
+    
+    <!-- Uuts Meat Pile -->
+    <path d="M 30,140 Q 60,60 140,70 Q 210,80 200,140 Q 190,170 120,165 Q 50,160 30,140 Z" fill="url(#meatGrad)" stroke="#331705" stroke-width="2" />
+    <!-- Tail (Suul) shape -->
+    <path d="M 120,70 Q 160,30 190,60 Q 210,80 180,110 Z" fill="#b0723d" stroke="#522a0a" stroke-width="2" />
+    <!-- Cooked rib / bone highlights -->
+    <path d="M 60,110 Q 90,95 110,120" fill="none" stroke="#d9b182" stroke-width="4" stroke-linecap="round" />
+    <path d="M 80,125 Q 110,110 130,135" fill="none" stroke="#d9b182" stroke-width="4" stroke-linecap="round" />
+  </g>
+
+  <!-- MIDDLE: Buuz Plate & Small Bowls -->
+  <g transform="translate(360, 390)">
+    <!-- Plate of Buuz -->
+    <ellipse cx="80" cy="60" rx="90" ry="30" fill="#e6e8eb" stroke="#cbd0d6" stroke-width="2" />
+    <!-- Dumplings (Buuz) on Plate -->
+    <circle cx="50" cy="55" r="18" fill="#fcfcfc" stroke="#dcdedf" />
+    <circle cx="80" cy="45" r="19" fill="#fcfcfc" stroke="#dcdedf" />
+    <circle cx="110" cy="58" r="18" fill="#fcfcfc" stroke="#dcdedf" />
+    <circle cx="65" cy="70" r="17" fill="#fcfcfc" stroke="#dcdedf" />
+    <circle cx="95" cy="72" r="17" fill="#fcfcfc" stroke="#dcdedf" />
+  </g>
+
+  <!-- SECOND PLATE OF BUUZ (Right side front) -->
+  <g transform="translate(810, 430)">
+    <ellipse cx="70" cy="50" rx="80" ry="25" fill="#e6e8eb" stroke="#cbd0d6" stroke-width="2" />
+    <circle cx="45" cy="45" r="16" fill="#fcfcfc" stroke="#dcdedf" />
+    <circle cx="70" cy="38" r="17" fill="#fcfcfc" stroke="#dcdedf" />
+    <circle cx="95" cy="48" r="16" fill="#fcfcfc" stroke="#dcdedf" />
+    <circle cx="70" cy="58" r="16" fill="#fcfcfc" stroke="#dcdedf" />
+  </g>
+
+  <!-- COPPER PITCHERS / VASE (Arhi / Airag containers) -->
+  <!-- Left Pitcher -->
+  <g transform="translate(90, 310)">
+    <path d="M 20,80 L 40,20 L 55,20 L 50,80 Z" fill="url(#copperGrad)" />
+    <path d="M 10,80 L 60,80 L 70,160 L 0,160 Z" fill="url(#copperGrad)" />
+    <ellipse cx="35" cy="80" rx="30" ry="10" fill="#b06223" />
+  </g>
+
+  <!-- Center Pitcher -->
+  <g transform="translate(480, 320)">
+    <path d="M 25,60 L 38,10 L 48,10 L 43,60 Z" fill="url(#copperGrad)" />
+    <path d="M 12,60 L 56,60 L 65,130 L 3,130 Z" fill="url(#copperGrad)" />
+    <ellipse cx="34" cy="60" rx="22" ry="8" fill="#b06223" />
+  </g>
+
+  <!-- Silver Bowls stack (Piala / Ayaga) -->
+  <g transform="translate(60, 400)">
+    <ellipse cx="30" cy="40" rx="30" ry="12" fill="#c0c5cd" stroke="#949b9e" />
+    <ellipse cx="30" cy="30" rx="28" ry="11" fill="#d4d8df" stroke="#949b9e" />
+    <ellipse cx="30" cy="20" rx="26" ry="10" fill="#e4e8ee" stroke="#949b9e" />
+    <ellipse cx="30" cy="10" rx="24" ry="9" fill="#f0f3f6" stroke="#949b9e" />
+  </g>
+
+  <!-- Silver Snuff Bottle (Khoorog) on left cloth -->
+  <g transform="translate(95, 430)">
+    <rect x="10" y="20" width="15" height="25" rx="5" fill="#e6e8eb" stroke="#949b9e" />
+    <ellipse cx="17.5" cy="20" rx="7.5" ry="3" fill="#ffffff" />
+    <ellipse cx="17.5" cy="10" rx="4" ry="6" fill="#cc3333" />
+  </g>
+</svg>

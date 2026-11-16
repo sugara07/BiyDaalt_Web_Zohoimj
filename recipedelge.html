@@ -1,210 +1,273 @@
 <!DOCTYPE html>
 <html lang="mn">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Уламжлалт бууз - Дэлгэрэнгүй | Хөх тэнгэр</title>
+  <title>Жорын жагсаалт | Хөх тэнгэр</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 
   <style>
-    .detail-container {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 20px;
-      background: #ffffff;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    .site-header {
+      background-color: #0f1c3f;
+      color: #ffffff;
+      padding-bottom: 60px;
     }
 
-    .detail-nav {
+    .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 15px;
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 20px;
     }
 
-    .back-btn {
-      text-decoration: none;
-      color: #102747;
-      font-weight: 600;
-      font-size: 1.1rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .detail-hero-img {
-      width: 100%;
-      height: 280px;
-      background: #f1f5f9;
-      border-radius: 16px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .detail-hero-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .detail-header {
-      margin-top: 20px;
-    }
-
-    .detail-header h1 {
-      font-size: 1.5rem;
-      color: #102747;
-      margin-bottom: 8px;
-    }
-
-    .meta-row {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      color: #64748b;
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-    }
-
-    .rating {
-      color: #fb8500;
+    .logo-link {
+      color: #ffffff;
+      font-size: 20px;
       font-weight: bold;
-    }
-
-    .section-title {
-      font-size: 1.15rem;
-      color: #102747;
-      margin-top: 20px;
-      margin-bottom: 10px;
-    }
-
-    .description-text {
-      color: #475569;
-      line-height: 1.6;
-      font-size: 0.95rem;
-      margin: 0;
-    }
-
-    .related-grid {
+      text-decoration: none;
       display: flex;
-      gap: 12px;
-      overflow-x: auto;
-      padding-bottom: 10px;
-      margin-top: 10px;
+      align-items: center;
+      gap: 8px;
     }
 
-    .related-item {
-      width: 90px;
-      height: 80px;
+    .logo-symbol {
+      color: #fb8500;
+      font-size: 22px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    .nav-links li a {
+      color: #cbd5e0;
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .menu-btn {
+      background-color: transparent;
+      border: 1px solid #cbd5e0;
+      color: #ffffff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    .menu-btn:hover {
+      background-color: #ffffff;
+      color: #0f1c3f;
+    }
+
+    .recipe-container {
+      max-width: 1150px;
+      margin: -40px auto 60px auto;
+      position: relative;
+      z-index: 10;
+      padding: 40px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .section-title-main {
+      font-size: 24px;
+      color: #0f1c3f;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    .recipe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 25px;
+    }
+
+    .recipe-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      flex-shrink: 0;
       overflow: hidden;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .related-item img {
+    .recipe-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .recipe-img {
       width: 100%;
-      height: 100%;
+      height: 200px;
       object-fit: cover;
+      background: #edf2f7;
     }
 
-    .action-btn {
-      display: block;
-      width: 100%;
-      text-align: center;
-      background: #102747;
-      color: #ffffff;
-      padding: 14px;
-      border-radius: 14px;
-      font-size: 1rem;
-      font-weight: 600;
+    .recipe-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .recipe-content h3 {
+      font-size: 18px;
+      color: #0f1c3f;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .recipe-content p {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .see-more-link {
+      display: inline-block;
+      background-color: #edf2f7;
+      color: #0f1c3f;
+      padding: 8px 16px;
+      border-radius: 8px;
       text-decoration: none;
-      margin-top: 30px;
-      transition: background 0.2s ease;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      transition: background 0.2s;
     }
 
-    .action-btn:hover {
-      background: #fb8500;
+    .see-more-link:hover {
+      background-color: #0f1c3f;
+      color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .recipe-container {
+        padding: 20px;
+        margin-top: -20px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header class="topbar">
-    <div class="wrap nav-bar">
-      <a class="logo" href="index.html"><span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр</a>
-      <nav aria-label="Үндсэн цэс">
-        <ul>
-          <li><a href="index.html">Нүүр</a></li>
-          <li><a href="recipe.html">Жорын жагсаалт</a></li>
-          <li><a href="sitemap.html">Сайтын зураглал</a></li>
-        </ul>
-      </nav>
+
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="logo">
+        <a class="logo-link" href="index.html">
+          <span class="logo-symbol" aria-hidden="true">✦</span> Хөх тэнгэр
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Нүүр</a></li>
+        <li><a href="about.html">Бидний тухай</a></li>
+        <li><a href="recipe.html" class="active">Мэдээлэл</a></li>
+        <li><a href="media.html">Медиа</a></li>
+        <li><a href="contact.html">Холбоо барих</a></li>
+        <li><a href="sitemap.html">Сайтын зураглал</a></li>
+      </ul>
+      <div class="nav-btn">
+        <a href="services/index.html" class="menu-btn">Цэс үзэх ↗</a>
+      </div>
+    </nav>
+
+    <div style="max-width: 1150px; margin: 0 auto; padding: 20px 20px 30px 20px;">
+      <div style="color: #a0aec0; font-size: 13px; margin-bottom: 8px;">
+        Нүүр / Жорын жагсаалт
+      </div>
+      <div style="color: #f6ad55; font-size: 12px; font-weight: bold; letter-spacing: 1px; margin-bottom: 6px;">
+        ХООЛНЫ СОЁЛ
+      </div>
+      <h1 style="color: #ffffff; font-size: 34px; font-weight: 800; margin: 0 0 10px 0;">
+        Уламжлалт хоолны жорууд
+      </h1>
+      <p style="color: #cbd5e0; font-size: 15px; margin: 0;">
+        Та дуртай хоолны англилаа сонгон жортой танилцаарай.
+      </p>
     </div>
   </header>
 
   <main id="main">
     <section class="section">
-      <div class="detail-container">
-        
-        <div class="detail-nav">
-          <a href="recipe.html" class="back-btn">‹ Буцах</a>
-          <span style="font-weight: 600; color: #102747;">Дэлгэрэнгүй жор</span>
-        </div>
+      <div class="recipe-container">
 
-        <div class="detail-hero-img">
-          <img src="img/buuz.svg" alt="Бууз">
-        </div>
+        <h2 class="section-title-main">Бүх жор болон хоолнууд</h2>
 
-        <div class="detail-header">
-          <h1>Уламжлалт бууз хийх арга</h1>
-          <div class="meta-row">
-            <span class="rating">★ 4.9 (258)</span>
-            <span>Хугацаа: 45 мин</span>
+        <div class="recipe-grid">
+          <div class="recipe-card">
+            <img src="img/shul.svg" alt="Махан шөл" class="recipe-img">
+            <div class="recipe-content">
+              <h3>Тэжээллэг махан шөл</h3>
+              <p>Биеийг дулаацуулж, дархлаа дэмжих уламжлалт амтат шөл.</p>
+              <a href="recipedelge.html" class="see-more-link">See More</a>
+            </div>
+          </div>
+
+          <div class="recipe-card">
+            <img src="img/buuz.svg" alt="Бууз" class="recipe-img">
+            <div class="recipe-content">
+              <h3>Бууз хийх уламжлалт жор</h3>
+              <p>Амт чанартай шүүслэг бууз хийх уламжлалт арга. Шинэ сайн чанарын хонь эсвэл үхрийн махыг сонгон
+                сонгино, саримсаар амталж чимхэнэ.</p>
+              <a href="recipedelge.html" class="see-more-link">See More</a>
+            </div>
+          </div>
+
+          <div class="recipe-card">
+            <img src="img/tsuivan.svg" alt="Цуйван" class="recipe-img">
+            <div class="recipe-content">
+              <h3>Ногоотой цуйвангийн жор</h3>
+              <p>Гар сунгасан гурилыг уураар жигнэж, мах болон төрөл бүрийн ногоогоор холин хуурч бэлтгэнэ.</p>
+              <a href="recipedelge.html" class="see-more-link">See More</a>
+            </div>
+          </div>
+
+          <div class="recipe-card">
+            <img src="img/khorkhog.svg" alt="Хорхог" class="recipe-img">
+            <div class="recipe-content">
+              <h3>Халуун чулууны хорхог</h3>
+              <p>Хонины махыг халуун чулуутай хамт саванд битүү чанаж болгодог нүүдэлчдийн өвөрмөц жор.</p>
+              <a href="recipedelge.html" class="see-more-link">See More</a>
+            </div>
           </div>
         </div>
-
-        <h3 class="section-title">Жорын тайлбар</h3>
-        <p class="description-text">
-          Монголын үндэсний уламжлалт амтат бууз нь үхрийн болон хонины татсан махаар амтлан бэлтгэсэн зуурсан гуриланд битүүмжлэн чимхэж, уурын жигнүүрт жигнэж болгодог баярын ширээний гол зоог юм.
-        </p>
-
-        <h3 class="section-title">Холбоотой хоолнууд</h3>
-        <div class="related-grid">
-          <div class="related-item">
-            <img src="img/khuushuur.svg" alt="Хуушуур">
-          </div>
-          <div class="related-item">
-            <img src="img/tsuivan.svg" alt="Цуйван">
-          </div>
-          <div class="related-item">
-            <img src="img/khorkhog.svg" alt="Хорхог">
-          </div>
-        </div>
-
-        <a href="recipe.html" class="action-btn">Жорын жагсаалт руу буцах</a>
 
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div>
-        <a class="logo" href="index.html">✦ Хөх тэнгэр</a>
-        <p>Монгол хоолны сэдэвтэй сургалтын веб төсөл.</p>
-      </div>
-      <div>
-        <p>© 2026. Сургалтын зориулалттай.</p>
-      </div>
-    </div>
+  <footer
+    style="text-align: center; padding: 30px; color: #718096; font-size: 14px; background-color: #f7fafc; border-top: 1px solid #e2e8f0; margin-top: 50px;">
+    <p>&copy; 2026 Хөх Тэнгэр - Монгол Үндэсний Хоолны Вэб Төсөл</p>
   </footer>
+
 </body>
+
 </html>
