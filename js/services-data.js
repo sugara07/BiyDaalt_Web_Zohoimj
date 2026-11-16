@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const select = document.getElementById("service-filter");
   const target = document.getElementById("service-live");
   let services;
+  status.dataset.state = "loading";
   status.textContent = "Үйлчилгээний мэдээлэл ачаалж байна…";
   try {
     const response = await fetch("../data/service-guide.json");
@@ -12,6 +13,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     services = await response.json();
     if (!Array.isArray(services)) throw new Error("Өгөгдөл буруу");
   } catch (error) {
+    status.dataset.state = "error";
     status.textContent = "Алдаа: мэдээлэл татаж чадсангүй. Live Server ашиглана уу.";
     return;
   }
@@ -20,6 +22,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const rows = services.filter(function (item) {
       return select.value === "all" || select.value === item.id;
     });
+    status.dataset.state = rows.length ? "success" : "empty";
     status.textContent = rows.length ? rows.length + " үйлчилгээ харуулж байна." : "Өгөгдөл хоосон байна.";
     rows.forEach(function (item) {
       const article = document.createElement("article");

@@ -14,7 +14,9 @@
         href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Rubik:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/project-bridge.css"></head>
+    <link rel="stylesheet" href="css/project-bridge.css">
+    <script src="js/app.js" defer></script>
+</head>
 
 <body><a class="skip-link" href="#main">Үндсэн агуулга руу</a>
     <header class="topbar">
@@ -83,9 +85,8 @@
                 <div class="contact-panel">
                     <p class="section-kicker">HTML МАЯГТЫН ДЕМО</p>
                     <h2>Санал хүсэлтийн загвар</h2>
-                    <p>Бие даалт 1-д зөвхөн бүтэц, <code>label</code> ба оролтын төрлийг харуулна. Серверт мэдээлэл
-                        илгээхгүй.</p>
-                    <form>
+                    <p>Жишээ мэдээлэл оруулаад санал хүсэлтийн маягтыг туршина уу.</p>
+                    <form id="contact-form">
                         <fieldset class="contact-fields">
                             <legend>Хүсэлтийн мэдээлэл</legend><label>Нэр<input name="name" type="text" required
                                     minlength="2" autocomplete="name" placeholder="Таны нэр"></label><label>Имэйл<input
@@ -97,10 +98,9 @@
                                     <option>Бусад</option>
                                 </select></label><label>Санал хүсэлт<textarea name="message" rows="5" minlength="10"
                                     maxlength="500" required></textarea></label>
-                        </fieldset><button class="btn" type="button" disabled>Илгээх (2-р шатанд)</button>
+                        </fieldset><button class="btn" type="submit" disabled>Маягтыг шалгах</button>
                     </form>
-                    <p class="small-muted">Илгээх боломжийг дараагийн шатанд хөгжүүлнэ. Одоогоор өгөгдөл хадгалагдахгүй.
-                    </p>
+                    <p id="contact-result" class="small-muted" role="status">Энэ маягт зөвхөн браузерт шалгагдана.</p>
                 </div>
             </div>
         </section>
@@ -117,7 +117,7 @@
                     </details>
                     <details>
                         <summary>Энэ маягт захиалга илгээх үү?</summary>
-                        <p>Үгүй. Нэгдүгээр шатанд серверт илгээхгүй.</p>
+                        <p>Энд маягтыг браузерт шалгана. Үйлчилгээний дэлгэрэнгүй жишээг <a href="services/feedback.html">санал хүсэлтийн хуудаснаас</a> үзнэ үү.</p>
                     </details>
                     <details>
                         <summary>Бусад хэсэг хаана байгаа вэ?</summary>

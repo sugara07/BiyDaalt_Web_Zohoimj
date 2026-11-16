@@ -30,6 +30,7 @@
 
 ## Шалгалт ба өгөгдөл
 - Файлын холбоос, JS синтакс, JSON бүтцийг шалгах: `node tests/check-site.mjs` (npm install шаардлагагүй).
-- 360px, 768px, 1280px өргөнд браузерын туршилт хийж, screenshot болон үр дүнг `docs/test-checklist.md`-д бүртгэхээр төлөвлөсөн.
+- Хоёр үе шатны хуудсыг Chromium-д 360px, 768px, 1280px өргөнд шалгасан. [Браузерын туршилтын дүн](docs/test-checklist.md).
 - `docs/change-log.md` — багийн өөрчлөлт, `docs/research-sources.md` — судалгааны холбоос.
-- **Бие даалт 1**: `submission/phase1-static` — 30 үндсэн HTML/CSS-only хувилбарыг тусад нь хадгалах зорилготой. **Бие даалт 2**: `main` — интерактив хувилбар.
+- **Бие даалт 1** нь [submission/phase1-static](https://github.com/sugara07/BiyDaalt_Web_Zohoimj/tree/submission/phase1-static) салбарын HTML/CSS хувилбар. **Бие даалт 2** нь [main](https://github.com/sugara07/BiyDaalt_Web_Zohoimj/tree/main) салбарын интерактив хувилбар.
+- [16 + 16 онооны шалгуурын тулгалт](docs/assignment-review.md), [хуудас ба лабораторийн хариуцлага](docs/team-responsibilities.md).
