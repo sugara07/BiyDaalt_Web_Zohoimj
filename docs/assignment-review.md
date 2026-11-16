@@ -27,4 +27,4 @@
 
 Нэгдүгээр шатны эх хувилбар [submission/phase1-static](https://github.com/sugara07/BiyDaalt_Web_Zohoimj/tree/submission/phase1-static), интерактив хувилбар [main](https://github.com/sugara07/BiyDaalt_Web_Zohoimj/tree/main) салбарт байна. Захиалга нь браузерын `localStorage` дахь сургалтын демо.
 
-GitHub түүхэнд нэгтгэсэн PR #1–#6, соёлын хуудсын эх commit-ууд болон `feature/home-sugara` дахь `6c10a66` хүртэлх лаборатори 3-ын тусдаа жишгийг шалгасан. Хуудасны хариуцлага ба өмнөх оролцоог [багийн хүснэгтэд](team-responsibilities.md) тэмдэглэв. Кодын алдаа засах, турших, тайлбар бэлтгэхэд ChatGPT ашигласан.
+GitHub түүхэнд нэгтгэсэн PR #1–#6, соёлын хуудсын эх commit-ууд болон `feature/home-sugara` дахь `6c10a66` хүртэлх лаборатори 3-ын тусдаа жишгийг шалгасан. Хуудасны хариуцлага ба өмнөх оролцоо [багийн хүснэгтэд](team-responsibilities.md) тусгагдсан. Ашигласан эх сурвалж, туслах хэрэгслийн мэдээлэл [судалгааны бүртгэлд](research-sources.md) тэмдэглэгдсэн.
