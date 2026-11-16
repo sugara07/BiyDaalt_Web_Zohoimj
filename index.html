@@ -157,10 +157,10 @@
       <div>
         <p class="section-kicker">АМРАХ АГШИН</p>
         <h2 id="music-title">Аялгуутай хамт тухлаарай</h2>
-        <p class="lead">Эндэхийн хөгжим нь сайтад зориулан үүсгэсэн богино жишээ аялгуу; морин хуурын бодит бичлэг биш.</p>
+        <p class="lead">Сургалтын зориулалттай жишээ аялгуу сонсоорой.</p>
       </div>
       <audio controls preload="none" aria-label="Жишээ аялгуу">
-        <source src="audio/demo-melody.wav" type="audio/wav">
+        <source src="audio/morin-khuur.wav" type="audio/wav">
         Таны хөтөч аудио тоглуулах боломжгүй байна.
       </audio>
     </div>
@@ -245,5 +245,21 @@
     <div><p>© 2026 Хөх тэнгэр. Сургалтын зориулалттай төсөл.</p><a href="sitemap.html">Сайтын зураглал ↗</a> · <a href="services/index.html">Үйлчилгээ ↗</a></div>
   </div>
 </footer>
+
+  <!-- Хоолны дэлгэрэнгүй мэдээллийн цонх -->
+  <div id="foodModal" class="modal" role="dialog" aria-modal="true"
+       aria-labelledby="modalTitle" aria-describedby="modalDescription" hidden>
+    <div class="modal-content">
+      <button type="button" class="close-btn" id="closeModal" aria-label="Цонх хаах">&times;</button>
+      <div class="modal-body-layout">
+        <img id="modalImg" src="" alt="" class="modal-vector-img">
+        <div class="modal-info-text">
+          <h2 id="modalTitle"></h2>
+          <p id="modalDescription"></p>
+          <div class="modal-price-tag">Үнэ: <span id="modalPrice"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

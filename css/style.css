@@ -247,3 +247,19 @@ button:disabled{opacity:.6;cursor:not-allowed;transform:none!important;box-shado
 
 /* Keep the shared main navigation usable when more sections are added. */
 @media(max-width:1000px){.topbar nav{overflow-x:visible}.topbar nav ul{min-width:0;width:100%;flex-wrap:wrap;gap:6px 14px;margin:5px auto 0}}
+
+
+/* Хоолны дэлгэрэнгүй цонх */
+.modal{position:fixed;inset:0;z-index:3000;display:flex;align-items:center;justify-content:center;padding:20px;background:#000b;overflow-y:auto}
+.modal[hidden]{display:none}
+.modal-content{position:relative;width:100%;max-width:500px;max-height:calc(100vh - 40px);overflow-y:auto;background:#fff;padding:30px;border-radius:16px;box-shadow:0 12px 40px #0006;color:#2c3e50}
+.close-btn{position:absolute;right:15px;top:8px;border:0;background:transparent;color:#667;font-size:34px;line-height:1;cursor:pointer;padding:5px 9px}
+.close-btn:hover,.close-btn:focus-visible{color:#bf3434}
+.modal-body-layout{display:flex;flex-direction:column;align-items:center;gap:16px;padding-top:16px}
+.modal-vector-img{width:170px;height:170px;object-fit:contain}
+.modal-info-text{text-align:center}
+.modal-info-text h2{font:800 1.65rem var(--head);color:var(--navy);margin-bottom:12px}
+.modal-info-text p{color:#555;line-height:1.6;margin:0}
+.modal-price-tag{margin-top:20px;padding:8px 20px;border-radius:24px;background:#fef5ec;color:#ad5e0d;display:inline-block;font-weight:800}
+.food-detail-btn{margin:0 17px 13px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:#f5f7fa;color:var(--navy);font:700 .84rem var(--body);cursor:pointer}
+.food-detail-btn:hover,.food-detail-btn:focus-visible{background:#e7eef7}
