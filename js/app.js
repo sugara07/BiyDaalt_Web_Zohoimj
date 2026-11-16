@@ -340,3 +340,82 @@
         }
     }
 })();
+
+
+
+// Хоолны зургийг дарахад дэлгэрэнгүй мэдээлэл харуулах
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("foodModal");
+    const closeButton = document.getElementById("closeModal");
+    const modalImg = document.getElementById("modalImg");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDescription = document.getElementById("modalDescription");
+    const modalPrice = document.getElementById("modalPrice");
+
+    if (!modal || !closeButton) return;
+
+    const details = {
+        buuz: "Үхэр, хонины мах, сонгиноор амталж, ууранд жигнэсэн уламжлалт бууз. 5 ширхэг.",
+        khuushuur: "Нимгэн элдсэн гурилд амталсан мах хийж, тосонд шарсан шүүслэг хуушуур. 3 ширхэг.",
+        tsuivan: "Гар аргаар элдсэн гурил, мах, сонгино, ногоотой цуйван.",
+        khorkhog: "Халуун чулуу ашиглан битүү саванд болгосон хонины махтай хорхог. 2–3 хүнд."
+    };
+
+    let previousFocus = null;
+
+    function openFood(card, image, key) {
+        previousFocus = document.activeElement;
+        modalImg.src = image.getAttribute("src");
+        modalImg.alt = image.alt;
+        modalTitle.textContent = card.querySelector("figcaption span").textContent.trim();
+        modalDescription.textContent = details[key];
+        modalPrice.textContent = card.querySelector(".price").textContent.trim();
+        modal.hidden = false;
+        closeButton.focus();
+    }
+
+    function closeFood() {
+        modal.hidden = true;
+        if (previousFocus && typeof previousFocus.focus === "function") {
+            previousFocus.focus();
+        }
+    }
+
+    document.querySelectorAll("#menu .food-card").forEach(function (card) {
+        const image = card.querySelector("img");
+        if (!image) return;
+        const match = image.getAttribute("src").match(/\/(buuz|khuushuur|tsuivan|khorkhog)\.svg$/);
+        if (!match) return;
+        const key = match[1];
+
+        image.style.cursor = "pointer";
+        image.addEventListener("click", function () {
+            openFood(card, image, key);
+        });
+
+        // Гараас удирдахад зориулсан товч
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "food-detail-btn";
+        button.textContent = "Дэлгэрэнгүй харах";
+        button.addEventListener("click", function () {
+            openFood(card, image, key);
+        });
+        card.querySelector("p").after(button);
+    });
+
+    closeButton.addEventListener("click", closeFood);
+
+    modal.addEventListener("click", function (event) {
+        if (event.target === modal) closeFood();
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (modal.hidden) return;
+        if (event.key === "Escape") closeFood();
+        if (event.key === "Tab") {
+            event.preventDefault();
+            closeButton.focus();
+        }
+    });
+});
