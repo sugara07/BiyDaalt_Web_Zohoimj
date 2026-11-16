@@ -1,28 +1,38 @@
-# Хөх тэнгэр — веб хөгжүүлэлтийн багийн төсөл
-Энэ нь F.ITM202 хичээлийн сургалтын зориулалттай **жишиг рестораны веб**. Бодит ресторан, захиалгын үйлчилгээ биш.
+# Хөх тэнгэр — F.ITM202 веб хөгжүүлэлтийн багийн төсөл
 
-## `feature/home-sugara`: 5 өөр бүтэцтэй хуудас
-- `index.html` — нүүр, hero, хоолны карт ба холбоос
-- `about.html` — зорилго, алхамчилсан timeline
-- `news.html` — мэдээний үндсэн нийтлэл, жагсаалт
-- `contact.html` — холбоо барих жишээ, HTML маягт
-- `sitemap.html` — багийн 30 хуудасны бүтэц, төлөв
+Монгол уламжлалт хоолны тухай **6 гишүүний 30 үндсэн HTML хуудас** бүхий сургалтын веб төсөл. Жорын дэлгэрэнгүй `recipedelge.html` нь нэмэлт хуудас тул repository-д **31 HTML файл** байна. Бодит ресторан биш; үнэ, хаяг, утас, танхим, цаг, захиалга сургалтын жишээ.
 
-**Нээх:** VS Code Live Server ашиглах эсвэл `index.html` файлыг браузераар нээнэ. `index.html` нь `js/app.js`-ээр ширээ захиалгын мэдээллийг зөвхөн дэлгэц дээр шалгах демо үйлдэлтэй. Үйлчилгээний хуудсууд `js/services.js`-ийг ашиглана. Формууд сервер рүү мэдээлэл илгээхгүй.
+## Нээх
+1. Repository-г VS Code дээр нээнэ.
+2. **Live Server** ашиглан `index.html`-ийг нээнэ. Эсвэл `python -m http.server 8000` ажиллуулаад `http://localhost:8000` хаягаар нээнэ.
+3. JSON ачаалдаг учир `file://` протоколоор шууд нээхэд `fetch()` ажиллахгүй байж болно.
+4. `sitemap.html`-ээс 30 үндсэн хуудас, нэмэлт жорын хуудсыг нээж болно.
 
-## `feature/services-amraa`: үйлчилгээний 5 хуудас
-- `services/index.html` — үйлчилгээний ерөнхий танилцуулга
-- `services/delivery.html` — хүргэлт ба бүс шалгагч
-- `services/catering.html` — арга хэмжээний хоолны хүсэлт
-- `services/offers.html` — купон, урамшуулал
-- `services/feedback.html` — санал хүсэлт, үнэлгээ
-- `css/services.css` — үйлчилгээний тусгай загвар
-- `js/services.js` — үйлчилгээнүүдийн браузер дээрх демо логик
+## Гишүүн бүрийн 5 гол хуудас
+| Чиглэл | 5 хуудас | JavaScript / JSON |
+| --- | --- | --- |
+| Нүүр (home-sugara) | `index.html`, `about.html`, `news.html`, `contact.html`, `sitemap.html` | `js/app.js`, `js/home-news.js`, `data/home-news.json` |
+| Үйлчилгээ (services-amraa) | `services/index.html`, `delivery.html`, `catering.html`, `offers.html`, `feedback.html` | `js/services.js`, `js/services-data.js`, `data/service-guide.json` |
+| Захиалга (booking-javkhlantugs) | `booking/index.html`, `seating.html`, `group.html`, `manage.html`, `faq.html` | `js/booking.js`, `data/booking.json` |
+| Цэс (PR #5 · Davkharbayr) | `menu/index.html`, `dish.html`, `compare.html`, `ingredients.html`, `sets.html` | `js/menu.js`, `data/menu.json` |
+| Зочлох (visit-javhaa) | `visit/index.html`, `hours.html`, `spaces.html`, `access.html`, `planner.html` | `js/visit.js`, `data/visit.json` |
+| Соёл (sarangerelbatmunkh089-web) | `cultureint.html`, `cooking.html`, `recipe.html`, `media.html`, `terminology.html` | `js/culture.js`, `data/culture.json` |
+Нэмэлт: `recipedelge.html` — жорын дэлгэрэнгүй.
 
-Эдгээр нь бодит захиалга, хүргэлт, хөнгөлөлт үүсгэхгүй сургалтын жишээ юм.
+Гишүүдийн **нэр, оюутны код** хараахан бүрэн баталгаажаагүй. Branch/PR-ийн эзэмшигч нь тухайн хуудасны бүх кодыг зохиосон гэсэн үг биш. Бодит хариуцлагыг `docs/team-responsibilities.md`-д баталгаажуулна.
 
-## Судалгааны эх сурвалж
-[docs/restaurant-research.md](docs/restaurant-research.md) — Modern Nomads, Хаан Бууз, Din Tai Fung, Wagamama.
+## Бүтэц ба технологи
+- HTML5, CSS3, өөрийн JavaScript. React, Bootstrap, jQuery, Font Awesome зэрэг бэлэн UI сан ашиглахгүй.
+- Нийтлэг `css/style.css`, үйлчилгээний `css/services.css`, бусад бүлгийн `css/project.css`, холбогч `css/project-bridge.css`, цэсийн `css/menu.css`, соёлын `css/buuz.css`.
+- Бүх бүлэг өөрийн JSON агуулгаа `fetch()`-ээр ачаалдаг; UI-д loading/success/empty/error үеийг ялгана.
+- Responsive media queries; `@keyframes`, transition, хөдөлгөөн багасгах тохиргоо.
+- Браузерын `localStorage`-д хадгалсан `restaurant_bookings`, `khukh_menu_favorites` нь бодит захиалга, бодит худалдан авалт биш.
 
-## Багийн ажлын зарчим
-6 хүн тус бүр 5 өөр бүтэцтэй хуудас өөрөө хөгжүүлнэ. Одоогоор нүүр ба мэдээллийн 5 хуудас, үйлчилгээний 5 хуудас нэгтгэгдсэн; нийт 30 хуудас бүрэн дуусаагүй. Үлдсэн гишүүд өөрсдийн branch дээр ажиллана. Хэрэглэсэн эх сурвалж, AI туслах хэрэгслийг тэмдэглэж, кодыг ойлгож хамгаална.
+## Шалгалт ба өгөгдөл
+- Файлын холбоос, JS синтакс, JSON бүтцийг шалгах: `node tests/check-site.mjs` (npm install шаардлагагүй).
+- 360px, 768px, 1280px дээр **бодитоор** туршиж, screenshot болон үр дүнг `docs/test-checklist.md`-д бөглөнө.
+- `docs/change-log.md` — багийн өөрчлөлт, `docs/research-sources.md` — судалгааны холбоос.
+- **Бие даалт 1**: `submission/phase1-static` — 30 үндсэн HTML/CSS-only хувилбарыг тусад нь хадгалах зорилготой. **Бие даалт 2**: `main` — интерактив хувилбар.
+
+## Ёс зүй ба хувийн хамгаалалт
+Энэ удаагийн өргөтгөлд AI туслах хэрэгсэл ашигласан. Бусад гишүүний PR болон commit-ээр хийсэн HTML/CSS хуудсуудыг хадгалсан. **Гишүүн бүр өөрийн кодын логик, туршилтыг ойлгож, өөрөө засварлаж, хамгаална.** AI тусалсан кодыг өөрийн гардан бичсэн лаборатори гэж буруу тайлбарлахгүй.

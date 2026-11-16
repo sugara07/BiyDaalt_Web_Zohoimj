@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Соёлын танилцуулга | Хөх тэнгэр</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 
   <style>
@@ -273,9 +273,9 @@
       }
     }
   </style>
-</head>
+<link rel="stylesheet" href="css/project-bridge.css"><link rel="stylesheet" href="css/project.css"><script defer src="js/culture.js"></script></head>
 
-<body>
+<body data-page="index">
 
   <header class="site-header">
     <nav class="navbar">
@@ -305,7 +305,7 @@
         Соёлын танилцуулга
       </h2>
     </div>
-  </header>
+  </header><nav class="team-shortcuts" aria-label="Багийн зургаан хэсэг"><a href="index.html">Нүүр</a><a href="services/index.html">Үйлчилгээ</a><a href="booking/index.html">Захиалга</a><a href="menu/index.html">Цэс</a><a href="visit/index.html">Зочлох</a><a href="cultureint.html">Хоолны өв</a></nav>
 
   <main class="f-layout-container">
 
@@ -375,7 +375,7 @@
 
         <section class="f-middle-bar">
           <div class="highlight-fact">
-            <i class="fa-solid fa-utensils"></i>
+            <span aria-hidden="true">✦</span>
             <span>Цагаан идээ ба Улаан идээний зохицол</span>
           </div>
         </section>
@@ -386,14 +386,14 @@
             нь маханд агуулагдах амин дэм, амт чанарыг алдагдуулахгүй хадгалахад чиглэгддэг.
           </p>
           <div class="action-box">
-            <a href="recipe.html" class="culture-btn">Жорын жагсаалт үзэх <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="recipe.html" class="culture-btn">Жорын жагсаалт үзэх <span aria-hidden="true">✦</span></a>
           </div>
         </article>
 
       </div>
     </div>
 
-  </main>
+  <section class="section"><div class="wrap live-extra"><h2>Соёлын товч мэдээлэл</h2><p id="data-status" role="status">JSON мэдээлэл ачаалж байна…</p><div id="culture-fact" class="project-result"></div></div></section></main>
 
   <footer
     style="text-align: center; padding: 30px; color: #718096; font-size: 14px; background-color: #f7fafc; border-top: 1px solid #e2e8f0; margin-top: 50px;">
