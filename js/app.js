@@ -6,8 +6,9 @@
     const dateInput = document.getElementById("booking-date");
     const result = document.getElementById("booking-result");
     const menu = document.getElementById("menu");
+    const submitButton = form?.querySelector('button[type="submit"]');
 
-    if (!form || !dateInput || !result || !menu) return;
+    if (!submitButton || !dateInput || !result || !menu) return;
 
     const STORAGE_KEY = "restaurant_bookings";
 
@@ -66,6 +67,7 @@
         const minus = document.createElement("button");
         minus.type = "button";
         minus.textContent = "−";
+        minus.setAttribute("aria-label", name + " хасах");
 
         const count = document.createElement("strong");
         count.textContent = "0";
@@ -73,6 +75,7 @@
         const plus = document.createElement("button");
         plus.type = "button";
         plus.textContent = "+";
+        plus.setAttribute("aria-label", name + " нэмэх");
 
         [minus, plus].forEach(btn => {
             btn.style.cssText =
@@ -134,6 +137,7 @@
         if (table) {
             const heading = document.createElement("th");
             heading.textContent = "Захиалах";
+            heading.scope = "col";
 
             table.querySelector("thead tr").appendChild(heading);
 
@@ -227,6 +231,14 @@
         if (!form.reportValidity()) return;
 
         const data = new FormData(form);
+        const name = data.get("name").trim();
+        const phone = data.get("phone").trim();
+
+        result.hidden = false;
+        if (name.length < 2 || phone.replace(/[^0-9]/g, "").length < 6) {
+            result.textContent = "Жишээ нэрээ бүтэн оруулж, утсандаа дор хаяж 6 цифр бичнэ үү.";
+            return;
+        }
 
         const selectedDate = new Date(
             data.get("date") + "T" + data.get("time")
@@ -234,7 +246,7 @@
 
         if (Number.isNaN(selectedDate.getTime()) ||
             selectedDate <= new Date()) {
-            alert("Ирээдүйн огноо, цаг сонгоно уу.");
+            result.textContent = "Ирээдүйн огноо, цаг сонгоно уу.";
             return;
         }
 
@@ -243,8 +255,8 @@
 
         const booking = {
             id: id,
-            name: data.get("name"),
-            phone: data.get("phone"),
+            name: name,
+            phone: phone,
             date: data.get("date"),
             time: data.get("time"),
             guests: data.get("guests"),
@@ -265,17 +277,20 @@
             );
 
         } catch (error) {
-            alert("Хадгалахад алдаа гарлаа: " + error.message);
+            result.textContent = "Демо захиалгыг браузерт хадгалж чадсангүй.";
             return;
         }
 
         bookingId = id;
 
-        result.hidden = false;
         result.textContent =
-            "Ширээний захиалгын хүсэлт хадгалагдлаа! " +
+            "Демо захиалга энэ браузерт хадгалагдлаа. " +
             "Дугаар: #" + id +
             ". Одоо хоолоо сонгоно уу.";
+        const lookupLink = document.createElement("a");
+        lookupLink.href = "booking/manage.html?id=" + encodeURIComponent(id);
+        lookupLink.textContent = "Энэ захиалгыг шалгах";
+        result.append(" ", lookupLink);
 
         prepareMenu();
 
@@ -289,10 +304,9 @@
         updateCart();
 
         // Хоолны цэс рүү шилжих
-        menu.scrollIntoView({
-            behavior: "smooth"
-        });
+        menu.scrollIntoView();
     });
+    submitButton.disabled = false;
 
     // Хоолны захиалгыг хадгалах
     function saveFoodOrder() {
@@ -331,7 +345,7 @@
             );
 
             message.textContent =
-                "✓ Хоолны захиалга хадгалагдлаа! " +
+                "Хоолны сонголт энэ браузерт хадгалагдлаа. " +
                 "Нийт: " + money(booking.total);
 
         } catch (error) {
@@ -341,6 +355,17 @@
     }
 })();
 
+// Холбоо барих маягтын HTML шалгалтыг браузер дээр туршина.
+const contactForm = document.getElementById("contact-form");
+if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const subject = contactForm.elements.subject.value;
+        const result = document.getElementById("contact-result");
+        result.textContent = subject + " сэдвийн маягт шалгагдлаа. Таны бичсэн мэдээллийг энэ хуудсанд хадгалаагүй.";
+    });
+    contactForm.querySelector('button[type="submit"]').disabled = false;
+}
 
 
 // Хоолны зургийг дарахад дэлгэрэнгүй мэдээлэл харуулах

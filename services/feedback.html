@@ -60,7 +60,7 @@
         <p class="panel-intro">Одны үнэлгээгээ сонгоод, сэтгэгдлээ товч бичнэ үү. Дараах товч нь мэдээллийн тоймыг дэлгэц дээр харуулна.</p>
         <div class="demo-alert" role="note"><strong>Демо хувилбар.</strong> Мэдээлэл серверт илгээгдэхгүй, хадгалагдахгүй. Энэ маягтаар бодит гомдол бүртгэгдэхгүй.</div>
 
-        <form id="feedback-form" action="#" method="get">
+        <form id="feedback-form">
           <fieldset class="rating-fieldset">
             <legend>Таны үнэлгээ</legend>
 
@@ -128,7 +128,7 @@
               <input type="email" name="email" autocomplete="email" placeholder="name@example.com" required>
             </label>
             <label>Утас <span class="optional">(заавал биш)</span>
-              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" pattern="[+0-9() -]{6,20}" title="Утасны дугаарыг 6–20 тэмдэгтээр оруулна уу" placeholder="+976 99xxxxxx">
+              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" pattern="[+0-9\(\) \-]{6,20}" title="Утасны дугаарыг 6–20 тэмдэгтээр оруулна уу" placeholder="+976 99xxxxxx">
             </label>
             <div class="field-group">
               <span class="field-label">Дахин захиалах уу?</span>
@@ -144,7 +144,7 @@
             <label class="full consent"><input type="checkbox" name="consent" required> Мэдээлэл зөв гэдгээ баталж, энэ нь демо маягт гэдгийг ойлгосон.</label>
           </fieldset>
 
-          <button class="btn submit-btn" type="submit">Үнэлгээгээ шалгах <span aria-hidden="true">→</span></button>
+          <button class="btn submit-btn" type="submit" disabled>Үнэлгээгээ шалгах <span aria-hidden="true">→</span></button>
           <p class="form-hint">Товч нь мэдээлэл илгээхгүй, зөвхөн дэлгэц дээр харуулна.</p>
         </form>
 

@@ -26,10 +26,13 @@
 - Нийтлэг `css/style.css`, үйлчилгээний `css/services.css`, бусад бүлгийн `css/project.css`, холбогч `css/project-bridge.css`, цэсийн `css/menu.css`, соёлын `css/buuz.css`.
 - Бүлгүүдийн JSON өгөгдөл `fetch()`-ээр ачаалагддаг; UI-д loading/success/empty/error үеийг ялгана.
 - Responsive media queries; `@keyframes`, transition, хөдөлгөөн багасгах тохиргоо.
-- `restaurant_bookings` нь зөвхөн тухайн браузерын localStorage дахь демо захиалга; бодит ресторан руу мэдээлэл илгээхгүй. Цэсийн хайлт, харьцуулалт нь JSON файлаас ачаалдаг.
+- `restaurant_bookings` нь зөвхөн тухайн браузерын localStorage дахь демо захиалга; бодит ресторан руу мэдээлэл илгээхгүй. Хоолны цэс JSON-оос хайлт, харьцуулалт, дуртай хоолны тэмдэглэгээ, улирлын саналыг ачаална.
 
 ## Шалгалт ба өгөгдөл
 - Файлын холбоос, JS синтакс, JSON бүтцийг шалгах: `node tests/check-site.mjs` (npm install шаардлагагүй).
-- 360px, 768px, 1280px өргөнд браузерын туршилт хийж, screenshot болон үр дүнг `docs/test-checklist.md`-д бүртгэхээр төлөвлөсөн.
+- GitHub Actions хоёр хувилбарыг 360px, 768px, 1280px өргөнд Chrome-оор нээдэг. [Браузерын туршилтын дүн](docs/test-checklist.md).
 - `docs/change-log.md` — багийн өөрчлөлт, `docs/research-sources.md` — судалгааны холбоос.
-- **Бие даалт 1**: `submission/phase1-static` — 30 үндсэн HTML/CSS-only хувилбарыг тусад нь хадгалах зорилготой. **Бие даалт 2**: `main` — интерактив хувилбар.
+- **Бие даалт 1** нь [submission/phase1-static](https://github.com/sugara07/BiyDaalt_Web_Zohoimj/tree/submission/phase1-static) салбарын HTML/CSS хувилбар. **Бие даалт 2** нь [main](https://github.com/sugara07/BiyDaalt_Web_Zohoimj/tree/main) салбарын интерактив хувилбар.
+- [16 + 16 онооны шалгуурын тулгалт](docs/assignment-review.md), [хуудас ба лабораторийн хариуцлага](docs/team-responsibilities.md).
+
+[Зургаан гишүүний хоёр минутын хамгаалалтын материал](docs/defense-guide.md).

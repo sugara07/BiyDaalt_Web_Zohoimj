@@ -1,10 +1,11 @@
 "use strict";
-// Гишүүн 1: Github ажлын мэдээний AJAX + JSON хайлт.
+// GitHub ажлын мэдээг JSON-оос уншиж хайна.
 document.addEventListener("DOMContentLoaded", async function () {
   const status = document.getElementById("news-load-status");
   const filter = document.getElementById("news-filter");
   const target = document.getElementById("news-live");
   let news;
+  status.dataset.state = "loading";
   status.textContent = "Мэдээг ачаалж байна…";
   try {
     const response = await fetch("data/home-news.json");
@@ -12,6 +13,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     news = await response.json();
     if (!Array.isArray(news)) throw new Error("JSON массив биш");
   } catch (error) {
+    status.dataset.state = "error";
     status.textContent = "Алдаа: мэдээг ачаалж чадсангүй. Live Server дээр шалгана уу.";
     return;
   }
@@ -21,6 +23,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const rows = news.filter(function (item) {
       return (item.title + " " + item.desc + " " + item.tag).toLowerCase().includes(q);
     });
+    status.dataset.state = rows.length ? "success" : "empty";
     status.textContent = rows.length ? rows.length + " мэдээ харагдаж байна." : "Тохирох мэдээ олдсонгүй.";
     rows.forEach(function (item) {
       const article = document.createElement("article");

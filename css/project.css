@@ -25,7 +25,9 @@
 .project-status[data-state=empty]{background:#e9ecf2;color:#586578}
 .project-paper{background:#fff;border:1px solid #e0e5e1;border-radius:18px;padding:clamp(20px,3vw,32px);box-shadow:0 10px 30px #102b4110;min-width:0;animation:project-rise .45s ease both}
 .project-paper h2{font-family:Georgia,serif;color:#17364b;font-size:1.55rem;margin-top:0}
-.project-split{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:22px;margin:24px 0}
+.project-split{display:flex;gap:22px;margin:24px 0}
+.project-split>*{flex:1;min-width:0}
+.project-split>:first-child{flex:1.45}
 .project-paper+.project-paper{margin-top:20px}
 .project-split>.project-paper+.project-paper{margin-top:0}
 .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:17px;margin:15px 0}
@@ -47,6 +49,7 @@
 .project-action{background:#174b5a;color:white!important}
 .project-action:hover{background:#226a77}
 .project-danger{background:#8d302c;color:white}
+.project-danger[hidden]{display:none}
 .project-controls{display:flex;flex-wrap:wrap;gap:16px;margin:12px 0 17px;align-items:end}
 .project-controls>div{flex:1 1 220px;min-width:0}
 .project-controls>button{flex:0 1 auto}
@@ -74,6 +77,6 @@
 .project-tile button{margin-top:10px}
 .project-item-compact{display:flex;justify-content:space-between;align-items:center;gap:12px}
 @keyframes project-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:768px){.project-split{grid-template-columns:1fr}.project-header .project-top{padding:14px 20px}.project-hero{padding:38px 0 25px}.project-page main{padding:0 15px 35px}.project-site-nav,.project-subnav{gap:4px 8px;font-size:.85rem}}
+@media(max-width:768px){.project-split{flex-direction:column}.project-header .project-top{padding:14px 20px}.project-hero{padding:38px 0 25px}.project-page main{padding:0 15px 35px}.project-site-nav,.project-subnav{gap:4px 8px;font-size:.85rem}}
 @media(max-width:420px){.project-grid{grid-template-columns:1fr}.project-flag{font-size:.68rem}.project-top{flex-wrap:wrap}.project-tile img{height:115px}}
 @media(prefers-reduced-motion:reduce){.project-paper,.project-tile{animation:none!important}.project-page *, .project-page *::before,.project-page *::after{transition:none!important;scroll-behavior:auto!important}}

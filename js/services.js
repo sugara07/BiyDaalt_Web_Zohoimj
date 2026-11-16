@@ -128,6 +128,7 @@
       );
     });
 
+    zoneForm.querySelector('button[type="submit"]').disabled = false;
     zoneSelect.addEventListener("change", () => {
       zoneResult.hidden = true;
     });
@@ -177,6 +178,7 @@
         "Энэ мэдээллийг серверт илгээгээгүй, хадгалаагүй. Хүсэлт бодитоор бүртгэгдээгүй."
       );
     });
+    cateringForm.querySelector('button[type="submit"]').disabled = false;
   }
 
   /* ---------- Купон код ---------- */
@@ -245,6 +247,7 @@
       );
     });
 
+    couponForm.querySelector('button[type="submit"]').disabled = false;
     qsa(".copy-btn").forEach((button) => {
       const original = button.textContent;
       button.addEventListener("click", async () => {
@@ -308,5 +311,6 @@
         "Энэ мэдээллийг серверт илгээгээгүй, хадгалаагүй. Маягт бодитоор бүртгэгдээгүй."
       );
     });
+    feedbackForm.querySelector('button[type="submit"]').disabled = false;
   }
 })();

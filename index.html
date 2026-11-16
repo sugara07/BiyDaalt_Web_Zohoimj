@@ -260,10 +260,10 @@
           <div class="booking-intro">
             <p class="section-kicker">ШИРЭЭНИЙ ЗАХИАЛГА</p>
             <h2 id="book-title">Тухтай суудлаа төлөвлөөрэй.</h2>
-            <p>Эхний шатанд энэ HTML форм нь зөвхөн загвар. Интерaктив ажиллагааг дараагийн шатанд нэмнэ.</p>
-            <div class="demo-alert" role="note"><strong>Демо хувилбар.</strong> Мэдээллийг серверт илгээхгүй,
-              хадгалахгүй.
-              Захиалга бодитоор баталгаажихгүй.</div>
+            <p>Ширээний захиалгаа үүсгээд цэсээс хоолоо сонгоно уу.</p>
+            <div class="demo-alert" role="note"><strong>Демо хувилбар.</strong> Жишээ нэр, утас ашиглана уу.
+              Захиалга зөвхөн энэ браузерт хадгалагдана.</div>
+            <p><a href="booking/manage.html">Браузерт хадгалсан захиалгаа шалгах</a></p>
           </div>
           <div class="booking-card">
             <form id="booking-form">
@@ -271,7 +271,7 @@
                 <legend>Таны мэдээлэл</legend>
                 <label>Нэр <input type="text" name="name" autocomplete="name" minlength="2" maxlength="70"
                     placeholder="Нэрээ оруулна уу" required></label>
-                <label>Утас <input type="tel" name="phone" autocomplete="tel" inputmode="tel" pattern="[+0-9() -]{6,20}"
+                <label>Утас <input type="tel" name="phone" autocomplete="tel" inputmode="tel" pattern="[+0-9\(\) \-]{6,20}"
                     title="Утасны дугаарыг 6–20 тэмдэгтээр оруулна уу" placeholder="+976 99xxxxxx" required></label>
               </fieldset>
               <fieldset>
@@ -298,10 +298,10 @@
                 <label class="full">Нэмэлт хүсэлт <textarea name="note" rows="3" maxlength="300"
                     placeholder="Хүсэлт байвал энд бичнэ үү"></textarea></label>
               </fieldset>
-              <button class="btn submit-btn" type="button" disabled>Илгээх (2-р шатанд)</button>
-              <p class="form-hint">Эхний шат: мэдээлэл хадгалахгүй, серверт илгээхгүй.</p>
+              <button class="btn submit-btn" type="submit" disabled>Демо захиалга үүсгэх</button>
+              <noscript><p class="form-hint">Демо захиалга ашиглахын тулд JavaScript-ийг идэвхжүүлнэ үү.</p></noscript>
             </form>
-
+            <p id="booking-result" class="booking-result" role="status" hidden></p>
           </div>
         </div>
       </section>
@@ -316,6 +316,20 @@
       </div>
     </div>
   </footer>
+  <div id="foodModal" class="modal" role="dialog" aria-modal="true"
+      aria-labelledby="modalTitle" aria-describedby="modalDescription" hidden>
+    <div class="modal-content">
+      <button type="button" class="close-btn" id="closeModal" aria-label="Цонх хаах">×</button>
+      <div class="modal-body-layout">
+        <img id="modalImg" src="img/buuz.svg" alt="" class="modal-vector-img">
+        <div class="modal-info-text">
+          <h2 id="modalTitle"></h2>
+          <p id="modalDescription"></p>
+          <p class="modal-price-tag">Үнэ <span id="modalPrice"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

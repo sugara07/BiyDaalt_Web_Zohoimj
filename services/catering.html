@@ -60,14 +60,14 @@
         <p class="panel-intro">Доорх мэдээллийг бөглөсний дараа таны оруулсан мэдээллийн тойм дэлгэц дээр харагдана.</p>
         <div class="demo-alert" role="note"><strong>Демо хувилбар.</strong> Энэ маягт мэдээллийг серверт илгээхгүй, хадгалахгүй. Хүсэлт бодитоор бүртгэгдэхгүй.</div>
 
-        <form id="catering-form" action="#" method="get">
+        <form id="catering-form">
           <fieldset>
             <legend>Холбоо барих</legend>
             <label>Нэр
               <input type="text" name="name" autocomplete="name" minlength="2" maxlength="70" placeholder="Овог, нэр" required>
             </label>
             <label>Утас
-              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" pattern="[+0-9() -]{6,20}" title="Утасны дугаарыг 6–20 тэмдэгтээр оруулна уу" placeholder="+976 99xxxxxx" required>
+              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" pattern="[+0-9\(\) \-]{6,20}" title="Утасны дугаарыг 6–20 тэмдэгтээр оруулна уу" placeholder="+976 99xxxxxx" required>
             </label>
             <label>И-мэйл
               <input type="email" name="email" autocomplete="email" placeholder="name@example.com" required>
@@ -136,7 +136,7 @@
             <label class="full consent"><input type="checkbox" name="consent" required> Мэдээлэл зөв гэдгээ баталж, энэ нь бодит захиалга биш демо маягт гэдгийг ойлгосон.</label>
           </fieldset>
 
-          <button class="btn submit-btn" type="submit">Хүсэлтээ шалгах <span aria-hidden="true">→</span></button>
+          <button class="btn submit-btn" type="submit" disabled>Хүсэлтээ шалгах <span aria-hidden="true">→</span></button>
           <p class="form-hint">Товч нь хүсэлтийг илгээхгүй, зөвхөн дэлгэц дээр харуулна.</p>
         </form>
 

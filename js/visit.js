@@ -12,8 +12,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (!info.info || !Array.isArray(info.hours) || !Array.isArray(info.spaces)) {
       throw new Error("Өгөгдөл бүрэн бус");
     }
-    status.dataset.state = info.hours.length ? "success" : "empty";
-    status.textContent = info.hours.length ? "Зочлох мэдээлэл ачааллаа." : "Мэдээлэл хоосон байна.";
+    const rows = page === "hours" ? info.hours : page === "access" ? info.accessQuestions : info.spaces;
+    const hasContent = page === "index" ? Boolean(info.info.address) : Boolean(rows?.length);
+    status.dataset.state = hasContent ? "success" : "empty";
+    status.textContent = hasContent ? "Зочлох мэдээлэл ачааллаа." : "Мэдээлэл хоосон байна.";
+    if (!hasContent) return;
   } catch (error) {
     status.dataset.state = "error";
     status.textContent = "Мэдээлэл татахад алдаа гарлаа. Live Server ашиглана уу.";
@@ -33,7 +36,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   if (page === "hours") {
     const target = document.getElementById("hours-body");
     const index = (new Date().getDay() + 6) % 7;
-    if (!info.hours.length) { target.appendChild(element("tr", "Мэдээлэл алга.")); return; }
     info.hours.forEach(function (item, number) {
       const row = document.createElement("tr");
       if (number === index) row.style.fontWeight = "bold";
@@ -61,10 +63,12 @@ document.addEventListener("DOMContentLoaded", async function () {
       document.getElementById("access-answer").textContent =
         "Лавлах асуулт: " + form.elements.need.value + ". Энэ мэдээлэл серверт илгээгдээгүй.";
     });
+    form.querySelector('button[type="submit"]').disabled = false;
   }
   if (page === "planner") {
     const form = document.getElementById("visit-plan-form");
     const dateInput = document.getElementById("plan-date");
+    const spaces = [...info.spaces].sort(function (a, b) { return a.capacity - b.capacity; });
     const today = new Date();
     const formatDate = function (d) {
       return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
@@ -81,10 +85,11 @@ document.addEventListener("DOMContentLoaded", async function () {
         result.textContent = "Өдөр, зочдын тоог дахин шалгана уу.";
         return;
       }
-      const space = info.spaces.find(function (item) { return guests <= item.capacity; });
+      const space = spaces.find(function (item) { return guests <= item.capacity; });
       result.textContent = date + " · " + guests + " зочин · " + reason +
         ". Санал болгох жишиг хэсэг: " + (space ? space.name : "Бүлгийн захиалгаар лавлах") +
         ". Энэ нь бодит захиалга биш.";
     });
+    form.querySelector('button[type="submit"]').disabled = false;
   }
 });
