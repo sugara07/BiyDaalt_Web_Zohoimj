@@ -30,7 +30,7 @@
 
 ## Шалгалт ба өгөгдөл
 - Файлын холбоос, JS синтакс, JSON бүтцийг шалгах: `node tests/check-site.mjs` (npm install шаардлагагүй).
-- GitHub Actions хоёр хувилбарыг 360px, 768px, 1280px өргөнд Chrome-оор нээдэг. [Браузерын туршилтын дүн](docs/test-checklist.md).
+- Хоёр хувилбар 360px, 768px, 1280px өргөнд Chrome болон GitHub Actions ашиглан шалгагдсан. [Браузерын туршилтын дүн](docs/test-checklist.md).
 - `docs/change-log.md` — багийн өөрчлөлт, `docs/research-sources.md` — судалгааны холбоос.
 - **Бие даалт 1** нь [submission/phase1-static](https://github.com/sugara07/BiyDaalt_Web_Zohoimj/tree/submission/phase1-static) салбарын HTML/CSS хувилбар. **Бие даалт 2** нь [main](https://github.com/sugara07/BiyDaalt_Web_Zohoimj/tree/main) салбарын интерактив хувилбар.
 - [16 + 16 онооны шалгуурын тулгалт](docs/assignment-review.md), [хуудас ба лабораторийн хариуцлага](docs/team-responsibilities.md).

@@ -24,3 +24,7 @@
 | [Modern Nomads цэс](https://www.modernnomads.mn/menu) | Үйлчлүүлэгч эхлээд салбар, дараа нь хоолоо сонгодог | Цэсийг бүх хэсгээс олох, үндсэн хоол ба ундааг салгаж шүүх |
 | [Modern Nomads түгээмэл асуулт](https://www.modernnomads.mn/faq) | Ирэхээс өмнө байршил, үйлчилгээний асуулт нээлттэй | `booking/faq.html`, `visit/access.html` дахь хайлт болон бэлдэх асуулт |
 | [Naadam Bar & Restaurant](https://www.shangri-la.com/ulaanbaatar/shangrila/dining/restaurants/naadam/) | Нэг хуудсаас цэс, хаяг, ажиллах цагт хүрэх | Нүүр, холбоо барих болон зочлох хэсэгт цагийн мэдээлэл нийцтэй харагдах |
+
+## Ашигласан туслах хэрэгсэл
+
+Кодын алдаа засах, турших, тайлбар бэлтгэхэд ChatGPT ашиглагдсан.
