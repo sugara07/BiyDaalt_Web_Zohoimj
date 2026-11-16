@@ -26,7 +26,7 @@
 - Нийтлэг `css/style.css`, үйлчилгээний `css/services.css`, бусад бүлгийн `css/project.css`, холбогч `css/project-bridge.css`, цэсийн `css/menu.css`, соёлын `css/buuz.css`.
 - Бүх бүлэг өөрийн JSON агуулгаа `fetch()`-ээр ачаалдаг; UI-д loading/success/empty/error үеийг ялгана.
 - Responsive media queries; `@keyframes`, transition, хөдөлгөөн багасгах тохиргоо.
-- Браузерын `localStorage`-д хадгалсан `restaurant_bookings`, `khukh_menu_favorites` нь бодит захиалга, бодит худалдан авалт биш.
+- `restaurant_bookings` нь зөвхөн тухайн браузерын localStorage дахь демо захиалга; бодит ресторан руу мэдээлэл илгээхгүй. Цэсийн хайлт, харьцуулалт нь JSON файлаас ачаалдаг.
 
 ## Шалгалт ба өгөгдөл
 - Файлын холбоос, JS синтакс, JSON бүтцийг шалгах: `node tests/check-site.mjs` (npm install шаардлагагүй).
