@@ -19,20 +19,17 @@
 | Соёл (sarangerelbatmunkh089-web) | `cultureint.html`, `cooking.html`, `recipe.html`, `media.html`, `terminology.html` | `js/culture.js`, `data/culture.json` |
 Нэмэлт: `recipedelge.html` — жорын дэлгэрэнгүй.
 
-Гишүүдийн **нэр, оюутны код** хараахан бүрэн баталгаажаагүй. Branch/PR-ийн эзэмшигч нь тухайн хуудасны бүх кодыг зохиосон гэсэн үг биш. Бодит хариуцлагыг `docs/team-responsibilities.md`-д баталгаажуулна.
+Гишүүдийн нэр, оюутны код болон хуудасны хариуцлагыг `docs/team-responsibilities.md`-д баталгаажуулах шаардлагатай.
 
 ## Бүтэц ба технологи
-- HTML5, CSS3, өөрийн JavaScript. React, Bootstrap, jQuery, Font Awesome зэрэг бэлэн UI сан ашиглахгүй.
+- HTML5, CSS3, Vanilla JavaScript ашиглан боловсруулсан. React, Bootstrap, jQuery, Font Awesome зэрэг бэлэн UI сан ашиглахгүй.
 - Нийтлэг `css/style.css`, үйлчилгээний `css/services.css`, бусад бүлгийн `css/project.css`, холбогч `css/project-bridge.css`, цэсийн `css/menu.css`, соёлын `css/buuz.css`.
-- Бүх бүлэг өөрийн JSON агуулгаа `fetch()`-ээр ачаалдаг; UI-д loading/success/empty/error үеийг ялгана.
+- Бүлгүүдийн JSON өгөгдөл `fetch()`-ээр ачаалагддаг; UI-д loading/success/empty/error үеийг ялгана.
 - Responsive media queries; `@keyframes`, transition, хөдөлгөөн багасгах тохиргоо.
 - `restaurant_bookings` нь зөвхөн тухайн браузерын localStorage дахь демо захиалга; бодит ресторан руу мэдээлэл илгээхгүй. Цэсийн хайлт, харьцуулалт нь JSON файлаас ачаалдаг.
 
 ## Шалгалт ба өгөгдөл
 - Файлын холбоос, JS синтакс, JSON бүтцийг шалгах: `node tests/check-site.mjs` (npm install шаардлагагүй).
-- 360px, 768px, 1280px дээр **бодитоор** туршиж, screenshot болон үр дүнг `docs/test-checklist.md`-д бөглөнө.
+- 360px, 768px, 1280px өргөнд браузерын туршилт хийж, screenshot болон үр дүнг `docs/test-checklist.md`-д бүртгэхээр төлөвлөсөн.
 - `docs/change-log.md` — багийн өөрчлөлт, `docs/research-sources.md` — судалгааны холбоос.
 - **Бие даалт 1**: `submission/phase1-static` — 30 үндсэн HTML/CSS-only хувилбарыг тусад нь хадгалах зорилготой. **Бие даалт 2**: `main` — интерактив хувилбар.
-
-## Ёс зүй ба хувийн хамгаалалт
-Энэ удаагийн өргөтгөлд AI туслах хэрэгсэл ашигласан. Бусад гишүүний PR болон commit-ээр хийсэн HTML/CSS хуудсуудыг хадгалсан. **Гишүүн бүр өөрийн кодын логик, туршилтыг ойлгож, өөрөө засварлаж, хамгаална.** AI тусалсан кодыг өөрийн гардан бичсэн лаборатори гэж буруу тайлбарлахгүй.
