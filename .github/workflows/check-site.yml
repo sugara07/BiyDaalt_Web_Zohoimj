@@ -1,0 +1,12 @@
+name: Verify static site structure
+on:
+  push:
+    branches: [main, "feature/itm202-six-team-pages"]
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check site without dependencies
+        run: node tests/check-site.mjs
