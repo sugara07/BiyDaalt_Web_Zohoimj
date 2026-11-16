@@ -10,8 +10,18 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (!response.ok) throw new Error("HTTP " + response.status);
     data = await response.json();
     if (!Array.isArray(data.recipes) || !Array.isArray(data.stories)) throw new Error("Формат буруу");
-    status.dataset.state = data.recipes.length || data.stories.length ? "success" : "empty";
-    status.textContent = status.dataset.state === "success" ? "Соёлын мэдээлэл ачааллаа." : "Өгөгдөл хоосон байна.";
+    const collections = {
+      recipes: data.recipes,
+      stories: data.stories,
+      sourcing: data.sources ?? [],
+      etiquette: data.etiquette ?? []
+    };
+    const rows = collections[page];
+    if (page !== "index" && !Array.isArray(rows)) throw new Error("Формат буруу");
+    const hasContent = page === "index" ? Boolean(data.fact) : rows.length > 0;
+    status.dataset.state = hasContent ? "success" : "empty";
+    status.textContent = hasContent ? "Соёлын мэдээлэл ачааллаа." : "Өгөгдөл хоосон байна.";
+    if (!hasContent) return;
   } catch (error) {
     status.dataset.state = "error";
     status.textContent = "JSON татаж чадсангүй. Live Server ашиглаж үзнэ үү.";
@@ -53,10 +63,10 @@ document.addEventListener("DOMContentLoaded", async function () {
       recipe.steps.forEach(function (step) { steps.appendChild(textNode("li", step)); });
       result.append(textNode("h4", "Хийх дараалал"), steps);
     });
+    form.querySelector('button[type="submit"]').disabled = false;
   }
   if (page === "sourcing") {
     const root = document.getElementById("sourcing-list");
-    if (!data.sources?.length) { root.appendChild(textNode("p", "Орцын мэдээлэл алга.")); return; }
     data.sources.forEach(function (item) {
       const article = document.createElement("article");
       article.className = "project-tile";
@@ -85,8 +95,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       button.addEventListener("click", function () { draw(category); });
       tabs.appendChild(button);
     });
-    if (categories.length) draw(categories[0]);
-    else output.textContent = "Зөвлөмжийн мэдээлэл хоосон байна.";
+    draw(categories[0]);
   }
   if (page === "stories") {
     const input = document.getElementById("story-query");

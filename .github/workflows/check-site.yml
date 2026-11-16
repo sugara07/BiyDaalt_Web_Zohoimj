@@ -3,10 +3,33 @@ on:
   push:
     branches: [main, "feature/itm202-six-team-pages"]
   pull_request:
+
+permissions:
+  contents: read
+
 jobs:
   check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
-      - name: Check site without dependencies
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: submission/phase1-static
+          path: phase1-static
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify interactive file structure
         run: node tests/check-site.mjs
+      - name: Verify HTML and CSS version
+        run: node tests/check-site.mjs --static phase1-static
+      - name: Install browser testing dependency
+        run: npm install --prefix "$RUNNER_TEMP/itm202-browser" --no-save --no-package-lock --ignore-scripts playwright@1.58.2
+      - name: Open both versions at 360, 768 and 1280 px in Chrome
+        env:
+          PLAYWRIGHT_MODULE: ${{ runner.temp }}/itm202-browser/node_modules/playwright
+        run: node tests/check-browser.mjs phase1-static

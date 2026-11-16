@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const hasContent = page === "index" ? Boolean(info.info.address) : Boolean(rows?.length);
     status.dataset.state = hasContent ? "success" : "empty";
     status.textContent = hasContent ? "Зочлох мэдээлэл ачааллаа." : "Мэдээлэл хоосон байна.";
+    if (!hasContent) return;
   } catch (error) {
     status.dataset.state = "error";
     status.textContent = "Мэдээлэл татахад алдаа гарлаа. Live Server ашиглана уу.";
@@ -62,6 +63,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       document.getElementById("access-answer").textContent =
         "Лавлах асуулт: " + form.elements.need.value + ". Энэ мэдээлэл серверт илгээгдээгүй.";
     });
+    form.querySelector('button[type="submit"]').disabled = false;
   }
   if (page === "planner") {
     const form = document.getElementById("visit-plan-form");
@@ -88,5 +90,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         ". Санал болгох жишиг хэсэг: " + (space ? space.name : "Бүлгийн захиалгаар лавлах") +
         ". Энэ нь бодит захиалга биш.";
     });
+    form.querySelector('button[type="submit"]').disabled = false;
   }
 });

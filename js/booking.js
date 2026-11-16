@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         budget.toLocaleString("en-US") + "₮ = " + (count * budget).toLocaleString("en-US") +
         "₮. Энэ бол зөвхөн төсвийн үржвэр, захиалга илгээгээгүй.";
     });
+    form.querySelector('button[type="submit"]').disabled = false;
   }
   if (page === "faq") {
     const input = document.getElementById("booking-faq-query");

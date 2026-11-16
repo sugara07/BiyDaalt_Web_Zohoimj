@@ -10,8 +10,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (!response.ok) throw new Error("HTTP " + response.status);
     data = await response.json();
     if (!Array.isArray(data.items) || !Array.isArray(data.seasonal)) throw new Error("Формат буруу");
-    status.dataset.state = data.items.length ? "success" : "empty";
-    status.textContent = data.items.length ? "Цэсийн мэдээлэл ачааллаа." : "Цэс хоосон байна.";
+    const rows = page === "seasonal" ? data.seasonal : data.items;
+    status.dataset.state = rows.length ? "success" : "empty";
+    status.textContent = rows.length ? "Цэсийн мэдээлэл ачааллаа." : "Харуулах мэдээлэл алга.";
   } catch (error) {
     status.dataset.state = "error";
     status.textContent = "Цэс ачаалж чадсангүй. Live Server ашиглана уу.";
@@ -26,7 +27,9 @@ document.addEventListener("DOMContentLoaded", async function () {
   function addRow(root, values) {
     const tr = document.createElement("tr");
     values.forEach(function (value, index) {
-      tr.appendChild(text(index === 0 ? "th" : "td", value));
+      const cell = text(index === 0 ? "th" : "td", value);
+      if (index === 0) cell.scope = "row";
+      tr.appendChild(cell);
     });
     root.appendChild(tr);
   }
@@ -84,7 +87,10 @@ document.addEventListener("DOMContentLoaded", async function () {
       root.replaceChildren();
       const one = data.items.find(function (f) { return f.id === a.value; });
       const two = data.items.find(function (f) { return f.id === b.value; });
-      if (!one || !two) { root.appendChild(text("tr", "Харьцуулах хоол алга.")); return; }
+      if (!one || !two) {
+        addRow(root, ["Төлөв", "Харьцуулах хоол алга."]);
+        return;
+      }
       addRow(root, ["Хоол", one.name + " / " + two.name]);
       addRow(root, ["Үнэ", money(one.price) + " / " + money(two.price)]);
       addRow(root, ["Порц", one.serving + " / " + two.serving]);
@@ -104,38 +110,51 @@ document.addEventListener("DOMContentLoaded", async function () {
     const choices = document.getElementById("favorites-choices");
     const list = document.getElementById("favorites-list");
     let favorites = loadFavorites();
-    function draw() {
-      choices.replaceChildren();
+    function drawList() {
       list.replaceChildren();
       data.items.forEach(function (food) {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "project-favorite";
-        const selected = favorites.includes(food.id);
-        button.setAttribute("aria-pressed", String(selected));
-        button.textContent = (selected ? "♥ " : "♡ ") + food.name + " — " + money(food.price);
-        button.addEventListener("click", function () {
-          favorites = selected ? favorites.filter(function (id) { return id !== food.id; }) : [...favorites, food.id];
-          try {
-            localStorage.setItem("khukh_menu_favorites", JSON.stringify(favorites));
-            draw();
-          } catch (error) { status.dataset.state = "error"; status.textContent = "Браузер хадгалж чадсангүй."; }
-        });
-        choices.appendChild(button);
-      });
-      favorites.forEach(function (id) {
-        const food = data.items.find(function (f) { return f.id === id; });
-        if (food) list.appendChild(text("li", food.name + " · " + money(food.price)));
+        if (favorites.includes(food.id)) list.appendChild(text("li", food.name + " · " + money(food.price)));
       });
       if (!list.children.length) list.appendChild(text("li", "Дуртай хоол сонгоогүй байна."));
     }
-    draw();
+
+    function showChoice(button, food) {
+      const selected = favorites.includes(food.id);
+      button.setAttribute("aria-pressed", String(selected));
+      button.textContent = (selected ? "♥ " : "♡ ") + food.name + " — " + money(food.price);
+    }
+
+    data.items.forEach(function (food) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "project-favorite";
+      button.setAttribute("aria-label", food.name);
+      showChoice(button, food);
+      button.addEventListener("click", function () {
+        const next = favorites.includes(food.id)
+          ? favorites.filter(function (id) { return id !== food.id; })
+          : [...favorites, food.id];
+        try {
+          localStorage.setItem("khukh_menu_favorites", JSON.stringify(next));
+          favorites = next;
+          showChoice(button, food);
+          drawList();
+          status.dataset.state = "success";
+          status.textContent = "Дуртай хоолны жагсаалт шинэчлэгдлээ.";
+        } catch (error) {
+          status.dataset.state = "error";
+          status.textContent = "Браузер сонголтыг хадгалж чадсангүй.";
+        }
+      });
+      choices.appendChild(button);
+    });
+    drawList();
   }
   if (page === "seasonal") {
     const target = document.getElementById("seasonal-items");
-    if (!data.seasonal.length) { target.appendChild(text("p", "Улирлын санал хоосон байна.")); return; }
     data.seasonal.forEach(function (row) {
       const article = document.createElement("article");
+      article.className = "project-tile";
       article.append(text("h3", row.season + " · " + row.title), text("p", row.text));
       target.append(article);
     });

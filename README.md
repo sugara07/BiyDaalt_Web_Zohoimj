@@ -26,7 +26,7 @@
 - Нийтлэг `css/style.css`, үйлчилгээний `css/services.css`, бусад бүлгийн `css/project.css`, холбогч `css/project-bridge.css`, цэсийн `css/menu.css`, соёлын `css/buuz.css`.
 - Бүлгүүдийн JSON өгөгдөл `fetch()`-ээр ачаалагддаг; UI-д loading/success/empty/error үеийг ялгана.
 - Responsive media queries; `@keyframes`, transition, хөдөлгөөн багасгах тохиргоо.
-- `restaurant_bookings` нь зөвхөн тухайн браузерын localStorage дахь демо захиалга; бодит ресторан руу мэдээлэл илгээхгүй. Цэсийн хайлт, харьцуулалт нь JSON файлаас ачаалдаг.
+- `restaurant_bookings` нь зөвхөн тухайн браузерын localStorage дахь демо захиалга; бодит ресторан руу мэдээлэл илгээхгүй. Хоолны цэс JSON-оос хайлт, харьцуулалт, дуртай хоолны тэмдэглэгээ, улирлын саналыг ачаална.
 
 ## Шалгалт ба өгөгдөл
 - Файлын холбоос, JS синтакс, JSON бүтцийг шалгах: `node tests/check-site.mjs` (npm install шаардлагагүй).
@@ -34,3 +34,5 @@
 - `docs/change-log.md` — багийн өөрчлөлт, `docs/research-sources.md` — судалгааны холбоос.
 - **Бие даалт 1** нь [submission/phase1-static](https://github.com/sugara07/BiyDaalt_Web_Zohoimj/tree/submission/phase1-static) салбарын HTML/CSS хувилбар. **Бие даалт 2** нь [main](https://github.com/sugara07/BiyDaalt_Web_Zohoimj/tree/main) салбарын интерактив хувилбар.
 - [16 + 16 онооны шалгуурын тулгалт](docs/assignment-review.md), [хуудас ба лабораторийн хариуцлага](docs/team-responsibilities.md).
+
+[Зургаан гишүүний хоёр минутын хамгаалалтын материал](docs/defense-guide.md).

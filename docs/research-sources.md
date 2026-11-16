@@ -18,6 +18,8 @@
 | --- | --- | --- |
 | [W3Schools HTML Tutorial](https://www.w3schools.com/html/default.asp), [HTML Semantics](https://www.w3schools.com/html/html5_semantic_elements.asp) | Хуудасны гол агуулга, навигаци, утгатай нийтлэл | `main`, `nav`, `section`, `article`, логик дараалалтай гарчиг |
 | [W3Schools HTML Forms](https://www.w3schools.com/html/html_forms.asp) | `label`, оролтын төрөл, submit | `index.html`, `contact.html`, үйлчилгээний маягтуудын шошго ба оролтын шалгалт |
+| [MDN Form validation](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation) | HTML атрибут болон браузерын validity төлөв | Утас, имэйл, огноо, тоон оролтын шалгалт |
+| [MDN prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion) | Хэрэглэгч хөдөлгөөн багасгах тохиргоо | Мэдээний карт, цэсийн хөдөлгөөнийг тохиргоогоор багасгах |
 | [W3Schools Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) | Уян хэмжээтэй багана, жижиг өргөнд босоо байрлал | Нүүр, үйлчилгээ, захиалга ба зочлох хэсгийн хоёр баганатай үндсэн байрлал |
 | [Modern Nomads цэс](https://www.modernnomads.mn/menu) | Үйлчлүүлэгч эхлээд салбар, дараа нь хоолоо сонгодог | Цэсийг бүх хэсгээс олох, үндсэн хоол ба ундааг салгаж шүүх |
 | [Modern Nomads түгээмэл асуулт](https://www.modernnomads.mn/faq) | Ирэхээс өмнө байршил, үйлчилгээний асуулт нээлттэй | `booking/faq.html`, `visit/access.html` дахь хайлт болон бэлдэх асуулт |
