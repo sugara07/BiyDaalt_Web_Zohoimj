@@ -4,8 +4,6 @@
   const dateInput = document.getElementById("booking-date");
   const result = document.getElementById("booking-result");
   if (!form || !dateInput || !result) return;
-
-  // Set the minimum date in the visitor's own local timezone.
   const today = new Date();
   const currentDate = [
     today.getFullYear(),
@@ -16,7 +14,7 @@
   dateInput.addEventListener("input", () => dateInput.setCustomValidity(""));
 
   form.addEventListener("submit", (event) => {
-    event.preventDefault(); // No backend: never claim the booking was sent.
+    event.preventDefault();
     if (dateInput.value < currentDate) {
       dateInput.setCustomValidity("Өнөөдрөөс өмнөх огноо сонгох боломжгүй.");
       dateInput.reportValidity();

@@ -1,7 +1,5 @@
-/* Lab 4 - CSS animation */
 .lab4 .lab4-scene {
   position: relative;
-  isolation: isolate;
   height: 290px;
   overflow: hidden;
   border: 1px solid #d8c6a6;
@@ -9,8 +7,8 @@
   margin-top: 12px;
   background-color: #9bd5ef;
   animation-name: lab4DayNight;
-  animation-duration: 16s;
-  animation-delay: 1s;
+  animation-duration: 10s;
+  animation-delay: .2s;
   animation-iteration-count: infinite;
 }
 @keyframes lab4DayNight {
@@ -21,11 +19,11 @@
 .lab4-sun, .lab4-moon {
   position: absolute; top: 25px; right: 15%; width: 46px; height: 46px; border-radius: 50%;
 }
-.lab4-sun { background: #ffe19a; animation: lab4Sun 16s 1s infinite; }
-.lab4-moon { background: #eef4ff; opacity: 0; animation: lab4Night 16s 1s infinite; }
+.lab4-sun { background: #ffe19a; animation: lab4Sun 10s .2s infinite; }
+.lab4-moon { background: #eef4ff; opacity: 0; animation: lab4Night 10s .2s infinite; }
 .lab4-stars {
   position: absolute; top: 20px; left: 8%; color: #fff; font-size: 21px;
-  opacity: 0; animation: lab4Night 16s 1s infinite;
+  opacity: 0; animation: lab4Night 10s .2s infinite;
 }
 @keyframes lab4Sun {
   0%, 30%, 100% { opacity: 1; }
@@ -35,15 +33,14 @@
   0%, 30%, 100% { opacity: 0; }
   65%, 80% { opacity: 1; }
 }
-/* Hol, oir davharga - 2 ijil heseg */
 .lab4-far, .lab4-near { position: absolute; left: 0; width: 200%; display: flex; }
 .lab4-far > span, .lab4-near > span { flex: 0 0 50%; }
-.lab4-far { bottom: 53px; height: 145px; animation: lab4Move 24s linear infinite; }
+.lab4-far { bottom: 53px; height: 145px; animation: lab4Move 14s linear infinite; }
 .lab4-far > span {
   background: #698b98;
   clip-path: polygon(0 73%, 12% 35%, 22% 62%, 35% 5%, 51% 70%, 64% 32%, 76% 61%, 89% 21%, 100% 73%, 100% 100%, 0 100%);
 }
-.lab4-near { bottom: 53px; height: 67px; animation: lab4Move 6s linear infinite; }
+.lab4-near { bottom: 53px; height: 67px; animation: lab4Move 4s linear infinite; }
 .lab4-near > span { display: flex; justify-content: space-around; align-items: flex-end; background: #526d54; }
 .lab4-near i {
   width: 46px; height: 77px; background: #294c3e;
@@ -61,14 +58,13 @@
 .lab4-lines {
   position: absolute; bottom: 12px; left: 0; width: 200%; height: 4px;
   background: repeating-linear-gradient(90deg, #fff0bf 0%, #fff0bf 3%, transparent 3%, transparent 6.25%);
-  animation: lab4Move 6s linear infinite;
+  animation: lab4Move 4s linear infinite;
 }
-/* Gol object - mashinii dorgilt */
 .lab4-vehicle {
   position: absolute; left: 50%; bottom: 28px; width: 146px; height: 85px;
   transform: translateX(-50%);
 }
-.lab4-truck { position: relative; width: 100%; height: 100%; animation: lab4Drive .65s ease-in-out infinite; }
+.lab4-truck { position: relative; width: 100%; height: 100%; animation: lab4Drive 2s ease-in-out infinite; }
 .lab4-box {
   position: absolute; top: 0; left: 0; width: 95px; height: 62px; display: flex;
   flex-direction: column; align-items: center; justify-content: center;
@@ -91,13 +87,20 @@
 .lab4-wheel-left { left: 18px; }
 .lab4-wheel-right { right: 13px; }
 @keyframes lab4Drive {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
+  0%, 100% { transform: translate(-12px, 0); }
+  25% { transform: translate(0, -7px); }
+  50% { transform: translate(12px, 0); }
+  75% { transform: translate(0, -7px); }
 }
-.lab4-pause { accent-color: #102747; }
-.lab4-pause:checked ~ .lab4-scene,
-.lab4-pause:checked ~ .lab4-scene * { animation-play-state: paused; }
-.lab4-pause:focus-visible { outline: 2px solid #102747; outline-offset: 3px; }
+.lab4-normal { display: inline; }
+.lab4-reduced { display: none; }
+.lab4-jump { color: inherit; }
+@media (prefers-reduced-motion: no-preference) {
+  #lab4-motion:checked ~ .lab4-scene,
+  #lab4-motion:checked ~ .lab4-scene * {
+    animation-play-state: paused;
+  }
+}
 .lab4-note { margin-top: 12px; }
 .lab4 .lab4-button {
   display: inline-block; padding: 10px 18px; border-radius: 6px; background: #102747;
@@ -123,6 +126,11 @@
   .lab4-stars { font-size: 14px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .lab4 .lab4-scene, .lab4-scene *, .lab4 .lab4-button { animation: none; transition: none; }
-  .lab4 .lab4-button:hover, .lab4 .lab4-button:focus { transform: none; }
+  .lab4-normal { display: none; }
+  .lab4-reduced { display: inline; }
+  #lab4-motion:not(:checked) ~ .lab4-scene,
+  #lab4-motion:not(:checked) ~ .lab4-scene * {
+    animation-play-state: paused;
+  }
+  .lab4-button:hover, .lab4-button:focus { transform: none; }
 }

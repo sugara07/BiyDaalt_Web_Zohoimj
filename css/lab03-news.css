@@ -231,12 +231,3 @@
     height: auto;
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .lab03-news *,
-  .lab03-news *::before,
-  .lab03-news *::after {
-    animation: none !important;
-    transition: none !important;
-  }
-}

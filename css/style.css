@@ -175,7 +175,6 @@ input[type=radio],input[type=checkbox]{accent-color:var(--navy);width:18px;heigh
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
 
-/* Restaurant UX research: additional static pages — Phase 1, no JavaScript */
 .topbar nav a[aria-current="page"]{color:var(--accent);font-weight:700}
 button:disabled{opacity:.6;cursor:not-allowed;transform:none!important;box-shadow:none!important}
 .page-hero{background:linear-gradient(115deg,#102747,#254b6a);color:white;padding:70px 0 75px}
