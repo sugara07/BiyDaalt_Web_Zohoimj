@@ -35,7 +35,7 @@
 }
 .lab4-far, .lab4-near { position: absolute; left: 0; width: 200%; display: flex; }
 .lab4-far > span, .lab4-near > span { flex: 0 0 50%; }
-.lab4-far { bottom: 53px; height: 145px; animation: lab4Move 14s linear infinite; }
+.lab4-far { bottom: 53px; height: 145px; animation: lab4Move 16s linear infinite; }
 .lab4-far > span {
   background: #698b98;
   clip-path: polygon(0 73%, 12% 35%, 22% 62%, 35% 5%, 51% 70%, 64% 32%, 76% 61%, 89% 21%, 100% 73%, 100% 100%, 0 100%);
