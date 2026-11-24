@@ -34,3 +34,6 @@ ZIP-ийг задлаад news.html-ийг Chrome эсвэл Live Server-ээр 
 - https://www.w3schools.com/css/css3_transitions.asp
 - https://www.w3schools.com/css/css3_2dtransforms.asp
 - https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+
+## Үр дүнгийн зураг
+[Өдөр, орой, шөнийн үе шат](screenshots/day-evening-night.webp).
