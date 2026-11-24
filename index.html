@@ -11,6 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lab5.css">
+  <script src="js/lab5.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Үндсэн агуулга руу шилжих</a>
@@ -115,6 +117,45 @@
           </table>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section lab5" id="lab5-choice" aria-labelledby="lab5-title">
+    <div class="wrap">
+      <p class="section-kicker">ТАНЫ СОНГОЛТ</p>
+      <h2 id="lab5-title">Та аль хоолыг илүүд үздэг вэ?</h2>
+      <p>Дуртай хоолоо сонгож, хоёр хоолны сонголтын харьцааг хараарай.</p>
+      <div class="lab5-options">
+        <article class="lab5-card">
+          <img src="img/buuz.svg" alt="Ууранд жигнэсэн бууз" width="720" height="540">
+          <h3>Бууз</h3>
+          <p>Үхрийн мах, сонгинотой. 5 ширхэг · 9,500₮</p>
+          <p class="lab5-percent" id="buuzPercent">50%</p>
+          <p>Санал: <span id="buuzCount">0</span></p>
+          <button class="btn" id="buuzButton" type="button">Бууз сонгох</button>
+        </article>
+        <article class="lab5-card">
+          <img src="img/khuushuur.svg" alt="Алтан шаргал хуушуур" width="720" height="540">
+          <h3>Хуушуур</h3>
+          <p>Шүүслэг, шарсан. 3 ширхэг · 10,500₮</p>
+          <p class="lab5-percent" id="huushuurPercent">50%</p>
+          <p>Санал: <span id="huushuurCount">0</span></p>
+          <button class="btn" id="huushuurButton" type="button">Хуушуур сонгох</button>
+        </article>
+      </div>
+      <div class="lab5-result" aria-live="polite" aria-atomic="true">
+        <div class="lab5-labels">
+          <span>Бууз</span>
+          <span>Хуушуур</span>
+        </div>
+        <div class="lab5-bar" aria-hidden="true">
+          <div id="buuzBar"></div>
+          <div id="huushuurBar"></div>
+        </div>
+        <p>Нийт санал: <strong id="totalCount">0</strong></p>
+      </div>
+      <button class="lab5-reset" id="resetButton" type="button">Дахин эхлүүлэх</button>
+      <p class="lab5-note">Сонголт зөвхөн энэ хуудсанд түр хадгалагдана. Хуудсыг дахин ачаалахад арилна. Энэ нь бодит санал асуулга, хоолны захиалга биш.</p>
     </div>
   </section>
 
